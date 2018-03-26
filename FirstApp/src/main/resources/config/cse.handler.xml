@@ -1,0 +1,3 @@
+<config>
+    <handler id="myhandler" class="com.service.firstapp.controller.MyHandler" />
+</config>
