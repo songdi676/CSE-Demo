@@ -1,0 +1,168 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+  <groupId>com.nl</groupId>
+  <artifactId>cxf-demo</artifactId>
+  <packaging>war</packaging>
+  <version>1.0-SNAPSHOT</version>
+  <name>cxf-demo Maven Webapp</name>
+  <url>http://maven.apache.org</url>
+
+
+  <!-- ##########依赖属性参数配置 start############### -->
+  <properties>
+    <junit.version>4.12</junit.version>
+    <cxf.version>2.2.3</cxf.version>
+    <spring.version>3.2.3.RELEASE</spring.version>
+    <slf4j.version>1.7.7</slf4j.version>
+    <oracle.version>11.1.0.7</oracle.version>
+    <dbcp.version>1.4</dbcp.version>
+  </properties>
+
+  <!-- 发布仓库配置 -->
+  <distributionManagement>
+    <repository>
+      <id>releases</id>
+      <name>newland utap Release repository</name>
+      <url>http://10.1.8.16:8081/repository/releases</url>
+    </repository>
+    <snapshotRepository>
+      <id>snapshots</id>
+      <name>newland utap snapshot repository</name>
+      <url>http://10.1.8.16:8081/repository/snapshots</url>
+    </snapshotRepository>
+  </distributionManagement>
+  <pluginRepositories>
+    <pluginRepository>
+      <id>plugins</id>
+      <name>plugins</name>
+      <url>http://10.1.8.16:8081/repository/public</url>
+    </pluginRepository>
+  </pluginRepositories>
+  <!-- 私服仓库配置 -->
+  <repositories>
+    <repository>
+      <id>public</id>
+      <name>public</name>
+      <url>http://10.1.8.16:8081/repository/public/</url>
+      <snapshots>
+        <enabled>false</enabled>
+      </snapshots>
+    </repository>
+    <repository>
+      <id>releases</id>
+      <name>releases</name>
+      <url>http://10.1.8.16:8081/repository/releases</url>
+      <snapshots>
+        <enabled>false</enabled>
+      </snapshots>
+    </repository>
+    <repository>
+      <id>snapshots</id>
+      <name>utap_snapshots</name>
+      <url>http://10.1.8.16:8081/repository/snapshots</url>
+      <snapshots>
+        <enabled>true</enabled>
+      </snapshots>
+    </repository>
+  </repositories>
+
+  <dependencies>
+    <!-- 单元测试依赖包 -->
+    <dependency>
+      <groupId>junit</groupId>
+      <artifactId>junit</artifactId>
+      <version>${junit.version}</version>
+    </dependency>
+
+    <!-- CXF Dependencies -->
+    <dependency>
+      <groupId>org.apache.cxf</groupId>
+      <artifactId>cxf-rt-frontend-jaxws</artifactId>
+      <version>${cxf.version}</version>
+    </dependency>
+    <dependency>
+      <groupId>org.apache.cxf</groupId>
+      <artifactId>cxf-rt-transports-http</artifactId>
+      <version>${cxf.version}</version>
+    </dependency>
+    <!-- Jetty is needed if you're are not using the CXFServlet -->
+    <dependency>
+      <groupId>org.apache.cxf</groupId>
+      <artifactId>cxf-rt-transports-http-jetty</artifactId>
+      <version>${cxf.version}</version>
+    </dependency>
+    <!-- End of CXF Dependencies -->
+
+    <!-- Spring Dependencies ${spring.version} -->
+    <!-- https://mvnrepository.com/artifact/org.springframework/spring-core -->
+    <dependency>
+      <groupId>org.springframework</groupId>
+      <artifactId>spring-core</artifactId>
+      <version>${spring.version}</version>
+    </dependency>
+
+    <dependency>
+      <groupId>org.springframework</groupId>
+      <artifactId>spring-context</artifactId>
+      <version>${spring.version}</version>
+    </dependency>
+
+    <dependency>
+      <groupId>org.springframework</groupId>
+      <artifactId>spring-web</artifactId>
+      <version>${spring.version}</version>
+    </dependency>
+
+    <dependency>
+      <groupId>org.slf4j</groupId>
+      <artifactId>slf4j-log4j12</artifactId>
+      <version>${slf4j.version}</version>
+      <type>jar</type>
+      <scope>compile</scope>
+    </dependency>
+
+    <dependency>
+      <groupId>com.oracle</groupId>
+      <artifactId>ojdbc6</artifactId>
+      <version>${oracle.version}</version>
+    </dependency>
+
+    <!-- https://mvnrepository.com/artifact/commons-dbcp/commons-dbcp -->
+    <dependency>
+      <groupId>commons-dbcp</groupId>
+      <artifactId>commons-dbcp</artifactId>
+      <version>${dbcp.version}</version>
+    </dependency>
+
+
+  </dependencies>
+
+  <!-- #####Project Build ###-->
+  <build>
+    <finalName>cxf-demo</finalName>
+    <!-- ###########给出构建过程中所用到的插件start######## -->
+    <plugins>
+      <!-- 由于maven默认使用的jdk与工程配置的jdk版本不一致，导致无法编译通过，通过该插件指定jdk版本 -->
+      <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-compiler-plugin</artifactId>
+        <configuration>
+          <source>1.8</source>
+          <target>1.8</target>
+          <encoding>UTF-8</encoding>
+        </configuration>
+      </plugin>
+      <!-- maven-surefire-plugin 是maven里执行测试用例的插件，不显示配置就会用默认配置。这个插件的 surefire:test 命令会默认绑定maven执行的 test 阶段 -->
+      <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-surefire-plugin</artifactId>
+        <configuration>
+          <!-- 跳过测试单元 true:跳过测试，false不跳过（默认）-->
+          <skip>true</skip>
+        </configuration>
+      </plugin>
+    </plugins>
+    <!-- ###########给出构建过程中所用到的插件end######## -->
+  </build>
+</project>
