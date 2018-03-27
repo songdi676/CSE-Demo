@@ -16,7 +16,7 @@
         <cse.version>2.3.9</cse.version>
         <maven.compiler.source>1.8</maven.compiler.source>
         <maven.compiler.target>1.8</maven.compiler.target>
-        <demo.main>com.service.firstapp.FirstAppApplication</demo.main>
+        <demo.main>com.newland.service.App</demo.main>
     </properties>
 
     <dependencyManagement>
