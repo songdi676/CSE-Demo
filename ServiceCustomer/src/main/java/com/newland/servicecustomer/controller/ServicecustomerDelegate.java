@@ -20,7 +20,7 @@ public class ServicecustomerDelegate {
 	@RpcReference(microserviceName = "CSERpcDemo", schemaId = "CSERpcDemo")
 	private static ICSERpcDemo cSERpcDemo;
 	
-	 private static final Logger logger = LoggerFactory.getLogger(ServicecustomerDelegate.class);
+	private static final Logger logger = LoggerFactory.getLogger(ServicecustomerDelegate.class);
 
 	public String helloworld(String name) {
 

@@ -1,9 +1,9 @@
-APPLICATION_ID: pojo
+APPLICATION_ID: demo-songdi
 service_description:
   name: CSERpcDemo
   version: 0.0.1
   properties:
-    allowCrossApp: false
+    allowCrossApp: true
 cse:
   service:
     registry:
@@ -18,7 +18,7 @@ cse:
   rest:
     address: 0.0.0.0:8080
   credentials:
-    accessKey: NWRZIEUNK7D5REGG9NG7
-    secretKey: qEX3aVfrniaIgj3TSRYWxdHK4TaxdV6Am8U3vsMw
+    accessKey: AJADUZGY3IFKSQPEPB8Q
+    secretKey: JUggo6jdtKqJ4fCaznLw043ideXRQV8Hoa5nsHTq
     akskCustomCipher: default
     project: cn-north-1

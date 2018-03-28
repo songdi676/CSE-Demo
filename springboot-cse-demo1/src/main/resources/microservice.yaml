@@ -1,6 +1,6 @@
-APPLICATION_ID: springmvc
+APPLICATION_ID: springmvc-boot
 service_description:
-  name: FirstApp
+  name: FirstApp-boot
   version: 0.0.1
   properties:
     allowCrossApp: false
@@ -28,7 +28,7 @@ cse:
     cycle:
       ms: 10000                          #输出性能日志统计时间间隔
   credentials:
-    accessKey: NWRZIEUNK7D5REGG9NG7
-    secretKey: qEX3aVfrniaIgj3TSRYWxdHK4TaxdV6Am8U3vsMw
+    accessKey: AJADUZGY3IFKSQPEPB8Q
+    secretKey: JUggo6jdtKqJ4fCaznLw043ideXRQV8Hoa5nsHTq
     akskCustomCipher: default
     project: cn-north-1
