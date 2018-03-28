@@ -15,6 +15,7 @@ public class ProviderSbApplication {
 	}
 
 	public static void main(String[] args) {
+
 		SpringApplication.run(ProviderSbApplication.class, args);
 	}
 }
