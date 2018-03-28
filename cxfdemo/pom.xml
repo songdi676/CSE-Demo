@@ -20,7 +20,7 @@
   </properties>
 
   <!-- 发布仓库配置 -->
-  <distributionManagement>
+  <!--<distributionManagement>
     <repository>
       <id>releases</id>
       <name>newland utap Release repository</name>
@@ -39,7 +39,7 @@
       <url>http://10.1.8.16:8081/repository/public</url>
     </pluginRepository>
   </pluginRepositories>
-  <!-- 私服仓库配置 -->
+  &lt;!&ndash; 私服仓库配置 &ndash;&gt;
   <repositories>
     <repository>
       <id>public</id>
@@ -65,7 +65,7 @@
         <enabled>true</enabled>
       </snapshots>
     </repository>
-  </repositories>
+  </repositories>-->
 
   <dependencies>
     <!-- 单元测试依赖包 -->
