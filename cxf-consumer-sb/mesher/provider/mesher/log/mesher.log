@@ -1,0 +1,415 @@
+2018-03-29 17:16:22.115 +08:00 INFO archaius/archaius.go:96 Essential Configuration Path: [/root/tmp/mesher/conf/chassis.yaml /root/tmp/mesher/conf/microservice.yaml], Configuration Paths [/root/tmp/mesher/conf/circuit_breaker.yaml /root/tmp/mesher/conf/load_balancing.yaml /root/tmp/mesher/conf/rate_limiting.yaml /root/tmp/mesher/conf/tls.yaml /root/tmp/mesher/conf/monitoring.yaml /root/tmp/mesher/conf/auth.yaml /root/tmp/mesher/conf/tracing.yaml]
+2018-03-29 17:16:22.115 +08:00 WARN config-manager/configurationmanager.go:140 empty configurtion from CommandlineSource
+2018-03-29 17:16:22.115 +08:00 WARN config-manager/configurationmanager.go:140 empty configurtion from ExternalSource
+2018-03-29 17:16:22.115 +08:00 INFO archaius/archaius.go:44 [/root/tmp/mesher/conf/circuit_breaker.yaml] file not exist
+2018-03-29 17:16:22.115 +08:00 INFO archaius/archaius.go:44 [/root/tmp/mesher/conf/load_balancing.yaml] file not exist
+2018-03-29 17:16:22.115 +08:00 INFO archaius/archaius.go:44 [/root/tmp/mesher/conf/rate_limiting.yaml] file not exist
+2018-03-29 17:16:22.115 +08:00 INFO archaius/archaius.go:44 [/root/tmp/mesher/conf/tls.yaml] file not exist
+2018-03-29 17:16:22.115 +08:00 INFO archaius/archaius.go:44 [/root/tmp/mesher/conf/monitoring.yaml] file not exist
+2018-03-29 17:16:22.115 +08:00 INFO archaius/archaius.go:44 [/root/tmp/mesher/conf/tracing.yaml] file not exist
+2018-03-29 17:16:22.115 +08:00 INFO config/config.go:235 archaius init success
+2018-03-29 17:16:22.115 +08:00 INFO config/router_config.go:71 Load route rules from file: /root/tmp/mesher/conf/router.yaml
+2018-03-29 17:16:22.116 +08:00 WARN auth/auth.go:193 Huawei Cloud auth mode: ak/sk
+2018-03-29 17:16:22.116 +08:00 INFO go-chassis/chassis.go:97 Chain init success
+2018-03-29 17:16:22.116 +08:00 WARN registry/registry.go:141 registry.Consumer TLS mode, verify peer: false, cipher plugin: default.
+2018-03-29 17:16:22.116 +08:00 INFO go-sc-client/client.go:133 Use Service center v4
+2018-03-29 17:16:22.116 +08:00 WARN registry/registry.go:82 Enable servicecenter registry.
+2018-03-29 17:16:22.116 +08:00 WARN registry/bootstrap.go:24 Get schemas failed, microservice = provider-sb-demo. error: microservice provider-sb-demo not found
+2018-03-29 17:16:22.116 +08:00 INFO registry/bootstrap.go:45 Framework registered is [ Mesher:1.3.7 ]
+2018-03-29 17:16:22.116 +08:00 INFO registry/bootstrap.go:46 Microservice registered by [ SIDECAR ]
+2018-03-29 17:16:22.118 +08:00 INFO archaius/archaius.go:77 config value after change sourceTemplate | #routeRule:
+#  ShoppingCart: #这里就是请求里的host,也是sc里的service name
+#    - precedence: 2 #路由规则优先级 越大优先级越高，请求会先进入优先级最高的路由规则进行匹配
+#      route: #路由规则列表
+#      - tags:
+#          version: 0.2 #对接service center的话，如果不填就自动为0.1
+#          app: HelloWorld #对接service center的话，如果不填就自动为default
+#        weight: 80 #全重 80%到这里
+#      - tags:
+#          version: 1.2
+#          app: HelloWorld
+#        weight: 20 #全重 20%到这里
+2018-03-29 17:16:22.424 +08:00 WARN servicecenter/servicecenter.go:34 Microservice [provider-sb-demo:0.0.1:provider-sb] not exists in registry, register it
+2018-03-29 17:16:22.515 +08:00 WARN registry/bootstrap.go:54 Register microservice [provider-sb-demo] success
+2018-03-29 17:16:22.598 +08:00 INFO registry/bootstrap.go:83 Don't need add dependency
+2018-03-29 17:16:22.973 +08:00 INFO registry/registry.go:160 Enabled Registry
+2018-03-29 17:16:22.973 +08:00 INFO loadbalance/selector.go:26 Enable LoadBalancing
+2018-03-29 17:16:22.973 +08:00 INFO bootstrap/bootstrap.go:32 Bootstrap Huawei Enterprise Edition.
+2018-03-29 17:16:22.974 +08:00 WARN config-center/config_center.go:119 configcenter.Consumer TLS mode, verify peer: false, cipher plugin: default.
+2018-03-29 17:16:23.309 +08:00 WARN config-center/config_center.go:78 config center init success
+2018-03-29 17:16:23.309 +08:00 WARN metrics/cse_monitoring.go:63 monitor.Consumer TLS mode, verify peer: false, cipher plugin: default
+2018-03-29 17:16:23.309 +08:00 INFO metrics/metric.go:92 Started sending metric Data to Monitor Server : https://cse.cn-north-1.myhwclouds.com:443
+2018-03-29 17:16:23.309 +08:00 WARN tracing/tracer_manager.go:34 Tracing enabled. Start to init tracer map.
+2018-03-29 17:16:23.309 +08:00 INFO go-chassis/chassis.go:261 Init chassis success
+2018-03-29 17:16:23.311 +08:00 INFO archaius/archaius.go:77 config value after change policy | # Router rules and fault injection rules are moved to router.yaml
+#plugin:
+#  destinationResolver: host #用户可自定义如何将host转为换destination name，默认为host直接就是service name，
+#admin: #admin API
+#  serverUri : 127.0.0.1:30102 # 在哪个地址监听
+#  goRuntimeMetrics : true # 是否开启go 运行时监控
+2018-03-29 17:16:23.311 +08:00 INFO config-center/config_center.go:225 config value policy | # Router rules and fault injection rules are moved to router.yaml
+#plugin:
+#  destinationResolver: host #用户可自定义如何将host转为换destination name，默认为host直接就是service name，
+#admin: #admin API
+#  serverUri : 127.0.0.1:30102 # 在哪个地址监听
+#  goRuntimeMetrics : true # 是否开启go 运行时监控
+2018-03-29 17:16:23.311 +08:00 INFO archaius/archaius.go:77 config value after change plugin | # Router rules and fault injection rules are moved to router.yaml
+#plugin:
+#  destinationResolver: host #用户可自定义如何将host转为换destination name，默认为host直接就是service name，
+#admin: #admin API
+#  serverUri : 127.0.0.1:30102 # 在哪个地址监听
+#  goRuntimeMetrics : true # 是否开启go 运行时监控
+2018-03-29 17:16:23.311 +08:00 INFO config-center/config_center.go:225 config value plugin | # Router rules and fault injection rules are moved to router.yaml
+#plugin:
+#  destinationResolver: host #用户可自定义如何将host转为换destination name，默认为host直接就是service name，
+#admin: #admin API
+#  serverUri : 127.0.0.1:30102 # 在哪个地址监听
+#  goRuntimeMetrics : true # 是否开启go 运行时监控
+2018-03-29 17:16:23.315 +08:00 INFO config-center/config_center.go:225 config value proxyedProtocol | # Router rules and fault injection rules are moved to router.yaml
+#plugin:
+#  destinationResolver: host #用户可自定义如何将host转为换destination name，默认为host直接就是service name，
+#admin: #admin API
+#  serverUri : 127.0.0.1:30102 # 在哪个地址监听
+#  goRuntimeMetrics : true # 是否开启go 运行时监控
+2018-03-29 17:16:23.316 +08:00 INFO archaius/archaius.go:77 config value after change proxyedProtocol | # Router rules and fault injection rules are moved to router.yaml
+#plugin:
+#  destinationResolver: host #用户可自定义如何将host转为换destination name，默认为host直接就是service name，
+#admin: #admin API
+#  serverUri : 127.0.0.1:30102 # 在哪个地址监听
+#  goRuntimeMetrics : true # 是否开启go 运行时监控
+2018-03-29 17:16:23.315 +08:00 INFO archaius/archaius.go:77 config value after change admin | # Router rules and fault injection rules are moved to router.yaml
+#plugin:
+#  destinationResolver: host #用户可自定义如何将host转为换destination name，默认为host直接就是service name，
+#admin: #admin API
+#  serverUri : 127.0.0.1:30102 # 在哪个地址监听
+#  goRuntimeMetrics : true # 是否开启go 运行时监控
+2018-03-29 17:16:23.316 +08:00 INFO config-center/config_center.go:225 config value admin | # Router rules and fault injection rules are moved to router.yaml
+#plugin:
+#  destinationResolver: host #用户可自定义如何将host转为换destination name，默认为host直接就是service name，
+#admin: #admin API
+#  serverUri : 127.0.0.1:30102 # 在哪个地址监听
+#  goRuntimeMetrics : true # 是否开启go 运行时监控
+2018-03-29 17:16:23.316 +08:00 INFO bootstrap/bootstrap.go:45 Running as sidecar
+2018-03-29 17:16:23.317 +08:00 INFO adminapi/router.go:68 admin server is not using ssl
+2018-03-29 17:16:23.317 +08:00 INFO adminapi/router.go:72 admin server listening on [::]:30102
+2018-03-29 17:16:23.317 +08:00 INFO adminapi/router.go:26 init router
+2018-03-29 17:16:24.320 +08:00 INFO adminapi/router.go:82 admin server start success
+2018-03-29 17:16:24.321 +08:00 INFO server/server_manager.go:62 starting server http...
+2018-03-29 17:16:24.321 +08:00 INFO server/server_manager.go:68 http server start success
+2018-03-29 17:16:24.321 +08:00 INFO server/server_manager.go:70 All server Start Completed
+2018-03-29 17:16:24.321 +08:00 WARN registry/bootstrap.go:105 Start to register instances.
+2018-03-29 17:16:24.492 +08:00 WARN servicecenter/servicecenter.go:58 RegisterMicroServiceInstance get SelfInstancesCache failed, Mid/Sid: ef7c0f00333311e89c8f0255ac105519/f0ab18c6333311e891230255ac105117
+2018-03-29 17:16:24.492 +08:00 WARN servicecenter/servicecenter.go:62 RegisterMicroServiceInstance type asserts failed,  Mid/Sid: ef7c0f00333311e89c8f0255ac105519/f0ab18c6333311e891230255ac105117
+2018-03-29 17:16:24.492 +08:00 INFO servicecenter/servicecenter.go:74 RegisterMicroServiceInstance success, MicroServiceID: ef7c0f00333311e89c8f0255ac105519
+2018-03-29 17:16:24.492 +08:00 INFO registry/heartbeat.go:50 Add HB task, task:ef7c0f00333311e89c8f0255ac105519/f0ab18c6333311e891230255ac105117
+2018-03-29 17:16:24.492 +08:00 INFO servicecenter/servicecenter.go:80 RegisterMicroServiceInstance success, microServiceID/instanceID: ef7c0f00333311e89c8f0255ac105519/f0ab18c6333311e891230255ac105117.
+2018-03-29 17:16:24.492 +08:00 WARN registry/bootstrap.go:167 Register instance success, serviceID/instanceID: ef7c0f00333311e89c8f0255ac105519/f0ab18c6333311e891230255ac105117.
+2018-03-29 17:16:25.513 +08:00 INFO cse-collector/csemonitor.go:67 Connection to monitoring server established successfully
+2018-03-29 17:17:08.789 +08:00 INFO client/client_manager.go:87 Create client map for rest
+2018-03-29 17:17:08.789 +08:00 INFO client/client_manager.go:97 Create client for provider-sb-demo
+2018-03-29 20:52:11.796 +08:00 WARN configcenter-source/configcentersource.go:338 Failed to pull configurations from config center server error: Unable to connect to ServiceCenter.error: Get https://cse.cn-north-1.myhwclouds.com:443/v3/default/configuration/items?dimensionsInfo=provider-sb-demo@provider-sb%230.0.1: read tcp 10.0.2.4:51804->43.254.0.22:443: read: connection reset by peer
+2018-03-29 20:52:13.767 +08:00 ERROR servicecenter/servicecenter.go:136 Heartbeat failed, microServiceID/instanceID: ef7c0f00333311e89c8f0255ac105519/f0ab18c6333311e891230255ac105117. error: Unable to connect to ServiceCenter.error: Put https://cse.cn-north-1.myhwclouds.com:443/v4/default/registry/microservices/ef7c0f00333311e89c8f0255ac105519/instances/f0ab18c6333311e891230255ac105117/heartbeat: read tcp 10.0.2.4:51802->43.254.0.22:443: read: connection reset by peer
+2018-03-29 20:52:13.768 +08:00 ERROR registry/heartbeat.go:95 Run Heartbeat fail error: Unable to connect to ServiceCenter.error: Put https://cse.cn-north-1.myhwclouds.com:443/v4/default/registry/microservices/ef7c0f00333311e89c8f0255ac105519/instances/f0ab18c6333311e891230255ac105117/heartbeat: read tcp 10.0.2.4:51802->43.254.0.22:443: read: connection reset by peer
+2018-03-29 20:52:19.528 +08:00 WARN cse-collector/csemonitor.go:61 Unable to connect to monitoring server error: Post https://cse.cn-north-1.myhwclouds.com:443/v2/default/csemonitor/metric?service=provider-sb-demo: dial tcp: i/o timeout
+2018-03-29 20:52:19.528 +08:00 ERROR servicecenter/cache.go:179 get Providers failed, sid = ef7c0f00333311e89c8f0255ac105519 error: Get Providers failed, error: Unable to connect to ServiceCenter.error: Get https://cse.cn-north-1.myhwclouds.com:443/v4/default/registry/microservices/ef7c0f00333311e89c8f0255ac105519/providers: dial tcp: lookup cse.cn-north-1.myhwclouds.com on 192.168.43.1:53: dial udp 192.168.43.1:53: i/o timeout, MicroServiceid: ef7c0f00333311e89c8f0255ac105519
+2018-03-29 20:52:19.529 +08:00 ERROR servicecenter/cache.go:73 AutoUpdateMicroserviceInstance failed. error: Get Providers failed, error: Unable to connect to ServiceCenter.error: Get https://cse.cn-north-1.myhwclouds.com:443/v4/default/registry/microservices/ef7c0f00333311e89c8f0255ac105519/providers: dial tcp: lookup cse.cn-north-1.myhwclouds.com on 192.168.43.1:53: dial udp 192.168.43.1:53: i/o timeout, MicroServiceid: ef7c0f00333311e89c8f0255ac105519
+2018-03-29 20:52:20.008 +08:00 INFO cse-collector/csemonitor.go:72 Connection recovered successfully to monitoring server
+2018-03-29 20:52:23.768 +08:00 INFO registry/heartbeat.go:125 Try to re-register self
+2018-03-29 20:52:25.356 +08:00 INFO servicecenter/servicecenter.go:74 RegisterMicroServiceInstance success, MicroServiceID: ef7c0f00333311e89c8f0255ac105519
+2018-03-29 20:52:25.357 +08:00 INFO registry/heartbeat.go:50 Add HB task, task:ef7c0f00333311e89c8f0255ac105519/08af802e335011e89c8f0255ac105519
+2018-03-29 20:52:25.357 +08:00 INFO servicecenter/servicecenter.go:80 RegisterMicroServiceInstance success, microServiceID/instanceID: ef7c0f00333311e89c8f0255ac105519/08af802e335011e89c8f0255ac105519.
+2018-03-29 20:52:25.357 +08:00 WARN registry/heartbeat.go:185 RegisterMicroServiceInstance get SelfInstancesCache failed, Mid/Sid: /08af802e335011e89c8f0255ac105519
+2018-03-29 20:52:25.357 +08:00 WARN registry/heartbeat.go:189 RegisterMicroServiceInstance type asserts failed,  Mid/Sid: /08af802e335011e89c8f0255ac105519
+2018-03-29 20:52:25.357 +08:00 WARN registry/heartbeat.go:201 RegisterMicroServiceInstance success, microServiceID/instanceID: /08af802e335011e89c8f0255ac105519.
+2018-03-29 20:52:25.357 +08:00 WARN registry/heartbeat.go:139 Re-register self success
+2018-03-29 20:52:41.811 +08:00 INFO configcenter-source/configcentersource.go:318 Recover configurations from config center server
+2018-03-29 21:03:07.417 +08:00 INFO archaius/archaius.go:96 Essential Configuration Path: [/root/tmp/mesher/conf/chassis.yaml /root/tmp/mesher/conf/microservice.yaml], Configuration Paths [/root/tmp/mesher/conf/circuit_breaker.yaml /root/tmp/mesher/conf/load_balancing.yaml /root/tmp/mesher/conf/rate_limiting.yaml /root/tmp/mesher/conf/tls.yaml /root/tmp/mesher/conf/monitoring.yaml /root/tmp/mesher/conf/auth.yaml /root/tmp/mesher/conf/tracing.yaml]
+2018-03-29 21:03:07.417 +08:00 WARN config-manager/configurationmanager.go:140 empty configurtion from CommandlineSource
+2018-03-29 21:03:07.417 +08:00 WARN config-manager/configurationmanager.go:140 empty configurtion from ExternalSource
+2018-03-29 21:03:07.419 +08:00 INFO archaius/archaius.go:44 [/root/tmp/mesher/conf/circuit_breaker.yaml] file not exist
+2018-03-29 21:03:07.419 +08:00 INFO archaius/archaius.go:44 [/root/tmp/mesher/conf/load_balancing.yaml] file not exist
+2018-03-29 21:03:07.419 +08:00 INFO archaius/archaius.go:44 [/root/tmp/mesher/conf/rate_limiting.yaml] file not exist
+2018-03-29 21:03:07.419 +08:00 INFO archaius/archaius.go:44 [/root/tmp/mesher/conf/tls.yaml] file not exist
+2018-03-29 21:03:07.419 +08:00 INFO archaius/archaius.go:44 [/root/tmp/mesher/conf/monitoring.yaml] file not exist
+2018-03-29 21:03:07.419 +08:00 INFO archaius/archaius.go:44 [/root/tmp/mesher/conf/tracing.yaml] file not exist
+2018-03-29 21:03:07.419 +08:00 INFO config/config.go:235 archaius init success
+2018-03-29 21:03:07.419 +08:00 INFO config/router_config.go:71 Load route rules from file: /root/tmp/mesher/conf/router.yaml
+2018-03-29 21:03:07.422 +08:00 WARN auth/auth.go:193 Huawei Cloud auth mode: ak/sk
+2018-03-29 21:03:07.422 +08:00 INFO go-chassis/chassis.go:97 Chain init success
+2018-03-29 21:03:07.423 +08:00 WARN registry/registry.go:141 registry.Consumer TLS mode, verify peer: false, cipher plugin: default.
+2018-03-29 21:03:07.423 +08:00 INFO go-sc-client/client.go:133 Use Service center v4
+2018-03-29 21:03:07.423 +08:00 WARN registry/registry.go:82 Enable servicecenter registry.
+2018-03-29 21:03:07.423 +08:00 WARN registry/bootstrap.go:24 Get schemas failed, microservice = provider-sb-demo. error: microservice provider-sb-demo not found
+2018-03-29 21:03:07.423 +08:00 INFO registry/bootstrap.go:45 Framework registered is [ Mesher:1.3.7 ]
+2018-03-29 21:03:07.423 +08:00 INFO registry/bootstrap.go:46 Microservice registered by [ SIDECAR ]
+2018-03-29 21:03:07.426 +08:00 INFO archaius/archaius.go:77 config value after change sourceTemplate | #routeRule:
+#  ShoppingCart: #这里就是请求里的host,也是sc里的service name
+#    - precedence: 2 #路由规则优先级 越大优先级越高，请求会先进入优先级最高的路由规则进行匹配
+#      route: #路由规则列表
+#      - tags:
+#          version: 0.2 #对接service center的话，如果不填就自动为0.1
+#          app: HelloWorld #对接service center的话，如果不填就自动为default
+#        weight: 80 #全重 80%到这里
+#      - tags:
+#          version: 1.2
+#          app: HelloWorld
+#        weight: 20 #全重 20%到这里
+2018-03-29 21:03:09.046 +08:00 WARN servicecenter/servicecenter.go:41 Microservice [provider-sb-demo:0.0.1:provider-sb] exists in registry, no need register
+2018-03-29 21:03:09.046 +08:00 WARN registry/bootstrap.go:54 Register microservice [provider-sb-demo] success
+2018-03-29 21:03:09.244 +08:00 INFO registry/bootstrap.go:83 Don't need add dependency
+2018-03-29 21:03:09.494 +08:00 INFO registry/registry.go:160 Enabled Registry
+2018-03-29 21:03:09.494 +08:00 INFO loadbalance/selector.go:26 Enable LoadBalancing
+2018-03-29 21:03:09.495 +08:00 INFO bootstrap/bootstrap.go:32 Bootstrap Huawei Enterprise Edition.
+2018-03-29 21:03:09.495 +08:00 WARN config-center/config_center.go:119 configcenter.Consumer TLS mode, verify peer: false, cipher plugin: default.
+2018-03-29 21:03:09.754 +08:00 WARN config-center/config_center.go:78 config center init success
+2018-03-29 21:03:09.755 +08:00 WARN metrics/cse_monitoring.go:63 monitor.Consumer TLS mode, verify peer: false, cipher plugin: default
+2018-03-29 21:03:09.755 +08:00 INFO metrics/metric.go:92 Started sending metric Data to Monitor Server : https://cse.cn-north-1.myhwclouds.com:443
+2018-03-29 21:03:09.755 +08:00 WARN tracing/tracer_manager.go:34 Tracing enabled. Start to init tracer map.
+2018-03-29 21:03:09.755 +08:00 INFO go-chassis/chassis.go:261 Init chassis success
+2018-03-29 21:03:09.756 +08:00 INFO archaius/archaius.go:77 config value after change policy | # Router rules and fault injection rules are moved to router.yaml
+#plugin:
+#  destinationResolver: host #用户可自定义如何将host转为换destination name，默认为host直接就是service name，
+#admin: #admin API
+#  serverUri : 127.0.0.1:30102 # 在哪个地址监听
+#  goRuntimeMetrics : true # 是否开启go 运行时监控
+2018-03-29 21:03:09.756 +08:00 INFO config-center/config_center.go:225 config value policy | # Router rules and fault injection rules are moved to router.yaml
+#plugin:
+#  destinationResolver: host #用户可自定义如何将host转为换destination name，默认为host直接就是service name，
+#admin: #admin API
+#  serverUri : 127.0.0.1:30102 # 在哪个地址监听
+#  goRuntimeMetrics : true # 是否开启go 运行时监控
+2018-03-29 21:03:09.757 +08:00 INFO archaius/archaius.go:77 config value after change plugin | # Router rules and fault injection rules are moved to router.yaml
+#plugin:
+#  destinationResolver: host #用户可自定义如何将host转为换destination name，默认为host直接就是service name，
+#admin: #admin API
+#  serverUri : 127.0.0.1:30102 # 在哪个地址监听
+#  goRuntimeMetrics : true # 是否开启go 运行时监控
+2018-03-29 21:03:09.757 +08:00 INFO config-center/config_center.go:225 config value plugin | # Router rules and fault injection rules are moved to router.yaml
+#plugin:
+#  destinationResolver: host #用户可自定义如何将host转为换destination name，默认为host直接就是service name，
+#admin: #admin API
+#  serverUri : 127.0.0.1:30102 # 在哪个地址监听
+#  goRuntimeMetrics : true # 是否开启go 运行时监控
+2018-03-29 21:03:09.758 +08:00 INFO archaius/archaius.go:77 config value after change admin | # Router rules and fault injection rules are moved to router.yaml
+#plugin:
+#  destinationResolver: host #用户可自定义如何将host转为换destination name，默认为host直接就是service name，
+#admin: #admin API
+#  serverUri : 127.0.0.1:30102 # 在哪个地址监听
+#  goRuntimeMetrics : true # 是否开启go 运行时监控
+2018-03-29 21:03:09.758 +08:00 INFO config-center/config_center.go:225 config value admin | # Router rules and fault injection rules are moved to router.yaml
+#plugin:
+#  destinationResolver: host #用户可自定义如何将host转为换destination name，默认为host直接就是service name，
+#admin: #admin API
+#  serverUri : 127.0.0.1:30102 # 在哪个地址监听
+#  goRuntimeMetrics : true # 是否开启go 运行时监控
+2018-03-29 21:03:09.763 +08:00 INFO bootstrap/bootstrap.go:45 Running as sidecar
+2018-03-29 21:03:09.764 +08:00 INFO archaius/archaius.go:77 config value after change proxyedProtocol | # Router rules and fault injection rules are moved to router.yaml
+#plugin:
+#  destinationResolver: host #用户可自定义如何将host转为换destination name，默认为host直接就是service name，
+#admin: #admin API
+#  serverUri : 127.0.0.1:30102 # 在哪个地址监听
+#  goRuntimeMetrics : true # 是否开启go 运行时监控
+2018-03-29 21:03:09.764 +08:00 INFO adminapi/router.go:68 admin server is not using ssl
+2018-03-29 21:03:09.764 +08:00 INFO config-center/config_center.go:225 config value proxyedProtocol | # Router rules and fault injection rules are moved to router.yaml
+#plugin:
+#  destinationResolver: host #用户可自定义如何将host转为换destination name，默认为host直接就是service name，
+#admin: #admin API
+#  serverUri : 127.0.0.1:30102 # 在哪个地址监听
+#  goRuntimeMetrics : true # 是否开启go 运行时监控
+2018-03-29 21:03:09.764 +08:00 INFO adminapi/router.go:72 admin server listening on [::]:30102
+2018-03-29 21:03:09.764 +08:00 INFO adminapi/router.go:26 init router
+2018-03-29 21:03:10.774 +08:00 INFO adminapi/router.go:82 admin server start success
+2018-03-29 21:03:10.775 +08:00 INFO server/server_manager.go:62 starting server http...
+2018-03-29 21:03:10.775 +08:00 INFO server/server_manager.go:68 http server start success
+2018-03-29 21:03:10.775 +08:00 INFO server/server_manager.go:70 All server Start Completed
+2018-03-29 21:03:10.775 +08:00 WARN registry/bootstrap.go:105 Start to register instances.
+2018-03-29 21:03:10.938 +08:00 WARN servicecenter/servicecenter.go:58 RegisterMicroServiceInstance get SelfInstancesCache failed, Mid/Sid: ef7c0f00333311e89c8f0255ac105519/89880b71335111e891230255ac105117
+2018-03-29 21:03:10.938 +08:00 WARN servicecenter/servicecenter.go:62 RegisterMicroServiceInstance type asserts failed,  Mid/Sid: ef7c0f00333311e89c8f0255ac105519/89880b71335111e891230255ac105117
+2018-03-29 21:03:10.938 +08:00 INFO servicecenter/servicecenter.go:74 RegisterMicroServiceInstance success, MicroServiceID: ef7c0f00333311e89c8f0255ac105519
+2018-03-29 21:03:10.938 +08:00 INFO registry/heartbeat.go:50 Add HB task, task:ef7c0f00333311e89c8f0255ac105519/89880b71335111e891230255ac105117
+2018-03-29 21:03:10.938 +08:00 INFO servicecenter/servicecenter.go:80 RegisterMicroServiceInstance success, microServiceID/instanceID: ef7c0f00333311e89c8f0255ac105519/89880b71335111e891230255ac105117.
+2018-03-29 21:03:10.938 +08:00 WARN registry/bootstrap.go:167 Register instance success, serviceID/instanceID: ef7c0f00333311e89c8f0255ac105519/89880b71335111e891230255ac105117.
+2018-03-29 21:03:12.052 +08:00 INFO cse-collector/csemonitor.go:67 Connection to monitoring server established successfully
+2018-03-29 21:06:38.987 +08:00 INFO client/client_manager.go:87 Create client map for rest
+2018-03-29 21:06:38.987 +08:00 INFO client/client_manager.go:97 Create client for provider-sb-demo
+2018-03-29 21:07:28.936 +08:00 INFO go-chassis/chassis.go:215 got os signal interrupt
+2018-03-29 21:07:28.936 +08:00 INFO go-chassis/chassis.go:220 stopping server http...
+2018-03-29 21:07:28.936 +08:00 INFO go-chassis/chassis.go:225 http server stop success
+2018-03-29 22:31:11.121 +08:00 INFO archaius/archaius.go:96 Essential Configuration Path: [/root/tmp/mesher/conf/chassis.yaml /root/tmp/mesher/conf/microservice.yaml], Configuration Paths [/root/tmp/mesher/conf/circuit_breaker.yaml /root/tmp/mesher/conf/load_balancing.yaml /root/tmp/mesher/conf/rate_limiting.yaml /root/tmp/mesher/conf/tls.yaml /root/tmp/mesher/conf/monitoring.yaml /root/tmp/mesher/conf/auth.yaml /root/tmp/mesher/conf/tracing.yaml]
+2018-03-29 22:31:11.122 +08:00 WARN config-manager/configurationmanager.go:140 empty configurtion from CommandlineSource
+2018-03-29 22:31:11.122 +08:00 WARN config-manager/configurationmanager.go:140 empty configurtion from ExternalSource
+2018-03-29 22:31:11.130 +08:00 INFO archaius/archaius.go:44 [/root/tmp/mesher/conf/circuit_breaker.yaml] file not exist
+2018-03-29 22:31:11.130 +08:00 INFO archaius/archaius.go:44 [/root/tmp/mesher/conf/load_balancing.yaml] file not exist
+2018-03-29 22:31:11.130 +08:00 INFO archaius/archaius.go:44 [/root/tmp/mesher/conf/rate_limiting.yaml] file not exist
+2018-03-29 22:31:11.130 +08:00 INFO archaius/archaius.go:44 [/root/tmp/mesher/conf/tls.yaml] file not exist
+2018-03-29 22:31:11.130 +08:00 INFO archaius/archaius.go:44 [/root/tmp/mesher/conf/monitoring.yaml] file not exist
+2018-03-29 22:31:11.140 +08:00 INFO archaius/archaius.go:44 [/root/tmp/mesher/conf/tracing.yaml] file not exist
+2018-03-29 22:31:11.140 +08:00 INFO config/config.go:235 archaius init success
+2018-03-29 22:31:11.140 +08:00 INFO config/router_config.go:71 Load route rules from file: /root/tmp/mesher/conf/router.yaml
+2018-03-29 22:31:11.156 +08:00 WARN auth/auth.go:193 Huawei Cloud auth mode: ak/sk
+2018-03-29 22:31:11.156 +08:00 INFO go-chassis/chassis.go:97 Chain init success
+2018-03-29 22:31:11.156 +08:00 WARN registry/registry.go:141 registry.Consumer TLS mode, verify peer: false, cipher plugin: default.
+2018-03-29 22:31:11.156 +08:00 INFO go-sc-client/client.go:133 Use Service center v4
+2018-03-29 22:31:11.156 +08:00 WARN registry/registry.go:82 Enable servicecenter registry.
+2018-03-29 22:31:11.156 +08:00 WARN registry/bootstrap.go:24 Get schemas failed, microservice = provider-sb-demo. error: microservice provider-sb-demo not found
+2018-03-29 22:31:11.156 +08:00 INFO registry/bootstrap.go:45 Framework registered is [ Mesher:1.3.7 ]
+2018-03-29 22:31:11.156 +08:00 INFO registry/bootstrap.go:46 Microservice registered by [ SIDECAR ]
+2018-03-29 22:31:11.157 +08:00 INFO archaius/archaius.go:77 config value after change sourceTemplate | #routeRule:
+#  ShoppingCart: #这里就是请求里的host,也是sc里的service name
+#    - precedence: 2 #路由规则优先级 越大优先级越高，请求会先进入优先级最高的路由规则进行匹配
+#      route: #路由规则列表
+#      - tags:
+#          version: 0.2 #对接service center的话，如果不填就自动为0.1
+#          app: HelloWorld #对接service center的话，如果不填就自动为default
+#        weight: 80 #全重 80%到这里
+#      - tags:
+#          version: 1.2
+#          app: HelloWorld
+#        weight: 20 #全重 20%到这里
+2018-03-29 22:31:11.473 +08:00 WARN servicecenter/servicecenter.go:34 Microservice [provider-sb-demo:0.0.1:provider-sb] not exists in registry, register it
+2018-03-29 22:31:11.546 +08:00 WARN registry/bootstrap.go:54 Register microservice [provider-sb-demo] success
+2018-03-29 22:31:11.611 +08:00 INFO registry/bootstrap.go:83 Don't need add dependency
+2018-03-29 22:31:11.974 +08:00 INFO registry/registry.go:160 Enabled Registry
+2018-03-29 22:31:11.974 +08:00 INFO loadbalance/selector.go:26 Enable LoadBalancing
+2018-03-29 22:31:11.975 +08:00 INFO bootstrap/bootstrap.go:32 Bootstrap Huawei Enterprise Edition.
+2018-03-29 22:31:11.975 +08:00 WARN config-center/config_center.go:119 configcenter.Consumer TLS mode, verify peer: false, cipher plugin: default.
+2018-03-29 22:31:12.210 +08:00 WARN config-center/config_center.go:78 config center init success
+2018-03-29 22:31:12.210 +08:00 WARN metrics/cse_monitoring.go:63 monitor.Consumer TLS mode, verify peer: false, cipher plugin: default
+2018-03-29 22:31:12.211 +08:00 INFO metrics/metric.go:92 Started sending metric Data to Monitor Server : https://cse.cn-north-1.myhwclouds.com:443
+2018-03-29 22:31:12.211 +08:00 WARN tracing/tracer_manager.go:34 Tracing enabled. Start to init tracer map.
+2018-03-29 22:31:12.211 +08:00 INFO go-chassis/chassis.go:261 Init chassis success
+2018-03-29 22:31:12.221 +08:00 INFO archaius/archaius.go:77 config value after change policy | # Router rules and fault injection rules are moved to router.yaml
+#plugin:
+#  destinationResolver: host #用户可自定义如何将host转为换destination name，默认为host直接就是service name，
+#admin: #admin API
+#  serverUri : 127.0.0.1:30102 # 在哪个地址监听
+#  goRuntimeMetrics : true # 是否开启go 运行时监控
+2018-03-29 22:31:12.221 +08:00 INFO config-center/config_center.go:225 config value policy | # Router rules and fault injection rules are moved to router.yaml
+#plugin:
+#  destinationResolver: host #用户可自定义如何将host转为换destination name，默认为host直接就是service name，
+#admin: #admin API
+#  serverUri : 127.0.0.1:30102 # 在哪个地址监听
+#  goRuntimeMetrics : true # 是否开启go 运行时监控
+2018-03-29 22:31:12.222 +08:00 INFO archaius/archaius.go:77 config value after change plugin | # Router rules and fault injection rules are moved to router.yaml
+#plugin:
+#  destinationResolver: host #用户可自定义如何将host转为换destination name，默认为host直接就是service name，
+#admin: #admin API
+#  serverUri : 127.0.0.1:30102 # 在哪个地址监听
+#  goRuntimeMetrics : true # 是否开启go 运行时监控
+2018-03-29 22:31:12.222 +08:00 INFO config-center/config_center.go:225 config value plugin | # Router rules and fault injection rules are moved to router.yaml
+#plugin:
+#  destinationResolver: host #用户可自定义如何将host转为换destination name，默认为host直接就是service name，
+#admin: #admin API
+#  serverUri : 127.0.0.1:30102 # 在哪个地址监听
+#  goRuntimeMetrics : true # 是否开启go 运行时监控
+2018-03-29 22:31:12.223 +08:00 INFO archaius/archaius.go:77 config value after change admin | # Router rules and fault injection rules are moved to router.yaml
+#plugin:
+#  destinationResolver: host #用户可自定义如何将host转为换destination name，默认为host直接就是service name，
+#admin: #admin API
+#  serverUri : 127.0.0.1:30102 # 在哪个地址监听
+#  goRuntimeMetrics : true # 是否开启go 运行时监控
+2018-03-29 22:31:12.224 +08:00 INFO config-center/config_center.go:225 config value admin | # Router rules and fault injection rules are moved to router.yaml
+#plugin:
+#  destinationResolver: host #用户可自定义如何将host转为换destination name，默认为host直接就是service name，
+#admin: #admin API
+#  serverUri : 127.0.0.1:30102 # 在哪个地址监听
+#  goRuntimeMetrics : true # 是否开启go 运行时监控
+2018-03-29 22:31:12.228 +08:00 INFO bootstrap/bootstrap.go:45 Running as sidecar
+2018-03-29 22:31:12.228 +08:00 INFO config-center/config_center.go:225 config value proxyedProtocol | # Router rules and fault injection rules are moved to router.yaml
+#plugin:
+#  destinationResolver: host #用户可自定义如何将host转为换destination name，默认为host直接就是service name，
+#admin: #admin API
+#  serverUri : 127.0.0.1:30102 # 在哪个地址监听
+#  goRuntimeMetrics : true # 是否开启go 运行时监控
+2018-03-29 22:31:12.228 +08:00 INFO archaius/archaius.go:77 config value after change proxyedProtocol | # Router rules and fault injection rules are moved to router.yaml
+#plugin:
+#  destinationResolver: host #用户可自定义如何将host转为换destination name，默认为host直接就是service name，
+#admin: #admin API
+#  serverUri : 127.0.0.1:30102 # 在哪个地址监听
+#  goRuntimeMetrics : true # 是否开启go 运行时监控
+2018-03-29 22:31:12.229 +08:00 INFO adminapi/router.go:68 admin server is not using ssl
+2018-03-29 22:31:12.229 +08:00 INFO adminapi/router.go:72 admin server listening on [::]:30102
+2018-03-29 22:31:12.229 +08:00 INFO adminapi/router.go:26 init router
+2018-03-29 22:31:13.229 +08:00 INFO adminapi/router.go:82 admin server start success
+2018-03-29 22:31:13.229 +08:00 INFO server/server_manager.go:62 starting server http...
+2018-03-29 22:31:13.230 +08:00 INFO server/server_manager.go:68 http server start success
+2018-03-29 22:31:13.230 +08:00 INFO server/server_manager.go:70 All server Start Completed
+2018-03-29 22:31:13.230 +08:00 WARN registry/bootstrap.go:105 Start to register instances.
+2018-03-29 22:31:13.390 +08:00 WARN servicecenter/servicecenter.go:58 RegisterMicroServiceInstance get SelfInstancesCache failed, Mid/Sid: 8f21b825335f11e89c8f0255ac105519/9039c1a3335f11e89c8f0255ac105519
+2018-03-29 22:31:13.390 +08:00 WARN servicecenter/servicecenter.go:62 RegisterMicroServiceInstance type asserts failed,  Mid/Sid: 8f21b825335f11e89c8f0255ac105519/9039c1a3335f11e89c8f0255ac105519
+2018-03-29 22:31:13.390 +08:00 INFO servicecenter/servicecenter.go:74 RegisterMicroServiceInstance success, MicroServiceID: 8f21b825335f11e89c8f0255ac105519
+2018-03-29 22:31:13.390 +08:00 INFO registry/heartbeat.go:50 Add HB task, task:8f21b825335f11e89c8f0255ac105519/9039c1a3335f11e89c8f0255ac105519
+2018-03-29 22:31:13.390 +08:00 INFO servicecenter/servicecenter.go:80 RegisterMicroServiceInstance success, microServiceID/instanceID: 8f21b825335f11e89c8f0255ac105519/9039c1a3335f11e89c8f0255ac105519.
+2018-03-29 22:31:13.390 +08:00 WARN registry/bootstrap.go:167 Register instance success, serviceID/instanceID: 8f21b825335f11e89c8f0255ac105519/9039c1a3335f11e89c8f0255ac105519.
+2018-03-29 22:31:14.470 +08:00 INFO cse-collector/csemonitor.go:67 Connection to monitoring server established successfully
+2018-03-29 22:32:35.316 +08:00 INFO client/client_manager.go:87 Create client map for rest
+2018-03-29 22:32:35.316 +08:00 INFO client/client_manager.go:97 Create client for provider-sb-demo
+2018-03-29 22:32:35.316 +08:00 ERROR handler/transport_handler.go:52 Call got Error error: dial tcp4 127.0.0.1:8080: getsockopt: connection refused
+2018-03-29 22:32:35.450 +08:00 ERROR handler/transport_handler.go:52 Call got Error error: dial tcp4 127.0.0.1:8080: getsockopt: connection refused
+2018-03-29 22:32:41.554 +08:00 ERROR handler/transport_handler.go:52 Call got Error error: dial tcp4 127.0.0.1:8080: getsockopt: connection refused
+2018-03-29 22:33:48.791 +08:00 ERROR handler/transport_handler.go:52 Call got Error error: dial tcp4 127.0.0.1:8080: getsockopt: connection refused
+2018-03-29 23:29:51.879 +08:00 WARN servicecenter/servicecenter.go:431 8f21b825335f11e89c8f0255ac105519 Get instances from remote, key: localhost:30101:0.0.1:default
+2018-03-29 23:29:51.945 +08:00 ERROR loadbalance/default.go:60 Lb err error: lb: FindMicroServiceInstances failed, ProviderID: localhost:30101:0.0.1:default, err: FindMicroServiceInstances failed, appID/MicroServiceName/version/stage: default/localhost:30101/0.0.1/production, response StatusCode: 400, response body: {"errorCode":"400012","errorMessage":"Micro-service does not exist","detail":"provider not exist, consumer 8f21b825335f11e89c8f0255ac105519 find provider default/localhost:30101/0.0.1"}
+
+2018-03-29 23:29:51.973 +08:00 WARN servicecenter/servicecenter.go:431 8f21b825335f11e89c8f0255ac105519 Get instances from remote, key: localhost:30101:0.0.1:default
+2018-03-29 23:29:52.037 +08:00 ERROR loadbalance/default.go:60 Lb err error: lb: FindMicroServiceInstances failed, ProviderID: localhost:30101:0.0.1:default, err: FindMicroServiceInstances failed, appID/MicroServiceName/version/stage: default/localhost:30101/0.0.1/production, response StatusCode: 400, response body: {"errorCode":"400012","errorMessage":"Micro-service does not exist","detail":"provider not exist, consumer 8f21b825335f11e89c8f0255ac105519 find provider default/localhost:30101/0.0.1"}
+
+2018-03-29 23:29:54.860 +08:00 WARN servicecenter/servicecenter.go:431 8f21b825335f11e89c8f0255ac105519 Get instances from remote, key: localhost:30101:0.0.1:default
+2018-03-29 23:29:54.917 +08:00 ERROR loadbalance/default.go:60 Lb err error: lb: FindMicroServiceInstances failed, ProviderID: localhost:30101:0.0.1:default, err: FindMicroServiceInstances failed, appID/MicroServiceName/version/stage: default/localhost:30101/0.0.1/production, response StatusCode: 400, response body: {"errorCode":"400012","errorMessage":"Micro-service does not exist","detail":"provider not exist, consumer 8f21b825335f11e89c8f0255ac105519 find provider default/localhost:30101/0.0.1"}
+
+2018-03-29 23:29:55.636 +08:00 WARN servicecenter/servicecenter.go:431 8f21b825335f11e89c8f0255ac105519 Get instances from remote, key: localhost:30101:0.0.1:default
+2018-03-29 23:29:55.714 +08:00 ERROR loadbalance/default.go:60 Lb err error: lb: FindMicroServiceInstances failed, ProviderID: localhost:30101:0.0.1:default, err: FindMicroServiceInstances failed, appID/MicroServiceName/version/stage: default/localhost:30101/0.0.1/production, response StatusCode: 400, response body: {"errorCode":"400012","errorMessage":"Micro-service does not exist","detail":"provider not exist, consumer 8f21b825335f11e89c8f0255ac105519 find provider default/localhost:30101/0.0.1"}
+
+2018-03-29 23:29:56.908 +08:00 WARN servicecenter/servicecenter.go:431 8f21b825335f11e89c8f0255ac105519 Get instances from remote, key: localhost:30101:0.0.1:default
+2018-03-29 23:29:56.965 +08:00 ERROR loadbalance/default.go:60 Lb err error: lb: FindMicroServiceInstances failed, ProviderID: localhost:30101:0.0.1:default, err: FindMicroServiceInstances failed, appID/MicroServiceName/version/stage: default/localhost:30101/0.0.1/production, response StatusCode: 400, response body: {"errorCode":"400012","errorMessage":"Micro-service does not exist","detail":"provider not exist, consumer 8f21b825335f11e89c8f0255ac105519 find provider default/localhost:30101/0.0.1"}
+
+2018-03-29 23:33:26.225 +08:00 WARN cse-collector/csemonitor.go:61 Unable to connect to monitoring server error: Post https://cse.cn-north-1.myhwclouds.com:443/v2/default/csemonitor/metric?service=provider-sb-demo: dial tcp: lookup cse.cn-north-1.myhwclouds.com on 192.168.0.1:53: server misbehaving
+2018-03-29 23:33:28.544 +08:00 INFO cse-collector/csemonitor.go:72 Connection recovered successfully to monitoring server
+2018-03-29 23:55:27.713 +08:00 ERROR servicecenter/servicecenter.go:136 Heartbeat failed, microServiceID/instanceID: 8f21b825335f11e89c8f0255ac105519/9039c1a3335f11e89c8f0255ac105519. error: Common exception(result: 400 {"errorCode":"400017","errorMessage":"Instance does not exist","detail":"Service instance does not exist."}
+)
+2018-03-29 23:55:27.713 +08:00 ERROR registry/heartbeat.go:95 Run Heartbeat fail error: Common exception(result: 400 {"errorCode":"400017","errorMessage":"Instance does not exist","detail":"Service instance does not exist."}
+)
+2018-03-29 23:55:37.714 +08:00 INFO registry/heartbeat.go:125 Try to re-register self
+2018-03-29 23:55:37.944 +08:00 INFO servicecenter/servicecenter.go:74 RegisterMicroServiceInstance success, MicroServiceID: 8f21b825335f11e89c8f0255ac105519
+2018-03-29 23:55:37.944 +08:00 INFO registry/heartbeat.go:50 Add HB task, task:8f21b825335f11e89c8f0255ac105519/59705862336b11e891230255ac105117
+2018-03-29 23:55:37.944 +08:00 INFO servicecenter/servicecenter.go:80 RegisterMicroServiceInstance success, microServiceID/instanceID: 8f21b825335f11e89c8f0255ac105519/59705862336b11e891230255ac105117.
+2018-03-29 23:55:37.944 +08:00 WARN registry/heartbeat.go:185 RegisterMicroServiceInstance get SelfInstancesCache failed, Mid/Sid: /59705862336b11e891230255ac105117
+2018-03-29 23:55:37.944 +08:00 WARN registry/heartbeat.go:189 RegisterMicroServiceInstance type asserts failed,  Mid/Sid: /59705862336b11e891230255ac105117
+2018-03-29 23:55:37.944 +08:00 WARN registry/heartbeat.go:201 RegisterMicroServiceInstance success, microServiceID/instanceID: /59705862336b11e891230255ac105117.
+2018-03-29 23:55:37.944 +08:00 WARN registry/heartbeat.go:139 Re-register self success
+2018-03-30 00:09:56.673 +08:00 ERROR servicecenter/servicecenter.go:136 Heartbeat failed, microServiceID/instanceID: 8f21b825335f11e89c8f0255ac105519/59705862336b11e891230255ac105117. error: Common exception(result: 400 {"errorCode":"400017","errorMessage":"Instance does not exist","detail":"Service instance does not exist."}
+)
+2018-03-30 00:09:56.674 +08:00 ERROR registry/heartbeat.go:95 Run Heartbeat fail error: Common exception(result: 400 {"errorCode":"400017","errorMessage":"Instance does not exist","detail":"Service instance does not exist."}
+)
+2018-03-30 00:10:06.674 +08:00 INFO registry/heartbeat.go:125 Try to re-register self
+2018-03-30 00:10:06.884 +08:00 INFO servicecenter/servicecenter.go:74 RegisterMicroServiceInstance success, MicroServiceID: 8f21b825335f11e89c8f0255ac105519
+2018-03-30 00:10:06.884 +08:00 INFO registry/heartbeat.go:50 Add HB task, task:8f21b825335f11e89c8f0255ac105519/5f1d5707336d11e891230255ac105117
+2018-03-30 00:10:06.884 +08:00 INFO servicecenter/servicecenter.go:80 RegisterMicroServiceInstance success, microServiceID/instanceID: 8f21b825335f11e89c8f0255ac105519/5f1d5707336d11e891230255ac105117.
+2018-03-30 00:10:06.884 +08:00 WARN registry/heartbeat.go:201 RegisterMicroServiceInstance success, microServiceID/instanceID: /5f1d5707336d11e891230255ac105117.
+2018-03-30 00:10:06.884 +08:00 WARN registry/heartbeat.go:139 Re-register self success
+2018-03-30 00:12:09.078 +08:00 ERROR servicecenter/servicecenter.go:136 Heartbeat failed, microServiceID/instanceID: 8f21b825335f11e89c8f0255ac105519/5f1d5707336d11e891230255ac105117. error: Common exception(result: 400 {"errorCode":"400017","errorMessage":"Instance does not exist","detail":"Service instance does not exist."}
+)
+2018-03-30 00:12:09.078 +08:00 ERROR registry/heartbeat.go:95 Run Heartbeat fail error: Common exception(result: 400 {"errorCode":"400017","errorMessage":"Instance does not exist","detail":"Service instance does not exist."}
+)
+2018-03-30 00:12:19.078 +08:00 INFO registry/heartbeat.go:125 Try to re-register self
+2018-03-30 00:12:19.282 +08:00 INFO servicecenter/servicecenter.go:74 RegisterMicroServiceInstance success, MicroServiceID: 8f21b825335f11e89c8f0255ac105519
+2018-03-30 00:12:19.282 +08:00 INFO registry/heartbeat.go:50 Add HB task, task:8f21b825335f11e89c8f0255ac105519/adfd87fc336d11e891230255ac105117
+2018-03-30 00:12:19.282 +08:00 INFO servicecenter/servicecenter.go:80 RegisterMicroServiceInstance success, microServiceID/instanceID: 8f21b825335f11e89c8f0255ac105519/adfd87fc336d11e891230255ac105117.
+2018-03-30 00:12:19.282 +08:00 WARN registry/heartbeat.go:201 RegisterMicroServiceInstance success, microServiceID/instanceID: /adfd87fc336d11e891230255ac105117.
+2018-03-30 00:12:19.282 +08:00 WARN registry/heartbeat.go:139 Re-register self success
+2018-03-30 00:15:30.225 +08:00 WARN cse-collector/csemonitor.go:61 Unable to connect to monitoring server error: Post https://cse.cn-north-1.myhwclouds.com:443/v2/default/csemonitor/metric?service=provider-sb-demo: dial tcp: lookup cse.cn-north-1.myhwclouds.com on 192.168.0.1:53: server misbehaving
+2018-03-30 00:15:32.541 +08:00 INFO cse-collector/csemonitor.go:72 Connection recovered successfully to monitoring server
+2018-03-30 01:00:28.882 +08:00 WARN file-source/yamlconfigurationsource.go:453 unmarshaling failed may be due to invalid file data format error: yaml: control characters are not allowed
+2018-03-30 01:00:28.882 +08:00 WARN file-source/yamlconfigurationsource.go:428 the file change mode: "/root/tmp/mesher/conf/.mesher.yaml.swx": REMOVE. So stop watching file
+2018-03-30 01:00:28.882 +08:00 WARN file-source/yamlconfigurationsource.go:428 the file change mode: "/root/tmp/mesher/conf/.mesher.yaml.swp": REMOVE. So stop watching file
+2018-03-30 01:00:28.882 +08:00 WARN file-source/yamlconfigurationsource.go:453 unmarshaling failed may be due to invalid file data format error: yaml: control characters are not allowed
+2018-03-30 01:00:28.882 +08:00 WARN file-source/yamlconfigurationsource.go:453 unmarshaling failed may be due to invalid file data format error: yaml: control characters are not allowed
+2018-03-30 01:00:28.883 +08:00 WARN file-source/yamlconfigurationsource.go:453 unmarshaling failed may be due to invalid file data format error: yaml: control characters are not allowed
+2018-03-30 01:00:33.370 +08:00 WARN file-source/yamlconfigurationsource.go:428 the file change mode: "/root/tmp/mesher/conf/.mesher.yaml.swp": REMOVE. So stop watching file
+2018-03-30 01:00:38.562 +08:00 WARN file-source/yamlconfigurationsource.go:453 unmarshaling failed may be due to invalid file data format error: yaml: control characters are not allowed
+2018-03-30 01:00:38.562 +08:00 WARN file-source/yamlconfigurationsource.go:428 the file change mode: "/root/tmp/mesher/conf/.router.yaml.swx": REMOVE. So stop watching file
+2018-03-30 01:00:38.562 +08:00 WARN file-source/yamlconfigurationsource.go:428 the file change mode: "/root/tmp/mesher/conf/.router.yaml.swp": REMOVE. So stop watching file
+2018-03-30 01:00:38.562 +08:00 WARN file-source/yamlconfigurationsource.go:453 unmarshaling failed may be due to invalid file data format error: yaml: control characters are not allowed
+2018-03-30 01:00:38.562 +08:00 WARN file-source/yamlconfigurationsource.go:453 unmarshaling failed may be due to invalid file data format error: yaml: control characters are not allowed
+2018-03-30 01:00:38.563 +08:00 WARN file-source/yamlconfigurationsource.go:453 unmarshaling failed may be due to invalid file data format error: yaml: control characters are not allowed
+2018-03-30 01:00:41.041 +08:00 WARN file-source/yamlconfigurationsource.go:428 the file change mode: "/root/tmp/mesher/conf/.router.yaml.swp": REMOVE. So stop watching file
