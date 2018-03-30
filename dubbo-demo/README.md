@@ -41,7 +41,7 @@ cse:
 ```
 
 * AK
-### Cosume Mesher
+### Consumer Mesher
 * auth.yaml
 
 ```yaml
@@ -93,7 +93,7 @@ dubbo.log4j.file=logs/dubbo-demo-provider.log
 dubbo.log4j.level=WARN
 ```
 
-### Dubbo Cosume 
+### Dubbo Consumer 
 * dubbo.properties
 * 
 ```
