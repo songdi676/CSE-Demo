@@ -1,7 +1,0 @@
-sample\data\jpa\SampleDataJpaApplication.class
-sample\data\jpa\web\SampleController.class
-sample\data\jpa\domain\City.class
-sample\data\jpa\service\PeopleService.class
-sample\data\jpa\service\PeopleServiceImpl.class
-sample\data\jpa\domain\People.class
-sample\data\jpa\service\DemoPeopleRepository.class
