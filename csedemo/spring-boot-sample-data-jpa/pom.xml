@@ -12,10 +12,17 @@
 
 
 	<properties>
-		<demo.main>
-			org.springframework.boot.SpringApplication.SampleDataJpaApplication</demo.main>
+		<demo.main>org.springframework.boot.SpringApplication.SampleDataJpaApplication</demo.main>
 	</properties>
-
+	<repositories>
+		<repository>
+			<id>aliyun</id>
+			<url>https://maven.aliyun.com/nexus/content/groups/public/</url>
+			<snapshots>
+				<enabled>false</enabled>
+			</snapshots>
+		</repository>
+	</repositories>
 	<!-- Spring Boot 微服务接入CSE服务中心，配置依赖管理 -->
 	<dependencyManagement>
 		<dependencies>
