@@ -32,4 +32,10 @@ public class CSERpcDemoImpl implements ICSERpcDemo {
 		return peopleJdbcTemplate.save(people);
 	}
 
+	@Override
+	public String sayHello(String name) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
 }

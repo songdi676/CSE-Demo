@@ -7692,3 +7692,400 @@ Caused by: java.lang.IllegalArgumentException: argument type mismatch
 [2018-03-28 11:24:17,022/CST][main][INFO] jar:file:/C:/mavenlib/com/huawei/paas/cse/cse-solution-service-engine/2.3.9/cse-solution-service-engine-2.3.9.jar!/microservice.yaml. org.apache.servicecomb.config.ConfigUtil.createLocalConfig(ConfigUtil.java:91)
 [2018-03-28 11:24:17,026/CST][main][INFO] file:/C:/D/huaweiDemo/ServiceCustomer/target/classes/microservice.yaml. org.apache.servicecomb.config.ConfigUtil.createLocalConfig(ConfigUtil.java:91)
 [2018-03-28 11:24:17,057/CST][main][INFO]get the SPI service success, the extend service is: class org.apache.servicecomb.config.archaius.sources.ConfigCenterConfigurationSourceImpl org.apache.servicecomb.foundation.common.utils.SPIServiceUtils.getTargetService(SPIServiceUtils.java:51)
+[2018-03-29 13:40:40,177/CST][main][INFO]Write merged log4j config file to C:\D\huaweiDemo\CSERpcDemo\target\classes\config\merged.log4j.properties org.apache.servicecomb.foundation.common.utils.Log4jUtils.outputFile(Log4jUtils.java:103)
+[2018-03-29 13:40:40,227/CST][main][INFO]Refreshing org.springframework.context.support.ClassPathXmlApplicationContext@3f2a3a5: startup date [Thu Mar 29 13:40:40 CST 2018]; root of context hierarchy org.springframework.context.support.AbstractApplicationContext.prepareRefresh(AbstractApplicationContext.java:582)
+[2018-03-29 13:40:40,312/CST][main][INFO]Loading XML bean definitions from file [C:\D\huaweiDemo\CSERpcDemo\target\classes\META-INF\spring\cse.CSERpcDemo.bean.xml] org.springframework.beans.factory.xml.XmlBeanDefinitionReader.loadBeanDefinitions(XmlBeanDefinitionReader.java:317)
+[2018-03-29 13:40:40,552/CST][main][INFO]Loading XML bean definitions from URL [jar:file:/C:/mavenlib/com/huawei/paas/cse/foundation-auth/2.3.9/foundation-auth-2.3.9.jar!/META-INF/spring/auth.bean.xml] org.springframework.beans.factory.xml.XmlBeanDefinitionReader.loadBeanDefinitions(XmlBeanDefinitionReader.java:317)
+[2018-03-29 13:40:40,576/CST][main][INFO]Loading XML bean definitions from URL [jar:file:/C:/mavenlib/org/apache/servicecomb/foundation-common/1.0.0.B001/foundation-common-1.0.0.B001.jar!/META-INF/spring/common.bean.xml] org.springframework.beans.factory.xml.XmlBeanDefinitionReader.loadBeanDefinitions(XmlBeanDefinitionReader.java:317)
+[2018-03-29 13:40:40,601/CST][main][INFO]Loading XML bean definitions from URL [jar:file:/C:/mavenlib/org/apache/servicecomb/foundation-config/1.0.0.B001/foundation-config-1.0.0.B001.jar!/META-INF/spring/cse.bean.xml] org.springframework.beans.factory.xml.XmlBeanDefinitionReader.loadBeanDefinitions(XmlBeanDefinitionReader.java:317)
+[2018-03-29 13:40:40,622/CST][main][INFO]Loading XML bean definitions from URL [jar:file:/C:/mavenlib/org/apache/servicecomb/foundation-vertx/1.0.0.B001/foundation-vertx-1.0.0.B001.jar!/META-INF/spring/cse.bean.xml] org.springframework.beans.factory.xml.XmlBeanDefinitionReader.loadBeanDefinitions(XmlBeanDefinitionReader.java:317)
+[2018-03-29 13:40:40,642/CST][main][INFO]Loading XML bean definitions from URL [jar:file:/C:/mavenlib/org/apache/servicecomb/foundation-metrics/1.0.0.B001/foundation-metrics-1.0.0.B001.jar!/META-INF/spring/metrics.bean.xml] org.springframework.beans.factory.xml.XmlBeanDefinitionReader.loadBeanDefinitions(XmlBeanDefinitionReader.java:317)
+[2018-03-29 13:40:40,664/CST][main][INFO]Loading XML bean definitions from URL [jar:file:/C:/mavenlib/org/apache/servicecomb/transport-rest-client/1.0.0.B001/transport-rest-client-1.0.0.B001.jar!/META-INF/spring/cse.transport.rest.bean.xml] org.springframework.beans.factory.xml.XmlBeanDefinitionReader.loadBeanDefinitions(XmlBeanDefinitionReader.java:317)
+[2018-03-29 13:40:40,682/CST][main][INFO]Loading XML bean definitions from URL [jar:file:/C:/mavenlib/org/apache/servicecomb/handler-bizkeeper/1.0.0.B001/handler-bizkeeper-1.0.0.B001.jar!/META-INF/spring/cse.bean.xml] org.springframework.beans.factory.xml.XmlBeanDefinitionReader.loadBeanDefinitions(XmlBeanDefinitionReader.java:317)
+[2018-03-29 13:40:40,702/CST][main][INFO]Loading XML bean definitions from URL [jar:file:/C:/mavenlib/org/apache/servicecomb/handler-loadbalance/1.0.0.B001/handler-loadbalance-1.0.0.B001.jar!/META-INF/spring/cse.bean.xml] org.springframework.beans.factory.xml.XmlBeanDefinitionReader.loadBeanDefinitions(XmlBeanDefinitionReader.java:317)
+[2018-03-29 13:40:40,720/CST][main][INFO]Loading XML bean definitions from URL [jar:file:/C:/mavenlib/com/huawei/paas/cse/cse-handler-cloud-extension/2.3.9/cse-handler-cloud-extension-2.3.9.jar!/META-INF/spring/services.bean.xml] org.springframework.beans.factory.xml.XmlBeanDefinitionReader.loadBeanDefinitions(XmlBeanDefinitionReader.java:317)
+[2018-03-29 13:40:40,743/CST][main][INFO]Loading XML bean definitions from URL [jar:file:/C:/mavenlib/com/huawei/paas/cse/cse-handler-tcc/2.3.9/cse-handler-tcc-2.3.9.jar!/META-INF/spring/cse.tcc.bean.xml] org.springframework.beans.factory.xml.XmlBeanDefinitionReader.loadBeanDefinitions(XmlBeanDefinitionReader.java:317)
+[2018-03-29 13:40:40,774/CST][main][INFO]Loading XML bean definitions from URL [jar:file:/C:/mavenlib/org/apache/servicecomb/java-chassis-core/1.0.0.B001/java-chassis-core-1.0.0.B001.jar!/META-INF/spring/cse.bean.xml] org.springframework.beans.factory.xml.XmlBeanDefinitionReader.loadBeanDefinitions(XmlBeanDefinitionReader.java:317)
+[2018-03-29 13:40:41,495/CST][main][WARN]No URLs will be polled as dynamic configuration sources. com.netflix.config.sources.URLConfigurationSource.<init>(URLConfigurationSource.java:121)
+[2018-03-29 13:40:41,500/CST][main][INFO]To enable URLs as dynamic configuration sources, define System property archaius.configurationSource.additionalUrls or make config.properties available on classpath. com.netflix.config.sources.URLConfigurationSource.<init>(URLConfigurationSource.java:122)
+[2018-03-29 13:40:41,513/CST][main][INFO]create dynamic config: org.apache.servicecomb.config.ConfigUtil.createDynamicConfig(ConfigUtil.java:171)
+[2018-03-29 13:40:41,594/CST][main][INFO]create local config: org.apache.servicecomb.config.ConfigUtil.createLocalConfig(ConfigUtil.java:89)
+[2018-03-29 13:40:41,600/CST][main][INFO] jar:file:/C:/mavenlib/com/huawei/paas/cse/cse-solution-service-engine/2.3.9/cse-solution-service-engine-2.3.9.jar!/microservice.yaml. org.apache.servicecomb.config.ConfigUtil.createLocalConfig(ConfigUtil.java:91)
+[2018-03-29 13:40:41,604/CST][main][INFO] file:/C:/D/huaweiDemo/CSERpcDemo/target/classes/microservice.yaml. org.apache.servicecomb.config.ConfigUtil.createLocalConfig(ConfigUtil.java:91)
+[2018-03-29 13:40:41,633/CST][main][INFO]get the SPI service success, the extend service is: class org.apache.servicecomb.config.archaius.sources.ConfigCenterConfigurationSourceImpl org.apache.servicecomb.foundation.common.utils.SPIServiceUtils.getTargetService(SPIServiceUtils.java:51)
+[2018-03-29 13:40:42,584/CST][config-center-vert.x-eventloop-thread-0][INFO]add network interface name:eth1,host address:192.168.122.2 org.apache.servicecomb.foundation.common.net.NetUtils.doGetIpv4AddressFromNetworkInterface(NetUtils.java:114)
+[2018-03-29 13:40:42,606/CST][config-center-vert.x-eventloop-thread-0][INFO]add network interface name:eth4,host address:192.168.200.1 org.apache.servicecomb.foundation.common.net.NetUtils.doGetIpv4AddressFromNetworkInterface(NetUtils.java:114)
+[2018-03-29 13:40:42,621/CST][config-center-vert.x-eventloop-thread-0][INFO]add network interface name:wlan1,host address:192.168.137.1 org.apache.servicecomb.foundation.common.net.NetUtils.doGetIpv4AddressFromNetworkInterface(NetUtils.java:114)
+[2018-03-29 13:40:42,643/CST][config-center-vert.x-eventloop-thread-0][INFO]add network interface name:eth7,host address:10.1.3.96 org.apache.servicecomb.foundation.common.net.NetUtils.doGetIpv4AddressFromNetworkInterface(NetUtils.java:114)
+[2018-03-29 13:40:42,728/CST][config-center-vert.x-eventloop-thread-0][INFO]add host name from localhost:SongDi-Note,host address:192.168.122.2 org.apache.servicecomb.foundation.common.net.NetUtils.<clinit>(NetUtils.java:72)
+[2018-03-29 13:40:42,764/CST][config-center-vert.x-eventloop-thread-0][INFO]add ak/sk cipher default com.huawei.paas.foundation.auth.credentials.AKSKManager.lambda$static$0(AKSKManager.java:41)
+[2018-03-29 13:40:42,771/CST][config-center-vert.x-eventloop-thread-0][INFO]add ak/sk cipher security com.huawei.paas.foundation.auth.credentials.AKSKManager.lambda$static$0(AKSKManager.java:41)
+[2018-03-29 13:40:42,778/CST][config-center-vert.x-eventloop-thread-0][INFO]read ak/sk from microservice.yaml. com.huawei.paas.foundation.auth.credentials.AKSKOption.buildFromYaml(AKSKOption.java:153)
+[2018-03-29 13:40:42,819/CST][main][INFO]JSR-330 'javax.inject.Inject' annotation found and supported for autowiring org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor.<init>(AutowiredAnnotationBeanPostProcessor.java:155)
+[2018-03-29 13:40:43,791/CST][config-center-vert.x-eventloop-thread-0][WARN]Config value cache changed: action:create; item:[myConfigKey] org.apache.servicecomb.config.archaius.sources.ConfigCenterConfigurationSourceImpl$UpdateHandler.handle(ConfigCenterConfigurationSourceImpl.java:124)
+[2018-03-29 13:40:43,985/CST][main][INFO]Found swagger generator context: org.apache.servicecomb.swagger.generator.springmvc.SpringmvcSwaggerGeneratorContext org.apache.servicecomb.swagger.generator.core.CompositeSwaggerGeneratorContext.<init>(CompositeSwaggerGeneratorContext.java:39)
+[2018-03-29 13:40:43,991/CST][main][INFO]Found swagger generator context: org.apache.servicecomb.swagger.generator.jaxrs.JaxrsSwaggerGeneratorContext org.apache.servicecomb.swagger.generator.core.CompositeSwaggerGeneratorContext.<init>(CompositeSwaggerGeneratorContext.java:39)
+[2018-03-29 13:40:43,999/CST][main][INFO]Found swagger generator context: org.apache.servicecomb.swagger.generator.pojo.PojoSwaggerGeneratorContext org.apache.servicecomb.swagger.generator.core.CompositeSwaggerGeneratorContext.<init>(CompositeSwaggerGeneratorContext.java:39)
+[2018-03-29 13:40:44,031/CST][main][INFO]found factory org.apache.servicecomb.swagger.invocation.springmvc.response.SpringmvcProducerResponseMapperFactory of org.apache.servicecomb.swagger.invocation.response.producer.ProducerResponseMapperFactory: org.apache.servicecomb.swagger.invocation.response.ResponseMapperFactorys.lambda$new$0(ResponseMapperFactorys.java:41)
+[2018-03-29 13:40:44,037/CST][main][INFO]found factory org.apache.servicecomb.swagger.invocation.jaxrs.response.JaxrsProducerResponseMapperFactory of org.apache.servicecomb.swagger.invocation.response.producer.ProducerResponseMapperFactory: org.apache.servicecomb.swagger.invocation.response.ResponseMapperFactorys.lambda$new$0(ResponseMapperFactorys.java:41)
+[2018-03-29 13:40:44,042/CST][main][INFO]found factory org.apache.servicecomb.swagger.invocation.response.producer.CseResponseProducerResponseMapperFactory of org.apache.servicecomb.swagger.invocation.response.producer.ProducerResponseMapperFactory: org.apache.servicecomb.swagger.invocation.response.ResponseMapperFactorys.lambda$new$0(ResponseMapperFactorys.java:41)
+[2018-03-29 13:40:44,047/CST][main][INFO]found factory org.apache.servicecomb.swagger.invocation.response.producer.CompletableFutureProducerResponseMapperFactory of org.apache.servicecomb.swagger.invocation.response.producer.ProducerResponseMapperFactory: org.apache.servicecomb.swagger.invocation.response.ResponseMapperFactorys.lambda$new$0(ResponseMapperFactorys.java:41)
+[2018-03-29 13:40:44,053/CST][main][INFO]found factory org.apache.servicecomb.swagger.invocation.response.producer.DefaultProducerResponseMapperFactory of org.apache.servicecomb.swagger.invocation.response.producer.ProducerResponseMapperFactory: org.apache.servicecomb.swagger.invocation.response.ResponseMapperFactorys.lambda$new$0(ResponseMapperFactorys.java:41)
+[2018-03-29 13:40:44,063/CST][main][INFO]found factory org.apache.servicecomb.swagger.invocation.springmvc.response.SpringmvcConsumerResponseMapperFactory of org.apache.servicecomb.swagger.invocation.response.consumer.ConsumerResponseMapperFactory: org.apache.servicecomb.swagger.invocation.response.ResponseMapperFactorys.lambda$new$0(ResponseMapperFactorys.java:41)
+[2018-03-29 13:40:44,070/CST][main][INFO]found factory org.apache.servicecomb.swagger.invocation.jaxrs.response.JaxrsConsumerResponseMapperFactory of org.apache.servicecomb.swagger.invocation.response.consumer.ConsumerResponseMapperFactory: org.apache.servicecomb.swagger.invocation.response.ResponseMapperFactorys.lambda$new$0(ResponseMapperFactorys.java:41)
+[2018-03-29 13:40:44,076/CST][main][INFO]found factory org.apache.servicecomb.swagger.invocation.response.consumer.CseResponseConsumerResponseMapperFactory of org.apache.servicecomb.swagger.invocation.response.consumer.ConsumerResponseMapperFactory: org.apache.servicecomb.swagger.invocation.response.ResponseMapperFactorys.lambda$new$0(ResponseMapperFactorys.java:41)
+[2018-03-29 13:40:44,081/CST][main][INFO]found factory org.apache.servicecomb.swagger.invocation.response.consumer.CompletableFutureConsumerResponseMapperFactory of org.apache.servicecomb.swagger.invocation.response.consumer.ConsumerResponseMapperFactory: org.apache.servicecomb.swagger.invocation.response.ResponseMapperFactorys.lambda$new$0(ResponseMapperFactorys.java:41)
+[2018-03-29 13:40:44,090/CST][main][INFO]found factory org.apache.servicecomb.swagger.invocation.response.consumer.DefaultConsumerResponseMapperFactory of org.apache.servicecomb.swagger.invocation.response.consumer.ConsumerResponseMapperFactory: org.apache.servicecomb.swagger.invocation.response.ResponseMapperFactorys.lambda$new$0(ResponseMapperFactorys.java:41)
+[2018-03-29 13:40:44,252/CST][main][INFO]load microservice config, name=CSERpcDemo, paths=[jar:file:/C:/mavenlib/com/huawei/paas/cse/cse-solution-service-engine/2.3.9/cse-solution-service-engine-2.3.9.jar!/microservice.yaml, file:/C:/D/huaweiDemo/CSERpcDemo/target/classes/microservice.yaml] org.apache.servicecomb.serviceregistry.definition.MicroserviceDefinition.logConfigPath(MicroserviceDefinition.java:142)
+[2018-03-29 13:40:44,265/CST][main][INFO]It is running in the normal mode, a separated service registry is required org.apache.servicecomb.serviceregistry.registry.ServiceRegistryFactory.create(ServiceRegistryFactory.java:81)
+[2018-03-29 13:40:44,322/CST][main][INFO]executor group 2, thread per group 8. org.apache.servicecomb.core.executor.FixedThreadExecutor.<init>(FixedThreadExecutor.java:54)
+[2018-03-29 13:40:44,712/CST][main][INFO]generate cse.gen.demo_songdi.CSERpcDemo.CSERpcDemo.helloworld.name in classLoader sun.misc.Launcher$AppClassLoader@6d06d69c. org.apache.servicecomb.common.javassist.JavassistUtils.createClass(JavassistUtils.java:207)
+[2018-03-29 13:40:44,728/CST][main][INFO]generate cse.gen.demo_songdi.CSERpcDemo.CSERpcDemo.sayHello.name in classLoader sun.misc.Launcher$AppClassLoader@6d06d69c. org.apache.servicecomb.common.javassist.JavassistUtils.createClass(JavassistUtils.java:207)
+[2018-03-29 13:40:44,758/CST][main][INFO]generate cse.gen.demo_songdi.CSERpcDemo.CSERpcDemo.CSERpcDemoImplIntf in classLoader sun.misc.Launcher$AppClassLoader@6d06d69c. org.apache.servicecomb.common.javassist.JavassistUtils.createClass(JavassistUtils.java:207)
+[2018-03-29 13:40:44,824/CST][main][INFO]generate swagger for demo-songdi/CSERpcDemo/CSERpcDemo, swagger: ---
+swagger: "2.0"
+info:
+  version: "1.0.0"
+  title: "swagger definition for com.service.cserpcdemo.controller.CSERpcDemoImpl"
+  x-java-interface: "cse.gen.demo_songdi.CSERpcDemo.CSERpcDemo.CSERpcDemoImplIntf"
+basePath: "/CSERpcDemoImpl"
+consumes:
+- "application/json"
+produces:
+- "application/json"
+paths:
+  /helloworld:
+    post:
+      operationId: "helloworld"
+      parameters:
+      - in: "body"
+        name: "name"
+        required: false
+        schema:
+          $ref: "#/definitions/helloworldBody"
+      responses:
+        200:
+          description: "response of 200"
+          schema:
+            type: "string"
+  /sayHello:
+    post:
+      operationId: "sayHello"
+      parameters:
+      - in: "body"
+        name: "name"
+        required: false
+        schema:
+          $ref: "#/definitions/sayHelloBody"
+      responses:
+        200:
+          description: "response of 200"
+          schema:
+            type: "string"
+  /addPeople:
+    post:
+      operationId: "addPeople"
+      parameters:
+      - in: "body"
+        name: "people"
+        required: false
+        schema:
+          $ref: "#/definitions/People"
+      responses:
+        200:
+          description: "response of 200"
+          schema:
+            type: "integer"
+            format: "int32"
+  /getPeopleNumberByNameAndStatus:
+    post:
+      operationId: "getPeopleNumberByNameAndStatus"
+      parameters:
+      - in: "body"
+        name: "people"
+        required: false
+        schema:
+          $ref: "#/definitions/People"
+      responses:
+        200:
+          description: "response of 200"
+          schema:
+            type: "integer"
+            format: "int32"
+definitions:
+  People:
+    type: "object"
+    properties:
+      peopleId:
+        type: "integer"
+        format: "int32"
+      peopleName:
+        type: "string"
+      status:
+        type: "integer"
+        format: "int32"
+      description:
+        type: "string"
+    x-java-class: "com.newland.demo.api.People"
+  helloworldBody:
+    type: "object"
+    properties:
+      name:
+        type: "string"
+  sayHelloBody:
+    type: "object"
+    properties:
+      name:
+        type: "string"
+ org.apache.servicecomb.core.definition.schema.ProducerSchemaFactory.createSchema(ProducerSchemaFactory.java:114)
+[2018-03-29 13:40:44,828/CST][main][INFO]register schema demo-songdi/CSERpcDemo/CSERpcDemo org.apache.servicecomb.core.definition.loader.SchemaLoader.registerSchema(SchemaLoader.java:91)
+[2018-03-29 13:40:44,853/CST][main][INFO]found DiscoveryFilter: org.apache.servicecomb.serviceregistry.discovery.DiscoveryTree.sort(DiscoveryTree.java:53)
+[2018-03-29 13:40:44,858/CST][main][INFO]DiscoveryFilter org.apache.servicecomb.loadbalance.filter.CseServerDiscoveryFilter. org.apache.servicecomb.serviceregistry.discovery.DiscoveryTree.sort(DiscoveryTree.java:55)
+[2018-03-29 13:40:44,888/CST][main][WARN]address /0.0.0.0:8080, auto select a host address to publish 192.168.122.2:8080, maybe not the correct one org.apache.servicecomb.serviceregistry.RegistryUtils.genPublishIpPort(RegistryUtils.java:181)
+[2018-03-29 13:40:44,895/CST][main][INFO]choose org.apache.servicecomb.transport.rest.vertx.VertxRestTransport for rest. org.apache.servicecomb.core.transport.TransportManager.chooseOneTransport(TransportManager.java:84)
+[2018-03-29 13:40:44,899/CST][main][INFO]choose org.apache.servicecomb.transport.highway.HighwayTransport for highway. org.apache.servicecomb.core.transport.TransportManager.chooseOneTransport(TransportManager.java:84)
+[2018-03-29 13:40:44,917/CST][transport-vert.x-eventloop-thread-2][INFO]Found HttpServerFilter: org.apache.servicecomb.common.rest.filter.tracing.TracingFilter. org.apache.servicecomb.transport.rest.vertx.AbstractVertxHttpDispatcher.<init>(AbstractVertxHttpDispatcher.java:40)
+[2018-03-29 13:40:44,922/CST][transport-vert.x-eventloop-thread-2][INFO]init vertx http dispatcher org.apache.servicecomb.transport.rest.vertx.VertxRestDispatcher org.apache.servicecomb.transport.rest.vertx.RestServerVerticle.initDispatcher(RestServerVerticle.java:95)
+[2018-03-29 13:40:44,929/CST][transport-vert.x-eventloop-thread-2][INFO]set uploads directory to null. org.apache.servicecomb.transport.rest.vertx.AbstractVertxHttpDispatcher.createBodyHandler(AbstractVertxHttpDispatcher.java:53)
+[2018-03-29 13:40:44,967/CST][transport-vert.x-eventloop-thread-2][INFO]rest listen success. address=0.0.0.0:8080 org.apache.servicecomb.transport.rest.vertx.RestServerVerticle.lambda$startListen$0(RestServerVerticle.java:103)
+[2018-03-29 13:40:44,972/CST][main][INFO]endpoint to publish: rest://192.168.122.2:8080 org.apache.servicecomb.core.transport.TransportManager.init(TransportManager.java:58)
+[2018-03-29 13:40:44,990/CST][transport-vert.x-eventloop-thread-6][WARN]highway listen address is not configured, will not listen. org.apache.servicecomb.transport.highway.HighwayServerVerticle.startListen(HighwayServerVerticle.java:59)
+[2018-03-29 13:40:45,007/CST][main][INFO]add schema to service paths. demo-songdi:CSERpcDemo:CSERpcDemo. org.apache.servicecomb.common.rest.locator.ServicePathManager.addSchema(ServicePathManager.java:91)
+[2018-03-29 13:40:45,016/CST][main][INFO]Swagger mapped "{[/CSERpcDemoImpl/helloworld/], method=[POST], produces=[application/json]}" onto public abstract java.lang.String cse.gen.demo_songdi.CSERpcDemo.CSERpcDemo.CSERpcDemoImplIntf.helloworld(cse.gen.demo_songdi.CSERpcDemo.CSERpcDemo.helloworld.name) org.apache.servicecomb.common.rest.locator.MicroservicePaths.printPath(MicroservicePaths.java:103)
+[2018-03-29 13:40:45,021/CST][main][INFO]Swagger mapped "{[/CSERpcDemoImpl/sayHello/], method=[POST], produces=[application/json]}" onto public abstract java.lang.String cse.gen.demo_songdi.CSERpcDemo.CSERpcDemo.CSERpcDemoImplIntf.sayHello(cse.gen.demo_songdi.CSERpcDemo.CSERpcDemo.sayHello.name) org.apache.servicecomb.common.rest.locator.MicroservicePaths.printPath(MicroservicePaths.java:103)
+[2018-03-29 13:40:45,025/CST][main][INFO]Swagger mapped "{[/CSERpcDemoImpl/getPeopleNumberByNameAndStatus/], method=[POST], produces=[application/json]}" onto public abstract java.lang.Integer cse.gen.demo_songdi.CSERpcDemo.CSERpcDemo.CSERpcDemoImplIntf.getPeopleNumberByNameAndStatus(com.newland.demo.api.People) org.apache.servicecomb.common.rest.locator.MicroservicePaths.printPath(MicroservicePaths.java:103)
+[2018-03-29 13:40:45,029/CST][main][INFO]Swagger mapped "{[/CSERpcDemoImpl/addPeople/], method=[POST], produces=[application/json]}" onto public abstract java.lang.Integer cse.gen.demo_songdi.CSERpcDemo.CSERpcDemo.CSERpcDemoImplIntf.addPeople(com.newland.demo.api.People) org.apache.servicecomb.common.rest.locator.MicroservicePaths.printPath(MicroservicePaths.java:103)
+[2018-03-29 13:40:45,034/CST][main][INFO]running microservice register task. org.apache.servicecomb.serviceregistry.task.MicroserviceRegisterTask.doRegister(MicroserviceRegisterTask.java:57)
+[2018-03-29 13:40:45,291/CST][main][INFO]Microservice exists in service center, no need to register. id=58bd69d2322911e891230255ac105117 appId=demo-songdi, name=CSERpcDemo, version=0.0.1 org.apache.servicecomb.serviceregistry.task.MicroserviceRegisterTask.doRegister(MicroserviceRegisterTask.java:64)
+[2018-03-29 13:40:45,371/CST][main][INFO]SchemaIds is equals to service center. id=58bd69d2322911e891230255ac105117 appId=demo-songdi, name=CSERpcDemo, version=0.0.1, schemaIds=[CSERpcDemo] org.apache.servicecomb.serviceregistry.task.MicroserviceRegisterTask.checkSchemaIdSet(MicroserviceRegisterTask.java:127)
+[2018-03-29 13:40:45,443/CST][main][INFO]schemaId CSERpcDemo exists true org.apache.servicecomb.serviceregistry.task.MicroserviceRegisterTask.registerSchemas(MicroserviceRegisterTask.java:143)
+[2018-03-29 13:40:45,449/CST][main][INFO]read MicroserviceRegisterTask status is FINISHED org.apache.servicecomb.serviceregistry.task.ServiceCenterTask.onRegisterTask(ServiceCenterTask.java:51)
+[2018-03-29 13:40:45,454/CST][main][INFO]running microservice instance register task. org.apache.servicecomb.serviceregistry.task.MicroserviceInstanceRegisterTask.doRegister(MicroserviceInstanceRegisterTask.java:59)
+[2018-03-29 13:40:45,554/CST][main][INFO]Register microservice instance success. microserviceId=58bd69d2322911e891230255ac105117 instanceId=b2fbf096331311e89c8f0255ac105519 endpoints=[rest://192.168.122.2:8080] lease 120s org.apache.servicecomb.serviceregistry.task.MicroserviceInstanceRegisterTask.doRegister(MicroserviceInstanceRegisterTask.java:77)
+[2018-03-29 13:40:45,559/CST][main][INFO]receive MicroserviceInstanceRegisterTask event, check instance Id... org.apache.servicecomb.core.CseApplicationListener$1.afterRegistryInstance(CseApplicationListener.java:170)
+[2018-03-29 13:40:45,564/CST][main][INFO]instance registry succeeds for the first time, will send AFTER_REGISTRY event. org.apache.servicecomb.core.CseApplicationListener$1.afterRegistryInstance(CseApplicationListener.java:172)
+[2018-03-29 13:40:45,654/CST][main][INFO]find instances[1] from service center success. service=default/CseMonitoring/latest org.apache.servicecomb.serviceregistry.registry.AbstractServiceRegistry.findServiceInstances(AbstractServiceRegistry.java:234)
+[2018-03-29 13:40:45,658/CST][main][INFO]service id=009918c41d6111e8ae1a0255ac10550d, instance id=00ae688e1d6111e8ae1a0255ac10550d, endpoints=[rest://100.125.0.198:30109?sslEnabled=true] org.apache.servicecomb.serviceregistry.registry.AbstractServiceRegistry.findServiceInstances(AbstractServiceRegistry.java:240)
+[2018-03-29 13:40:45,675/CST][main][INFO]Use the endpoint from ServiceCenter to CSE Monitor!https://100.125.0.198:30109 com.huawei.paas.monitor.MonitorBootListener.onBootEvent(MonitorBootListener.java:42)
+[2018-03-29 13:40:45,690/CST][main][INFO]Monitor data sender started. Configured data providers is {com.huawei.paas.monitor.HealthMonitorDataProvider,com.huawei.paas.cse.tcc.upload.TransactionMonitorDataProvider,} com.huawei.paas.monitor.DataFactory.start(DataFactory.java:90)
+[2018-03-29 13:40:45,696/CST][main][INFO]read MicroserviceInstanceRegisterTask status is FINISHED org.apache.servicecomb.serviceregistry.task.ServiceCenterTask.onRegisterTask(ServiceCenterTask.java:51)
+[2018-03-29 13:41:00,717/CST][monitor-center-vert.x-eventloop-thread-0][ERROR]io.netty.channel.ConnectTimeoutException: connection timed out: /100.125.0.198:30109 io.vertx.core.http.impl.HttpClientRequestBase.handleException(HttpClientRequestBase.java:138)
+[2018-03-29 13:41:10,717/CST][monitor-center-vert.x-eventloop-thread-0][ERROR]io.netty.channel.ConnectTimeoutException: connection timed out: /100.125.0.198:30109 io.vertx.core.http.impl.HttpClientRequestBase.handleException(HttpClientRequestBase.java:138)
+[2018-03-29 13:41:15,770/CST][Service Center Task][WARN]sc task interval changed from -1 to 30 org.apache.servicecomb.serviceregistry.task.ServiceCenterTaskMonitor.beginCycle(ServiceCenterTaskMonitor.java:39)
+[2018-03-29 13:41:20,718/CST][monitor-center-vert.x-eventloop-thread-0][ERROR]io.netty.channel.ConnectTimeoutException: connection timed out: /100.125.0.198:30109 io.vertx.core.http.impl.HttpClientRequestBase.handleException(HttpClientRequestBase.java:138)
+[2018-03-29 13:41:30,718/CST][monitor-center-vert.x-eventloop-thread-0][ERROR]io.netty.channel.ConnectTimeoutException: connection timed out: /100.125.0.198:30109 io.vertx.core.http.impl.HttpClientRequestBase.handleException(HttpClientRequestBase.java:138)
+[2018-03-29 13:41:40,719/CST][monitor-center-vert.x-eventloop-thread-0][ERROR]io.netty.channel.ConnectTimeoutException: connection timed out: /100.125.0.198:30109 io.vertx.core.http.impl.HttpClientRequestBase.handleException(HttpClientRequestBase.java:138)
+[2018-03-29 13:41:50,719/CST][monitor-center-vert.x-eventloop-thread-0][ERROR]io.netty.channel.ConnectTimeoutException: connection timed out: /100.125.0.198:30109 io.vertx.core.http.impl.HttpClientRequestBase.handleException(HttpClientRequestBase.java:138)
+[2018-03-29 13:42:00,720/CST][monitor-center-vert.x-eventloop-thread-0][ERROR]io.netty.channel.ConnectTimeoutException: connection timed out: /100.125.0.198:30109 io.vertx.core.http.impl.HttpClientRequestBase.handleException(HttpClientRequestBase.java:138)
+[2018-03-29 13:42:10,721/CST][monitor-center-vert.x-eventloop-thread-0][ERROR]io.netty.channel.ConnectTimeoutException: connection timed out: /100.125.0.198:30109 io.vertx.core.http.impl.HttpClientRequestBase.handleException(HttpClientRequestBase.java:138)
+[2018-03-29 13:42:20,721/CST][monitor-center-vert.x-eventloop-thread-0][ERROR]io.netty.channel.ConnectTimeoutException: connection timed out: /100.125.0.198:30109 io.vertx.core.http.impl.HttpClientRequestBase.handleException(HttpClientRequestBase.java:138)
+[2018-03-29 13:42:30,722/CST][monitor-center-vert.x-eventloop-thread-0][ERROR]io.netty.channel.ConnectTimeoutException: connection timed out: /100.125.0.198:30109 io.vertx.core.http.impl.HttpClientRequestBase.handleException(HttpClientRequestBase.java:138)
+[2018-03-30 09:51:48,882/CST][main][INFO]Write merged log4j config file to C:\D\huaweiDemo\CSERpcDemo\target\classes\config\merged.log4j.properties org.apache.servicecomb.foundation.common.utils.Log4jUtils.outputFile(Log4jUtils.java:103)
+[2018-03-30 09:51:48,922/CST][main][INFO]Refreshing org.springframework.context.support.ClassPathXmlApplicationContext@3f2a3a5: startup date [Fri Mar 30 09:51:48 CST 2018]; root of context hierarchy org.springframework.context.support.AbstractApplicationContext.prepareRefresh(AbstractApplicationContext.java:582)
+[2018-03-30 09:51:48,980/CST][main][INFO]Loading XML bean definitions from file [C:\D\huaweiDemo\CSERpcDemo\target\classes\META-INF\spring\cse.CSERpcDemo.bean.xml] org.springframework.beans.factory.xml.XmlBeanDefinitionReader.loadBeanDefinitions(XmlBeanDefinitionReader.java:317)
+[2018-03-30 09:51:49,158/CST][main][INFO]Loading XML bean definitions from URL [jar:file:/C:/mavenlib/com/huawei/paas/cse/foundation-auth/2.3.9/foundation-auth-2.3.9.jar!/META-INF/spring/auth.bean.xml] org.springframework.beans.factory.xml.XmlBeanDefinitionReader.loadBeanDefinitions(XmlBeanDefinitionReader.java:317)
+[2018-03-30 09:51:49,174/CST][main][INFO]Loading XML bean definitions from URL [jar:file:/C:/mavenlib/org/apache/servicecomb/foundation-common/1.0.0.B001/foundation-common-1.0.0.B001.jar!/META-INF/spring/common.bean.xml] org.springframework.beans.factory.xml.XmlBeanDefinitionReader.loadBeanDefinitions(XmlBeanDefinitionReader.java:317)
+[2018-03-30 09:51:49,188/CST][main][INFO]Loading XML bean definitions from URL [jar:file:/C:/mavenlib/org/apache/servicecomb/foundation-config/1.0.0.B001/foundation-config-1.0.0.B001.jar!/META-INF/spring/cse.bean.xml] org.springframework.beans.factory.xml.XmlBeanDefinitionReader.loadBeanDefinitions(XmlBeanDefinitionReader.java:317)
+[2018-03-30 09:51:49,202/CST][main][INFO]Loading XML bean definitions from URL [jar:file:/C:/mavenlib/org/apache/servicecomb/foundation-vertx/1.0.0.B001/foundation-vertx-1.0.0.B001.jar!/META-INF/spring/cse.bean.xml] org.springframework.beans.factory.xml.XmlBeanDefinitionReader.loadBeanDefinitions(XmlBeanDefinitionReader.java:317)
+[2018-03-30 09:51:49,214/CST][main][INFO]Loading XML bean definitions from URL [jar:file:/C:/mavenlib/org/apache/servicecomb/foundation-metrics/1.0.0.B001/foundation-metrics-1.0.0.B001.jar!/META-INF/spring/metrics.bean.xml] org.springframework.beans.factory.xml.XmlBeanDefinitionReader.loadBeanDefinitions(XmlBeanDefinitionReader.java:317)
+[2018-03-30 09:51:49,226/CST][main][INFO]Loading XML bean definitions from URL [jar:file:/C:/mavenlib/org/apache/servicecomb/transport-rest-client/1.0.0.B001/transport-rest-client-1.0.0.B001.jar!/META-INF/spring/cse.transport.rest.bean.xml] org.springframework.beans.factory.xml.XmlBeanDefinitionReader.loadBeanDefinitions(XmlBeanDefinitionReader.java:317)
+[2018-03-30 09:51:49,242/CST][main][INFO]Loading XML bean definitions from URL [jar:file:/C:/mavenlib/org/apache/servicecomb/handler-bizkeeper/1.0.0.B001/handler-bizkeeper-1.0.0.B001.jar!/META-INF/spring/cse.bean.xml] org.springframework.beans.factory.xml.XmlBeanDefinitionReader.loadBeanDefinitions(XmlBeanDefinitionReader.java:317)
+[2018-03-30 09:51:49,256/CST][main][INFO]Loading XML bean definitions from URL [jar:file:/C:/mavenlib/org/apache/servicecomb/handler-loadbalance/1.0.0.B001/handler-loadbalance-1.0.0.B001.jar!/META-INF/spring/cse.bean.xml] org.springframework.beans.factory.xml.XmlBeanDefinitionReader.loadBeanDefinitions(XmlBeanDefinitionReader.java:317)
+[2018-03-30 09:51:49,266/CST][main][INFO]Loading XML bean definitions from URL [jar:file:/C:/mavenlib/com/huawei/paas/cse/cse-handler-cloud-extension/2.3.9/cse-handler-cloud-extension-2.3.9.jar!/META-INF/spring/services.bean.xml] org.springframework.beans.factory.xml.XmlBeanDefinitionReader.loadBeanDefinitions(XmlBeanDefinitionReader.java:317)
+[2018-03-30 09:51:49,278/CST][main][INFO]Loading XML bean definitions from URL [jar:file:/C:/mavenlib/com/huawei/paas/cse/cse-handler-tcc/2.3.9/cse-handler-tcc-2.3.9.jar!/META-INF/spring/cse.tcc.bean.xml] org.springframework.beans.factory.xml.XmlBeanDefinitionReader.loadBeanDefinitions(XmlBeanDefinitionReader.java:317)
+[2018-03-30 09:51:49,309/CST][main][INFO]Loading XML bean definitions from URL [jar:file:/C:/mavenlib/org/apache/servicecomb/java-chassis-core/1.0.0.B001/java-chassis-core-1.0.0.B001.jar!/META-INF/spring/cse.bean.xml] org.springframework.beans.factory.xml.XmlBeanDefinitionReader.loadBeanDefinitions(XmlBeanDefinitionReader.java:317)
+[2018-03-30 09:51:49,773/CST][main][WARN]No URLs will be polled as dynamic configuration sources. com.netflix.config.sources.URLConfigurationSource.<init>(URLConfigurationSource.java:121)
+[2018-03-30 09:51:49,776/CST][main][INFO]To enable URLs as dynamic configuration sources, define System property archaius.configurationSource.additionalUrls or make config.properties available on classpath. com.netflix.config.sources.URLConfigurationSource.<init>(URLConfigurationSource.java:122)
+[2018-03-30 09:51:49,784/CST][main][INFO]create dynamic config: org.apache.servicecomb.config.ConfigUtil.createDynamicConfig(ConfigUtil.java:171)
+[2018-03-30 09:51:49,833/CST][main][INFO]create local config: org.apache.servicecomb.config.ConfigUtil.createLocalConfig(ConfigUtil.java:89)
+[2018-03-30 09:51:49,836/CST][main][INFO] jar:file:/C:/mavenlib/com/huawei/paas/cse/cse-solution-service-engine/2.3.9/cse-solution-service-engine-2.3.9.jar!/microservice.yaml. org.apache.servicecomb.config.ConfigUtil.createLocalConfig(ConfigUtil.java:91)
+[2018-03-30 09:51:49,840/CST][main][INFO] file:/C:/D/huaweiDemo/CSERpcDemo/target/classes/microservice.yaml. org.apache.servicecomb.config.ConfigUtil.createLocalConfig(ConfigUtil.java:91)
+[2018-03-30 09:51:49,866/CST][main][INFO]get the SPI service success, the extend service is: class org.apache.servicecomb.config.archaius.sources.ConfigCenterConfigurationSourceImpl org.apache.servicecomb.foundation.common.utils.SPIServiceUtils.getTargetService(SPIServiceUtils.java:51)
+[2018-03-30 09:51:50,628/CST][config-center-vert.x-eventloop-thread-0][INFO]add network interface name:eth1,host address:192.168.122.2 org.apache.servicecomb.foundation.common.net.NetUtils.doGetIpv4AddressFromNetworkInterface(NetUtils.java:114)
+[2018-03-30 09:51:50,640/CST][config-center-vert.x-eventloop-thread-0][INFO]add network interface name:eth4,host address:192.168.200.1 org.apache.servicecomb.foundation.common.net.NetUtils.doGetIpv4AddressFromNetworkInterface(NetUtils.java:114)
+[2018-03-30 09:51:50,651/CST][config-center-vert.x-eventloop-thread-0][INFO]add network interface name:wlan1,host address:192.168.137.1 org.apache.servicecomb.foundation.common.net.NetUtils.doGetIpv4AddressFromNetworkInterface(NetUtils.java:114)
+[2018-03-30 09:51:50,668/CST][config-center-vert.x-eventloop-thread-0][INFO]add network interface name:eth7,host address:10.1.3.96 org.apache.servicecomb.foundation.common.net.NetUtils.doGetIpv4AddressFromNetworkInterface(NetUtils.java:114)
+[2018-03-30 09:51:50,719/CST][config-center-vert.x-eventloop-thread-0][INFO]add host name from localhost:SongDi-Note,host address:192.168.122.2 org.apache.servicecomb.foundation.common.net.NetUtils.<clinit>(NetUtils.java:72)
+[2018-03-30 09:51:50,752/CST][config-center-vert.x-eventloop-thread-0][INFO]add ak/sk cipher default com.huawei.paas.foundation.auth.credentials.AKSKManager.lambda$static$0(AKSKManager.java:41)
+[2018-03-30 09:51:50,757/CST][config-center-vert.x-eventloop-thread-0][INFO]add ak/sk cipher security com.huawei.paas.foundation.auth.credentials.AKSKManager.lambda$static$0(AKSKManager.java:41)
+[2018-03-30 09:51:50,761/CST][config-center-vert.x-eventloop-thread-0][INFO]read ak/sk from microservice.yaml. com.huawei.paas.foundation.auth.credentials.AKSKOption.buildFromYaml(AKSKOption.java:153)
+[2018-03-30 09:51:50,812/CST][main][INFO]JSR-330 'javax.inject.Inject' annotation found and supported for autowiring org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor.<init>(AutowiredAnnotationBeanPostProcessor.java:155)
+[2018-03-30 09:51:51,448/CST][config-center-vert.x-eventloop-thread-0][WARN]Config value cache changed: action:create; item:[myConfigKey] org.apache.servicecomb.config.archaius.sources.ConfigCenterConfigurationSourceImpl$UpdateHandler.handle(ConfigCenterConfigurationSourceImpl.java:124)
+[2018-03-30 09:51:51,559/CST][main][INFO]Found swagger generator context: org.apache.servicecomb.swagger.generator.springmvc.SpringmvcSwaggerGeneratorContext org.apache.servicecomb.swagger.generator.core.CompositeSwaggerGeneratorContext.<init>(CompositeSwaggerGeneratorContext.java:39)
+[2018-03-30 09:51:51,563/CST][main][INFO]Found swagger generator context: org.apache.servicecomb.swagger.generator.jaxrs.JaxrsSwaggerGeneratorContext org.apache.servicecomb.swagger.generator.core.CompositeSwaggerGeneratorContext.<init>(CompositeSwaggerGeneratorContext.java:39)
+[2018-03-30 09:51:51,567/CST][main][INFO]Found swagger generator context: org.apache.servicecomb.swagger.generator.pojo.PojoSwaggerGeneratorContext org.apache.servicecomb.swagger.generator.core.CompositeSwaggerGeneratorContext.<init>(CompositeSwaggerGeneratorContext.java:39)
+[2018-03-30 09:51:51,589/CST][main][INFO]found factory org.apache.servicecomb.swagger.invocation.springmvc.response.SpringmvcProducerResponseMapperFactory of org.apache.servicecomb.swagger.invocation.response.producer.ProducerResponseMapperFactory: org.apache.servicecomb.swagger.invocation.response.ResponseMapperFactorys.lambda$new$0(ResponseMapperFactorys.java:41)
+[2018-03-30 09:51:51,592/CST][main][INFO]found factory org.apache.servicecomb.swagger.invocation.jaxrs.response.JaxrsProducerResponseMapperFactory of org.apache.servicecomb.swagger.invocation.response.producer.ProducerResponseMapperFactory: org.apache.servicecomb.swagger.invocation.response.ResponseMapperFactorys.lambda$new$0(ResponseMapperFactorys.java:41)
+[2018-03-30 09:51:51,595/CST][main][INFO]found factory org.apache.servicecomb.swagger.invocation.response.producer.CseResponseProducerResponseMapperFactory of org.apache.servicecomb.swagger.invocation.response.producer.ProducerResponseMapperFactory: org.apache.servicecomb.swagger.invocation.response.ResponseMapperFactorys.lambda$new$0(ResponseMapperFactorys.java:41)
+[2018-03-30 09:51:51,599/CST][main][INFO]found factory org.apache.servicecomb.swagger.invocation.response.producer.CompletableFutureProducerResponseMapperFactory of org.apache.servicecomb.swagger.invocation.response.producer.ProducerResponseMapperFactory: org.apache.servicecomb.swagger.invocation.response.ResponseMapperFactorys.lambda$new$0(ResponseMapperFactorys.java:41)
+[2018-03-30 09:51:51,602/CST][main][INFO]found factory org.apache.servicecomb.swagger.invocation.response.producer.DefaultProducerResponseMapperFactory of org.apache.servicecomb.swagger.invocation.response.producer.ProducerResponseMapperFactory: org.apache.servicecomb.swagger.invocation.response.ResponseMapperFactorys.lambda$new$0(ResponseMapperFactorys.java:41)
+[2018-03-30 09:51:51,609/CST][main][INFO]found factory org.apache.servicecomb.swagger.invocation.springmvc.response.SpringmvcConsumerResponseMapperFactory of org.apache.servicecomb.swagger.invocation.response.consumer.ConsumerResponseMapperFactory: org.apache.servicecomb.swagger.invocation.response.ResponseMapperFactorys.lambda$new$0(ResponseMapperFactorys.java:41)
+[2018-03-30 09:51:51,612/CST][main][INFO]found factory org.apache.servicecomb.swagger.invocation.jaxrs.response.JaxrsConsumerResponseMapperFactory of org.apache.servicecomb.swagger.invocation.response.consumer.ConsumerResponseMapperFactory: org.apache.servicecomb.swagger.invocation.response.ResponseMapperFactorys.lambda$new$0(ResponseMapperFactorys.java:41)
+[2018-03-30 09:51:51,615/CST][main][INFO]found factory org.apache.servicecomb.swagger.invocation.response.consumer.CseResponseConsumerResponseMapperFactory of org.apache.servicecomb.swagger.invocation.response.consumer.ConsumerResponseMapperFactory: org.apache.servicecomb.swagger.invocation.response.ResponseMapperFactorys.lambda$new$0(ResponseMapperFactorys.java:41)
+[2018-03-30 09:51:51,619/CST][main][INFO]found factory org.apache.servicecomb.swagger.invocation.response.consumer.CompletableFutureConsumerResponseMapperFactory of org.apache.servicecomb.swagger.invocation.response.consumer.ConsumerResponseMapperFactory: org.apache.servicecomb.swagger.invocation.response.ResponseMapperFactorys.lambda$new$0(ResponseMapperFactorys.java:41)
+[2018-03-30 09:51:51,624/CST][main][INFO]found factory org.apache.servicecomb.swagger.invocation.response.consumer.DefaultConsumerResponseMapperFactory of org.apache.servicecomb.swagger.invocation.response.consumer.ConsumerResponseMapperFactory: org.apache.servicecomb.swagger.invocation.response.ResponseMapperFactorys.lambda$new$0(ResponseMapperFactorys.java:41)
+[2018-03-30 09:51:51,731/CST][main][INFO]load microservice config, name=CSERpcDemo, paths=[jar:file:/C:/mavenlib/com/huawei/paas/cse/cse-solution-service-engine/2.3.9/cse-solution-service-engine-2.3.9.jar!/microservice.yaml, file:/C:/D/huaweiDemo/CSERpcDemo/target/classes/microservice.yaml] org.apache.servicecomb.serviceregistry.definition.MicroserviceDefinition.logConfigPath(MicroserviceDefinition.java:142)
+[2018-03-30 09:51:51,741/CST][main][INFO]It is running in the normal mode, a separated service registry is required org.apache.servicecomb.serviceregistry.registry.ServiceRegistryFactory.create(ServiceRegistryFactory.java:81)
+[2018-03-30 09:51:51,780/CST][main][INFO]executor group 2, thread per group 8. org.apache.servicecomb.core.executor.FixedThreadExecutor.<init>(FixedThreadExecutor.java:54)
+[2018-03-30 09:51:52,072/CST][main][INFO]generate cse.gen.demo_songdi.CSERpcDemo.CSERpcDemo.helloworld.name in classLoader sun.misc.Launcher$AppClassLoader@6d06d69c. org.apache.servicecomb.common.javassist.JavassistUtils.createClass(JavassistUtils.java:207)
+[2018-03-30 09:51:52,084/CST][main][INFO]generate cse.gen.demo_songdi.CSERpcDemo.CSERpcDemo.sayHello.name in classLoader sun.misc.Launcher$AppClassLoader@6d06d69c. org.apache.servicecomb.common.javassist.JavassistUtils.createClass(JavassistUtils.java:207)
+[2018-03-30 09:51:52,104/CST][main][INFO]generate cse.gen.demo_songdi.CSERpcDemo.CSERpcDemo.CSERpcDemoImplIntf in classLoader sun.misc.Launcher$AppClassLoader@6d06d69c. org.apache.servicecomb.common.javassist.JavassistUtils.createClass(JavassistUtils.java:207)
+[2018-03-30 09:51:52,153/CST][main][INFO]generate swagger for demo-songdi/CSERpcDemo/CSERpcDemo, swagger: ---
+swagger: "2.0"
+info:
+  version: "1.0.0"
+  title: "swagger definition for com.service.cserpcdemo.controller.CSERpcDemoImpl"
+  x-java-interface: "cse.gen.demo_songdi.CSERpcDemo.CSERpcDemo.CSERpcDemoImplIntf"
+basePath: "/CSERpcDemoImpl"
+consumes:
+- "application/json"
+produces:
+- "application/json"
+paths:
+  /helloworld:
+    post:
+      operationId: "helloworld"
+      parameters:
+      - in: "body"
+        name: "name"
+        required: false
+        schema:
+          $ref: "#/definitions/helloworldBody"
+      responses:
+        200:
+          description: "response of 200"
+          schema:
+            type: "string"
+  /sayHello:
+    post:
+      operationId: "sayHello"
+      parameters:
+      - in: "body"
+        name: "name"
+        required: false
+        schema:
+          $ref: "#/definitions/sayHelloBody"
+      responses:
+        200:
+          description: "response of 200"
+          schema:
+            type: "string"
+  /addPeople:
+    post:
+      operationId: "addPeople"
+      parameters:
+      - in: "body"
+        name: "people"
+        required: false
+        schema:
+          $ref: "#/definitions/People"
+      responses:
+        200:
+          description: "response of 200"
+          schema:
+            type: "integer"
+            format: "int32"
+  /getPeopleNumberByNameAndStatus:
+    post:
+      operationId: "getPeopleNumberByNameAndStatus"
+      parameters:
+      - in: "body"
+        name: "people"
+        required: false
+        schema:
+          $ref: "#/definitions/People"
+      responses:
+        200:
+          description: "response of 200"
+          schema:
+            type: "integer"
+            format: "int32"
+definitions:
+  People:
+    type: "object"
+    properties:
+      peopleId:
+        type: "integer"
+        format: "int32"
+      peopleName:
+        type: "string"
+      status:
+        type: "integer"
+        format: "int32"
+      description:
+        type: "string"
+    x-java-class: "com.newland.demo.api.People"
+  helloworldBody:
+    type: "object"
+    properties:
+      name:
+        type: "string"
+  sayHelloBody:
+    type: "object"
+    properties:
+      name:
+        type: "string"
+ org.apache.servicecomb.core.definition.schema.ProducerSchemaFactory.createSchema(ProducerSchemaFactory.java:114)
+[2018-03-30 09:51:52,157/CST][main][INFO]register schema demo-songdi/CSERpcDemo/CSERpcDemo org.apache.servicecomb.core.definition.loader.SchemaLoader.registerSchema(SchemaLoader.java:91)
+[2018-03-30 09:51:52,168/CST][main][INFO]found DiscoveryFilter: org.apache.servicecomb.serviceregistry.discovery.DiscoveryTree.sort(DiscoveryTree.java:53)
+[2018-03-30 09:51:52,172/CST][main][INFO]DiscoveryFilter org.apache.servicecomb.loadbalance.filter.CseServerDiscoveryFilter. org.apache.servicecomb.serviceregistry.discovery.DiscoveryTree.sort(DiscoveryTree.java:55)
+[2018-03-30 09:51:52,192/CST][main][WARN]address /0.0.0.0:8080, auto select a host address to publish 192.168.122.2:8080, maybe not the correct one org.apache.servicecomb.serviceregistry.RegistryUtils.genPublishIpPort(RegistryUtils.java:181)
+[2018-03-30 09:51:52,199/CST][main][INFO]choose org.apache.servicecomb.transport.rest.vertx.VertxRestTransport for rest. org.apache.servicecomb.core.transport.TransportManager.chooseOneTransport(TransportManager.java:84)
+[2018-03-30 09:51:52,204/CST][main][INFO]choose org.apache.servicecomb.transport.highway.HighwayTransport for highway. org.apache.servicecomb.core.transport.TransportManager.chooseOneTransport(TransportManager.java:84)
+[2018-03-30 09:51:52,221/CST][transport-vert.x-eventloop-thread-2][INFO]Found HttpServerFilter: org.apache.servicecomb.common.rest.filter.tracing.TracingFilter. org.apache.servicecomb.transport.rest.vertx.AbstractVertxHttpDispatcher.<init>(AbstractVertxHttpDispatcher.java:40)
+[2018-03-30 09:51:52,225/CST][transport-vert.x-eventloop-thread-2][INFO]init vertx http dispatcher org.apache.servicecomb.transport.rest.vertx.VertxRestDispatcher org.apache.servicecomb.transport.rest.vertx.RestServerVerticle.initDispatcher(RestServerVerticle.java:95)
+[2018-03-30 09:51:52,232/CST][transport-vert.x-eventloop-thread-2][INFO]set uploads directory to null. org.apache.servicecomb.transport.rest.vertx.AbstractVertxHttpDispatcher.createBodyHandler(AbstractVertxHttpDispatcher.java:53)
+[2018-03-30 09:51:52,255/CST][transport-vert.x-eventloop-thread-2][INFO]rest listen success. address=0.0.0.0:8080 org.apache.servicecomb.transport.rest.vertx.RestServerVerticle.lambda$startListen$0(RestServerVerticle.java:103)
+[2018-03-30 09:51:52,259/CST][main][INFO]endpoint to publish: rest://192.168.122.2:8080 org.apache.servicecomb.core.transport.TransportManager.init(TransportManager.java:58)
+[2018-03-30 09:51:52,271/CST][transport-vert.x-eventloop-thread-6][WARN]highway listen address is not configured, will not listen. org.apache.servicecomb.transport.highway.HighwayServerVerticle.startListen(HighwayServerVerticle.java:59)
+[2018-03-30 09:51:52,285/CST][main][INFO]add schema to service paths. demo-songdi:CSERpcDemo:CSERpcDemo. org.apache.servicecomb.common.rest.locator.ServicePathManager.addSchema(ServicePathManager.java:91)
+[2018-03-30 09:51:52,290/CST][main][INFO]Swagger mapped "{[/CSERpcDemoImpl/helloworld/], method=[POST], produces=[application/json]}" onto public abstract java.lang.String cse.gen.demo_songdi.CSERpcDemo.CSERpcDemo.CSERpcDemoImplIntf.helloworld(cse.gen.demo_songdi.CSERpcDemo.CSERpcDemo.helloworld.name) org.apache.servicecomb.common.rest.locator.MicroservicePaths.printPath(MicroservicePaths.java:103)
+[2018-03-30 09:51:52,295/CST][main][INFO]Swagger mapped "{[/CSERpcDemoImpl/sayHello/], method=[POST], produces=[application/json]}" onto public abstract java.lang.String cse.gen.demo_songdi.CSERpcDemo.CSERpcDemo.CSERpcDemoImplIntf.sayHello(cse.gen.demo_songdi.CSERpcDemo.CSERpcDemo.sayHello.name) org.apache.servicecomb.common.rest.locator.MicroservicePaths.printPath(MicroservicePaths.java:103)
+[2018-03-30 09:51:52,299/CST][main][INFO]Swagger mapped "{[/CSERpcDemoImpl/getPeopleNumberByNameAndStatus/], method=[POST], produces=[application/json]}" onto public abstract java.lang.Integer cse.gen.demo_songdi.CSERpcDemo.CSERpcDemo.CSERpcDemoImplIntf.getPeopleNumberByNameAndStatus(com.newland.demo.api.People) org.apache.servicecomb.common.rest.locator.MicroservicePaths.printPath(MicroservicePaths.java:103)
+[2018-03-30 09:51:52,303/CST][main][INFO]Swagger mapped "{[/CSERpcDemoImpl/addPeople/], method=[POST], produces=[application/json]}" onto public abstract java.lang.Integer cse.gen.demo_songdi.CSERpcDemo.CSERpcDemo.CSERpcDemoImplIntf.addPeople(com.newland.demo.api.People) org.apache.servicecomb.common.rest.locator.MicroservicePaths.printPath(MicroservicePaths.java:103)
+[2018-03-30 09:51:52,307/CST][main][INFO]running microservice register task. org.apache.servicecomb.serviceregistry.task.MicroserviceRegisterTask.doRegister(MicroserviceRegisterTask.java:57)
+[2018-03-30 09:51:52,564/CST][main][INFO]Microservice exists in service center, no need to register. id=58bd69d2322911e891230255ac105117 appId=demo-songdi, name=CSERpcDemo, version=0.0.1 org.apache.servicecomb.serviceregistry.task.MicroserviceRegisterTask.doRegister(MicroserviceRegisterTask.java:64)
+[2018-03-30 09:51:52,651/CST][main][INFO]SchemaIds is equals to service center. id=58bd69d2322911e891230255ac105117 appId=demo-songdi, name=CSERpcDemo, version=0.0.1, schemaIds=[CSERpcDemo] org.apache.servicecomb.serviceregistry.task.MicroserviceRegisterTask.checkSchemaIdSet(MicroserviceRegisterTask.java:127)
+[2018-03-30 09:51:52,740/CST][main][INFO]schemaId CSERpcDemo exists true org.apache.servicecomb.serviceregistry.task.MicroserviceRegisterTask.registerSchemas(MicroserviceRegisterTask.java:143)
+[2018-03-30 09:51:52,750/CST][main][INFO]read MicroserviceRegisterTask status is FINISHED org.apache.servicecomb.serviceregistry.task.ServiceCenterTask.onRegisterTask(ServiceCenterTask.java:51)
+[2018-03-30 09:51:52,757/CST][main][INFO]running microservice instance register task. org.apache.servicecomb.serviceregistry.task.MicroserviceInstanceRegisterTask.doRegister(MicroserviceInstanceRegisterTask.java:59)
+[2018-03-30 09:51:52,872/CST][main][INFO]Register microservice instance success. microserviceId=58bd69d2322911e891230255ac105117 instanceId=e3f0a05733bc11e891230255ac105117 endpoints=[rest://192.168.122.2:8080] lease 120s org.apache.servicecomb.serviceregistry.task.MicroserviceInstanceRegisterTask.doRegister(MicroserviceInstanceRegisterTask.java:77)
+[2018-03-30 09:51:52,876/CST][main][INFO]receive MicroserviceInstanceRegisterTask event, check instance Id... org.apache.servicecomb.core.CseApplicationListener$1.afterRegistryInstance(CseApplicationListener.java:170)
+[2018-03-30 09:51:52,879/CST][main][INFO]instance registry succeeds for the first time, will send AFTER_REGISTRY event. org.apache.servicecomb.core.CseApplicationListener$1.afterRegistryInstance(CseApplicationListener.java:172)
+[2018-03-30 09:51:52,947/CST][main][INFO]find instances[1] from service center success. service=default/CseMonitoring/latest org.apache.servicecomb.serviceregistry.registry.AbstractServiceRegistry.findServiceInstances(AbstractServiceRegistry.java:234)
+[2018-03-30 09:51:52,950/CST][main][INFO]service id=009918c41d6111e8ae1a0255ac10550d, instance id=00ae688e1d6111e8ae1a0255ac10550d, endpoints=[rest://100.125.0.198:30109?sslEnabled=true] org.apache.servicecomb.serviceregistry.registry.AbstractServiceRegistry.findServiceInstances(AbstractServiceRegistry.java:240)
+[2018-03-30 09:51:52,965/CST][main][INFO]Use the endpoint from ServiceCenter to CSE Monitor!https://100.125.0.198:30109 com.huawei.paas.monitor.MonitorBootListener.onBootEvent(MonitorBootListener.java:42)
+[2018-03-30 09:51:52,976/CST][main][INFO]Monitor data sender started. Configured data providers is {com.huawei.paas.monitor.HealthMonitorDataProvider,com.huawei.paas.cse.tcc.upload.TransactionMonitorDataProvider,} com.huawei.paas.monitor.DataFactory.start(DataFactory.java:90)
+[2018-03-30 09:51:52,982/CST][main][INFO]read MicroserviceInstanceRegisterTask status is FINISHED org.apache.servicecomb.serviceregistry.task.ServiceCenterTask.onRegisterTask(ServiceCenterTask.java:51)
+[2018-03-30 09:52:08,043/CST][monitor-center-vert.x-eventloop-thread-0][ERROR]io.netty.channel.ConnectTimeoutException: connection timed out: /100.125.0.198:30109 io.vertx.core.http.impl.HttpClientRequestBase.handleException(HttpClientRequestBase.java:138)
+[2018-03-30 09:52:18,051/CST][monitor-center-vert.x-eventloop-thread-0][ERROR]io.netty.channel.ConnectTimeoutException: connection timed out: /100.125.0.198:30109 io.vertx.core.http.impl.HttpClientRequestBase.handleException(HttpClientRequestBase.java:138)
+[2018-03-30 09:52:23,067/CST][Service Center Task][WARN]sc task interval changed from -1 to 30 org.apache.servicecomb.serviceregistry.task.ServiceCenterTaskMonitor.beginCycle(ServiceCenterTaskMonitor.java:39)
+[2018-03-30 09:52:28,055/CST][monitor-center-vert.x-eventloop-thread-0][ERROR]io.netty.channel.ConnectTimeoutException: connection timed out: /100.125.0.198:30109 io.vertx.core.http.impl.HttpClientRequestBase.handleException(HttpClientRequestBase.java:138)
+[2018-03-30 09:52:38,082/CST][monitor-center-vert.x-eventloop-thread-0][ERROR]io.netty.channel.ConnectTimeoutException: connection timed out: /100.125.0.198:30109 io.vertx.core.http.impl.HttpClientRequestBase.handleException(HttpClientRequestBase.java:138)
+[2018-03-30 09:52:48,082/CST][monitor-center-vert.x-eventloop-thread-0][ERROR]io.netty.channel.ConnectTimeoutException: connection timed out: /100.125.0.198:30109 io.vertx.core.http.impl.HttpClientRequestBase.handleException(HttpClientRequestBase.java:138)
+[2018-03-30 09:52:58,100/CST][monitor-center-vert.x-eventloop-thread-0][ERROR]io.netty.channel.ConnectTimeoutException: connection timed out: /100.125.0.198:30109 io.vertx.core.http.impl.HttpClientRequestBase.handleException(HttpClientRequestBase.java:138)
+[2018-03-30 09:53:08,102/CST][monitor-center-vert.x-eventloop-thread-0][ERROR]io.netty.channel.ConnectTimeoutException: connection timed out: /100.125.0.198:30109 io.vertx.core.http.impl.HttpClientRequestBase.handleException(HttpClientRequestBase.java:138)
+[2018-03-30 09:53:18,095/CST][monitor-center-vert.x-eventloop-thread-0][ERROR]io.netty.channel.ConnectTimeoutException: connection timed out: /100.125.0.198:30109 io.vertx.core.http.impl.HttpClientRequestBase.handleException(HttpClientRequestBase.java:138)
+[2018-03-30 09:53:28,111/CST][monitor-center-vert.x-eventloop-thread-0][ERROR]io.netty.channel.ConnectTimeoutException: connection timed out: /100.125.0.198:30109 io.vertx.core.http.impl.HttpClientRequestBase.handleException(HttpClientRequestBase.java:138)
+[2018-03-30 09:53:38,124/CST][monitor-center-vert.x-eventloop-thread-0][ERROR]io.netty.channel.ConnectTimeoutException: connection timed out: /100.125.0.198:30109 io.vertx.core.http.impl.HttpClientRequestBase.handleException(HttpClientRequestBase.java:138)
+[2018-03-30 09:53:48,115/CST][monitor-center-vert.x-eventloop-thread-0][ERROR]io.netty.channel.ConnectTimeoutException: connection timed out: /100.125.0.198:30109 io.vertx.core.http.impl.HttpClientRequestBase.handleException(HttpClientRequestBase.java:138)
+[2018-03-30 09:53:58,117/CST][monitor-center-vert.x-eventloop-thread-0][ERROR]io.netty.channel.ConnectTimeoutException: connection timed out: /100.125.0.198:30109 io.vertx.core.http.impl.HttpClientRequestBase.handleException(HttpClientRequestBase.java:138)
+[2018-03-30 09:54:08,120/CST][monitor-center-vert.x-eventloop-thread-0][ERROR]io.netty.channel.ConnectTimeoutException: connection timed out: /100.125.0.198:30109 io.vertx.core.http.impl.HttpClientRequestBase.handleException(HttpClientRequestBase.java:138)
+[2018-03-30 09:54:18,121/CST][monitor-center-vert.x-eventloop-thread-0][ERROR]io.netty.channel.ConnectTimeoutException: connection timed out: /100.125.0.198:30109 io.vertx.core.http.impl.HttpClientRequestBase.handleException(HttpClientRequestBase.java:138)
+[2018-03-30 09:54:28,123/CST][monitor-center-vert.x-eventloop-thread-0][ERROR]io.netty.channel.ConnectTimeoutException: connection timed out: /100.125.0.198:30109 io.vertx.core.http.impl.HttpClientRequestBase.handleException(HttpClientRequestBase.java:138)
+[2018-03-30 09:54:38,125/CST][monitor-center-vert.x-eventloop-thread-0][ERROR]io.netty.channel.ConnectTimeoutException: connection timed out: /100.125.0.198:30109 io.vertx.core.http.impl.HttpClientRequestBase.handleException(HttpClientRequestBase.java:138)
+[2018-03-30 09:54:48,129/CST][monitor-center-vert.x-eventloop-thread-0][ERROR]io.netty.channel.ConnectTimeoutException: connection timed out: /100.125.0.198:30109 io.vertx.core.http.impl.HttpClientRequestBase.handleException(HttpClientRequestBase.java:138)
+[2018-03-30 09:54:58,128/CST][monitor-center-vert.x-eventloop-thread-0][ERROR]io.netty.channel.ConnectTimeoutException: connection timed out: /100.125.0.198:30109 io.vertx.core.http.impl.HttpClientRequestBase.handleException(HttpClientRequestBase.java:138)
+[2018-03-30 09:55:08,131/CST][monitor-center-vert.x-eventloop-thread-0][ERROR]io.netty.channel.ConnectTimeoutException: connection timed out: /100.125.0.198:30109 io.vertx.core.http.impl.HttpClientRequestBase.handleException(HttpClientRequestBase.java:138)
+[2018-03-30 09:55:18,134/CST][monitor-center-vert.x-eventloop-thread-0][ERROR]io.netty.channel.ConnectTimeoutException: connection timed out: /100.125.0.198:30109 io.vertx.core.http.impl.HttpClientRequestBase.handleException(HttpClientRequestBase.java:138)
+[2018-03-30 09:55:28,134/CST][monitor-center-vert.x-eventloop-thread-0][ERROR]io.netty.channel.ConnectTimeoutException: connection timed out: /100.125.0.198:30109 io.vertx.core.http.impl.HttpClientRequestBase.handleException(HttpClientRequestBase.java:138)
+[2018-03-30 09:55:38,134/CST][monitor-center-vert.x-eventloop-thread-0][ERROR]io.netty.channel.ConnectTimeoutException: connection timed out: /100.125.0.198:30109 io.vertx.core.http.impl.HttpClientRequestBase.handleException(HttpClientRequestBase.java:138)
+[2018-03-30 09:55:48,135/CST][monitor-center-vert.x-eventloop-thread-0][ERROR]io.netty.channel.ConnectTimeoutException: connection timed out: /100.125.0.198:30109 io.vertx.core.http.impl.HttpClientRequestBase.handleException(HttpClientRequestBase.java:138)
+[2018-03-30 09:55:58,135/CST][monitor-center-vert.x-eventloop-thread-0][ERROR]io.netty.channel.ConnectTimeoutException: connection timed out: /100.125.0.198:30109 io.vertx.core.http.impl.HttpClientRequestBase.handleException(HttpClientRequestBase.java:138)
+[2018-03-30 09:56:08,136/CST][monitor-center-vert.x-eventloop-thread-0][ERROR]io.netty.channel.ConnectTimeoutException: connection timed out: /100.125.0.198:30109 io.vertx.core.http.impl.HttpClientRequestBase.handleException(HttpClientRequestBase.java:138)
+[2018-03-30 09:56:18,139/CST][monitor-center-vert.x-eventloop-thread-0][ERROR]io.netty.channel.ConnectTimeoutException: connection timed out: /100.125.0.198:30109 io.vertx.core.http.impl.HttpClientRequestBase.handleException(HttpClientRequestBase.java:138)
+[2018-03-30 09:56:28,141/CST][monitor-center-vert.x-eventloop-thread-0][ERROR]io.netty.channel.ConnectTimeoutException: connection timed out: /100.125.0.198:30109 io.vertx.core.http.impl.HttpClientRequestBase.handleException(HttpClientRequestBase.java:138)
+[2018-03-30 09:56:38,142/CST][monitor-center-vert.x-eventloop-thread-0][ERROR]io.netty.channel.ConnectTimeoutException: connection timed out: /100.125.0.198:30109 io.vertx.core.http.impl.HttpClientRequestBase.handleException(HttpClientRequestBase.java:138)
+[2018-03-30 09:56:48,143/CST][monitor-center-vert.x-eventloop-thread-0][ERROR]io.netty.channel.ConnectTimeoutException: connection timed out: /100.125.0.198:30109 io.vertx.core.http.impl.HttpClientRequestBase.handleException(HttpClientRequestBase.java:138)
+[2018-03-30 09:56:58,145/CST][monitor-center-vert.x-eventloop-thread-0][ERROR]io.netty.channel.ConnectTimeoutException: connection timed out: /100.125.0.198:30109 io.vertx.core.http.impl.HttpClientRequestBase.handleException(HttpClientRequestBase.java:138)
+[2018-03-30 09:57:08,145/CST][monitor-center-vert.x-eventloop-thread-0][ERROR]io.netty.channel.ConnectTimeoutException: connection timed out: /100.125.0.198:30109 io.vertx.core.http.impl.HttpClientRequestBase.handleException(HttpClientRequestBase.java:138)

@@ -1,0 +1,20 @@
+Manifest-Version: 1.0
+Implementation-Title: Java Chassis::Demo::CrossApp::Client
+Implementation-Version: 1.0.0-m2-SNAPSHOT
+Built-By: SongDi
+Specification-Vendor: The Apache Software Foundation
+Specification-Title: Java Chassis::Demo::CrossApp::Client
+Implementation-Vendor-Id: org.apache.servicecomb.demo
+Class-Path: lib/demo-schema-1.0.0-m2-SNAPSHOT.jar lib/javax.servlet-ap
+ i-3.1.0.jar lib/demo-signature-1.0.0-m2-SNAPSHOT.jar lib/slf4j-log4j1
+ 2-1.7.7.jar lib/slf4j-api-1.7.7.jar lib/log4j-1.2.17.jar lib/javax.in
+ ject-1.jar lib/spring-aspects-4.3.5.RELEASE.jar lib/aspectjweaver-1.8
+ .8.jar
+Implementation-Vendor: The Apache Software Foundation
+Main-Class: org.apache.servicecomb.demo.crossapp.CrossappClient
+Build-Jdk: 1.8.0_162
+Specification-Version: 1.0.0-m2-SNAPSHOT
+Implementation-URL: https://github.com/apache/incubator-servicecomb-ja
+ va-chassis/demo-parent/demo-crossapp/crossapp-client
+Created-By: Maven Integration for Eclipse
+

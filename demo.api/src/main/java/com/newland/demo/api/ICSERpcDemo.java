@@ -4,8 +4,10 @@ public interface ICSERpcDemo {
 
 	String helloworld(String name);
 
-	public int getPeopleNumberByNameAndStatus(People people);
+	String sayHello(String name);
 
-	public int addPeople(People people);
+	int getPeopleNumberByNameAndStatus(People people);
+
+	int addPeople(People people);
 
 }
