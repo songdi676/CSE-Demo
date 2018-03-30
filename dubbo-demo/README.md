@@ -2,6 +2,13 @@
 
 ## Mesher涉及的配置文件
 ### Provider Mesher
+* 设置环境变量（地址是Dubbo Provider的dubbo.properties）
+
+```powershell
+SET SPECIFIC_ADDR=%ADDR%:3333
+```
+
+
 * auth.yaml
 
 ```yaml
@@ -40,8 +47,13 @@ cse:
        serverUri: @{SERVICE_CENTER}
 ```
 
-* AK
+
 ### Consumer Mesher
+* 设置环境变量
+
+```powershell
+SET SPECIFIC_ADDR=%ADDR%:4444
+```
 * auth.yaml
 
 ```yaml
