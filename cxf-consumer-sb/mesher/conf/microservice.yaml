@@ -1,0 +1,7 @@
+## microservice property
+APPLICATION_ID: cxf-mesh # application name
+service_description:
+  name: cxf-consumer-csedemo # microservice name
+  version: 0.0.1 # microservice version
+  properties: # custom properties
+    allowCrossApp: true # allow calls across applications

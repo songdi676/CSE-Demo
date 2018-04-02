@@ -1,0 +1,908 @@
+2018-03-30 10:50:16.901 +08:00 INFO archaius/archaius.go:96 Essential Configuration Path: [F:\nl-code\mesher\consumer\mesher\conf\chassis.yaml F:\nl-code\mesher\consumer\mesher\conf\microservice.yaml], Configuration Paths [F:\nl-code\mesher\consumer\mesher\conf\circuit_breaker.yaml F:\nl-code\mesher\consumer\mesher\conf\load_balancing.yaml F:\nl-code\mesher\consumer\mesher\conf\rate_limiting.yaml F:\nl-code\mesher\consumer\mesher\conf\tls.yaml F:\nl-code\mesher\consumer\mesher\conf\monitoring.yaml F:\nl-code\mesher\consumer\mesher\conf\auth.yaml F:\nl-code\mesher\consumer\mesher\conf\tracing.yaml]
+2018-03-30 10:50:16.901 +08:00 WARN config-manager/configurationmanager.go:140 empty configurtion from CommandlineSource
+2018-03-30 10:50:16.901 +08:00 WARN config-manager/configurationmanager.go:140 empty configurtion from ExternalSource
+2018-03-30 10:50:16.903 +08:00 INFO archaius/archaius.go:44 [F:\nl-code\mesher\consumer\mesher\conf\circuit_breaker.yaml] file not exist
+2018-03-30 10:50:16.904 +08:00 INFO archaius/archaius.go:44 [F:\nl-code\mesher\consumer\mesher\conf\load_balancing.yaml] file not exist
+2018-03-30 10:50:16.904 +08:00 INFO archaius/archaius.go:44 [F:\nl-code\mesher\consumer\mesher\conf\rate_limiting.yaml] file not exist
+2018-03-30 10:50:16.905 +08:00 INFO archaius/archaius.go:44 [F:\nl-code\mesher\consumer\mesher\conf\tls.yaml] file not exist
+2018-03-30 10:50:16.905 +08:00 INFO archaius/archaius.go:44 [F:\nl-code\mesher\consumer\mesher\conf\monitoring.yaml] file not exist
+2018-03-30 10:50:16.905 +08:00 INFO archaius/archaius.go:44 [F:\nl-code\mesher\consumer\mesher\conf\tracing.yaml] file not exist
+2018-03-30 10:50:16.906 +08:00 INFO config/config.go:235 archaius init success
+2018-03-30 10:50:16.906 +08:00 INFO config/router_config.go:71 Load route rules from file: F:\nl-code\mesher\consumer\mesher\conf\router.yaml
+2018-03-30 10:50:16.907 +08:00 INFO archaius/archaius.go:77 config value after change sourceTemplate | #routeRule:
+#  ShoppingCart: #这里就是请求里的host,也是sc里的service name
+#    - precedence: 2 #路由规则优先级 越大优先级越高，请求会先进入优先级最高的路由规则进行匹配
+#      route: #路由规则列表
+#      - tags:
+#          version: 0.2 #对接service center的话，如果不填就自动为0.1
+#          app: HelloWorld #对接service center的话，如果不填就自动为default
+#        weight: 80 #全重 80%到这里
+#      - tags:
+#          version: 1.2
+#          app: HelloWorld
+#        weight: 20 #全重 20%到这里
+routeRule:
+  cxf-provider-sbdemo: #这里就是请求里的host,也是sc里的service name
+    - precedence: 2 #路由规则优先级 越大优先级越高，请求会先进入优先级最高的路由规则进行匹配
+      route: #路由规则列表
+      - tags:
+          version: 0.0.1 #对接service center的话，如果不填就自动为0.1
+          app: cxf-mesh #对接service center的话，如果不填就自动为default
+2018-03-30 10:50:16.908 +08:00 WARN auth/auth.go:193 Huawei Cloud auth mode: ak/sk
+2018-03-30 10:50:16.909 +08:00 INFO go-chassis/chassis.go:97 Chain init success
+2018-03-30 10:50:16.909 +08:00 WARN registry/registry.go:141 registry.Consumer TLS mode, verify peer: false, cipher plugin: default.
+2018-03-30 10:50:16.909 +08:00 INFO go-sc-client/client.go:133 Use Service center v4
+2018-03-30 10:50:16.909 +08:00 WARN registry/registry.go:82 Enable servicecenter registry.
+2018-03-30 10:50:16.910 +08:00 WARN registry/bootstrap.go:24 Get schemas failed, microservice = cxf-consumer-csedemo. error: microservice cxf-consumer-csedemo not found
+2018-03-30 10:50:16.910 +08:00 INFO registry/bootstrap.go:45 Framework registered is [ Mesher:1.3.7 ]
+2018-03-30 10:50:16.910 +08:00 INFO registry/bootstrap.go:46 Microservice registered by [ SIDECAR ]
+2018-03-30 10:50:17.140 +08:00 WARN servicecenter/servicecenter.go:34 Microservice [cxf-consumer-csedemo:0.0.1:cxf-mesh] not exists in registry, register it
+2018-03-30 10:50:17.217 +08:00 WARN registry/bootstrap.go:54 Register microservice [cxf-consumer-csedemo] success
+2018-03-30 10:50:17.279 +08:00 INFO registry/bootstrap.go:83 Don't need add dependency
+2018-03-30 10:50:17.541 +08:00 INFO registry/registry.go:160 Enabled Registry
+2018-03-30 10:50:17.542 +08:00 INFO loadbalance/selector.go:26 Enable LoadBalancing
+2018-03-30 10:50:17.544 +08:00 INFO bootstrap/bootstrap.go:32 Bootstrap Huawei Enterprise Edition.
+2018-03-30 10:50:17.545 +08:00 WARN config-center/config_center.go:119 configcenter.Consumer TLS mode, verify peer: false, cipher plugin: default.
+2018-03-30 10:50:17.786 +08:00 WARN config-center/config_center.go:78 config center init success
+2018-03-30 10:50:17.786 +08:00 WARN metrics/cse_monitoring.go:63 monitor.Consumer TLS mode, verify peer: false, cipher plugin: default
+2018-03-30 10:50:17.794 +08:00 INFO metrics/metric.go:92 Started sending metric Data to Monitor Server : https://cse.cn-north-1.myhwclouds.com:443
+2018-03-30 10:50:17.795 +08:00 WARN tracing/tracer_manager.go:34 Tracing enabled. Start to init tracer map.
+2018-03-30 10:50:17.796 +08:00 INFO go-chassis/chassis.go:261 Init chassis success
+2018-03-30 10:50:17.798 +08:00 INFO archaius/archaius.go:77 config value after change policy | # Router rules and fault injection rules are moved to router.yaml
+#plugin:
+#  destinationResolver: host #用户可自定义如何将host转为换destination name，默认为host直接就是service name，
+#admin: #admin API
+#  serverUri : 127.0.0.1:40102 # 在哪个地址监听
+#  goRuntimeMetrics : true # 是否开启go 运行时监控
+2018-03-30 10:50:17.798 +08:00 INFO config-center/config_center.go:225 config value policy | # Router rules and fault injection rules are moved to router.yaml
+#plugin:
+#  destinationResolver: host #用户可自定义如何将host转为换destination name，默认为host直接就是service name，
+#admin: #admin API
+#  serverUri : 127.0.0.1:40102 # 在哪个地址监听
+#  goRuntimeMetrics : true # 是否开启go 运行时监控
+2018-03-30 10:50:17.802 +08:00 INFO archaius/archaius.go:77 config value after change plugin | # Router rules and fault injection rules are moved to router.yaml
+#plugin:
+#  destinationResolver: host #用户可自定义如何将host转为换destination name，默认为host直接就是service name，
+#admin: #admin API
+#  serverUri : 127.0.0.1:40102 # 在哪个地址监听
+#  goRuntimeMetrics : true # 是否开启go 运行时监控
+2018-03-30 10:50:17.802 +08:00 INFO config-center/config_center.go:225 config value plugin | # Router rules and fault injection rules are moved to router.yaml
+#plugin:
+#  destinationResolver: host #用户可自定义如何将host转为换destination name，默认为host直接就是service name，
+#admin: #admin API
+#  serverUri : 127.0.0.1:40102 # 在哪个地址监听
+#  goRuntimeMetrics : true # 是否开启go 运行时监控
+2018-03-30 10:50:17.809 +08:00 INFO archaius/archaius.go:77 config value after change admin | # Router rules and fault injection rules are moved to router.yaml
+#plugin:
+#  destinationResolver: host #用户可自定义如何将host转为换destination name，默认为host直接就是service name，
+#admin: #admin API
+#  serverUri : 127.0.0.1:40102 # 在哪个地址监听
+#  goRuntimeMetrics : true # 是否开启go 运行时监控
+2018-03-30 10:50:17.809 +08:00 INFO config-center/config_center.go:225 config value admin | # Router rules and fault injection rules are moved to router.yaml
+#plugin:
+#  destinationResolver: host #用户可自定义如何将host转为换destination name，默认为host直接就是service name，
+#admin: #admin API
+#  serverUri : 127.0.0.1:40102 # 在哪个地址监听
+#  goRuntimeMetrics : true # 是否开启go 运行时监控
+2018-03-30 10:50:17.811 +08:00 INFO archaius/archaius.go:77 config value after change proxyedProtocol | # Router rules and fault injection rules are moved to router.yaml
+#plugin:
+#  destinationResolver: host #用户可自定义如何将host转为换destination name，默认为host直接就是service name，
+#admin: #admin API
+#  serverUri : 127.0.0.1:40102 # 在哪个地址监听
+#  goRuntimeMetrics : true # 是否开启go 运行时监控
+2018-03-30 10:50:17.811 +08:00 INFO bootstrap/bootstrap.go:45 Running as sidecar
+2018-03-30 10:50:17.811 +08:00 INFO config-center/config_center.go:225 config value proxyedProtocol | # Router rules and fault injection rules are moved to router.yaml
+#plugin:
+#  destinationResolver: host #用户可自定义如何将host转为换destination name，默认为host直接就是service name，
+#admin: #admin API
+#  serverUri : 127.0.0.1:40102 # 在哪个地址监听
+#  goRuntimeMetrics : true # 是否开启go 运行时监控
+2018-03-30 10:50:17.821 +08:00 INFO server/server_manager.go:62 starting server http...
+2018-03-30 10:50:17.822 +08:00 ERROR server/server_manager.go:65 servers failed to start error: listen tcp4 127.0.0.1:30101: bind: Only one usage of each socket address (protocol/network address/port) is normally permitted.
+2018-03-30 10:50:17.823 +08:00 ERROR go-chassis/chassis.go:204 run chassis fail: error: Can not start [http] server,listen tcp4 127.0.0.1:30101: bind: Only one usage of each socket address (protocol/network address/port) is normally permitted.
+2018-03-30 10:50:17.824 +08:00 WARN registry/bootstrap.go:105 Start to register instances.
+2018-03-30 10:50:17.971 +08:00 WARN servicecenter/servicecenter.go:58 RegisterMicroServiceInstance get SelfInstancesCache failed, Mid/Sid: 143628a533c511e89c8f0255ac105519/14a8a02f33c511e89c8f0255ac105519
+2018-03-30 10:50:17.971 +08:00 WARN servicecenter/servicecenter.go:62 RegisterMicroServiceInstance type asserts failed,  Mid/Sid: 143628a533c511e89c8f0255ac105519/14a8a02f33c511e89c8f0255ac105519
+2018-03-30 10:50:17.972 +08:00 INFO servicecenter/servicecenter.go:74 RegisterMicroServiceInstance success, MicroServiceID: 143628a533c511e89c8f0255ac105519
+2018-03-30 10:50:17.973 +08:00 INFO registry/heartbeat.go:50 Add HB task, task:143628a533c511e89c8f0255ac105519/14a8a02f33c511e89c8f0255ac105519
+2018-03-30 10:50:17.973 +08:00 INFO servicecenter/servicecenter.go:80 RegisterMicroServiceInstance success, microServiceID/instanceID: 143628a533c511e89c8f0255ac105519/14a8a02f33c511e89c8f0255ac105519.
+2018-03-30 10:50:17.974 +08:00 WARN registry/bootstrap.go:167 Register instance success, serviceID/instanceID: 143628a533c511e89c8f0255ac105519/14a8a02f33c511e89c8f0255ac105519.
+2018-03-30 10:50:20.002 +08:00 INFO cse-collector/csemonitor.go:67 Connection to monitoring server established successfully
+2018-03-30 13:31:14.359 +08:00 INFO archaius/archaius.go:96 Essential Configuration Path: [F:\nl-code\mesher\consumer\mesher\conf\chassis.yaml F:\nl-code\mesher\consumer\mesher\conf\microservice.yaml], Configuration Paths [F:\nl-code\mesher\consumer\mesher\conf\circuit_breaker.yaml F:\nl-code\mesher\consumer\mesher\conf\load_balancing.yaml F:\nl-code\mesher\consumer\mesher\conf\rate_limiting.yaml F:\nl-code\mesher\consumer\mesher\conf\tls.yaml F:\nl-code\mesher\consumer\mesher\conf\monitoring.yaml F:\nl-code\mesher\consumer\mesher\conf\auth.yaml F:\nl-code\mesher\consumer\mesher\conf\tracing.yaml]
+2018-03-30 13:31:14.360 +08:00 WARN config-manager/configurationmanager.go:140 empty configurtion from CommandlineSource
+2018-03-30 13:31:14.360 +08:00 WARN config-manager/configurationmanager.go:140 empty configurtion from ExternalSource
+2018-03-30 13:31:14.361 +08:00 INFO archaius/archaius.go:44 [F:\nl-code\mesher\consumer\mesher\conf\circuit_breaker.yaml] file not exist
+2018-03-30 13:31:14.361 +08:00 INFO archaius/archaius.go:44 [F:\nl-code\mesher\consumer\mesher\conf\load_balancing.yaml] file not exist
+2018-03-30 13:31:14.361 +08:00 INFO archaius/archaius.go:44 [F:\nl-code\mesher\consumer\mesher\conf\rate_limiting.yaml] file not exist
+2018-03-30 13:31:14.361 +08:00 INFO archaius/archaius.go:44 [F:\nl-code\mesher\consumer\mesher\conf\tls.yaml] file not exist
+2018-03-30 13:31:14.361 +08:00 INFO archaius/archaius.go:44 [F:\nl-code\mesher\consumer\mesher\conf\monitoring.yaml] file not exist
+2018-03-30 13:31:14.362 +08:00 INFO archaius/archaius.go:44 [F:\nl-code\mesher\consumer\mesher\conf\tracing.yaml] file not exist
+2018-03-30 13:31:14.362 +08:00 INFO config/config.go:235 archaius init success
+2018-03-30 13:31:14.362 +08:00 INFO config/router_config.go:71 Load route rules from file: F:\nl-code\mesher\consumer\mesher\conf\router.yaml
+2018-03-30 13:31:14.363 +08:00 INFO archaius/archaius.go:77 config value after change sourceTemplate | #routeRule:
+#  ShoppingCart: #这里就是请求里的host,也是sc里的service name
+#    - precedence: 2 #路由规则优先级 越大优先级越高，请求会先进入优先级最高的路由规则进行匹配
+#      route: #路由规则列表
+#      - tags:
+#          version: 0.2 #对接service center的话，如果不填就自动为0.1
+#          app: HelloWorld #对接service center的话，如果不填就自动为default
+#        weight: 80 #全重 80%到这里
+#      - tags:
+#          version: 1.2
+#          app: HelloWorld
+#        weight: 20 #全重 20%到这里
+routeRule:
+  cxf-provider-sbdemo: #这里就是请求里的host,也是sc里的service name
+    - precedence: 2 #路由规则优先级 越大优先级越高，请求会先进入优先级最高的路由规则进行匹配
+      route: #路由规则列表
+      - tags:
+          version: 0.0.1 #对接service center的话，如果不填就自动为0.1
+          app: cxf-mesh #对接service center的话，如果不填就自动为default
+2018-03-30 13:31:14.364 +08:00 WARN auth/auth.go:193 Huawei Cloud auth mode: ak/sk
+2018-03-30 13:31:14.364 +08:00 INFO go-chassis/chassis.go:97 Chain init success
+2018-03-30 13:31:14.364 +08:00 WARN registry/registry.go:141 registry.Consumer TLS mode, verify peer: false, cipher plugin: default.
+2018-03-30 13:31:14.365 +08:00 INFO go-sc-client/client.go:133 Use Service center v4
+2018-03-30 13:31:14.365 +08:00 WARN registry/registry.go:82 Enable servicecenter registry.
+2018-03-30 13:31:14.365 +08:00 WARN registry/bootstrap.go:24 Get schemas failed, microservice = cxf-consumer-csedemo. error: microservice cxf-consumer-csedemo not found
+2018-03-30 13:31:14.365 +08:00 INFO registry/bootstrap.go:45 Framework registered is [ Mesher:1.3.7 ]
+2018-03-30 13:31:14.368 +08:00 INFO registry/bootstrap.go:46 Microservice registered by [ SIDECAR ]
+2018-03-30 13:31:14.617 +08:00 WARN servicecenter/servicecenter.go:41 Microservice [cxf-consumer-csedemo:0.0.1:cxf-mesh] exists in registry, no need register
+2018-03-30 13:31:14.617 +08:00 WARN registry/bootstrap.go:54 Register microservice [cxf-consumer-csedemo] success
+2018-03-30 13:31:14.678 +08:00 INFO registry/bootstrap.go:83 Don't need add dependency
+2018-03-30 13:31:14.970 +08:00 INFO registry/registry.go:160 Enabled Registry
+2018-03-30 13:31:14.970 +08:00 INFO loadbalance/selector.go:26 Enable LoadBalancing
+2018-03-30 13:31:14.973 +08:00 INFO bootstrap/bootstrap.go:32 Bootstrap Huawei Enterprise Edition.
+2018-03-30 13:31:14.973 +08:00 WARN config-center/config_center.go:119 configcenter.Consumer TLS mode, verify peer: false, cipher plugin: default.
+2018-03-30 13:31:15.217 +08:00 WARN config-center/config_center.go:78 config center init success
+2018-03-30 13:31:15.217 +08:00 WARN metrics/cse_monitoring.go:63 monitor.Consumer TLS mode, verify peer: false, cipher plugin: default
+2018-03-30 13:31:15.220 +08:00 INFO metrics/metric.go:92 Started sending metric Data to Monitor Server : https://cse.cn-north-1.myhwclouds.com:443
+2018-03-30 13:31:15.223 +08:00 WARN tracing/tracer_manager.go:34 Tracing enabled. Start to init tracer map.
+2018-03-30 13:31:15.224 +08:00 INFO go-chassis/chassis.go:261 Init chassis success
+2018-03-30 13:31:15.225 +08:00 INFO archaius/archaius.go:77 config value after change policy | # Router rules and fault injection rules are moved to router.yaml
+#plugin:
+#  destinationResolver: host #用户可自定义如何将host转为换destination name，默认为host直接就是service name，
+#admin: #admin API
+#  serverUri : 127.0.0.1:40102 # 在哪个地址监听
+#  goRuntimeMetrics : true # 是否开启go 运行时监控
+2018-03-30 13:31:15.226 +08:00 INFO config-center/config_center.go:225 config value policy | # Router rules and fault injection rules are moved to router.yaml
+#plugin:
+#  destinationResolver: host #用户可自定义如何将host转为换destination name，默认为host直接就是service name，
+#admin: #admin API
+#  serverUri : 127.0.0.1:40102 # 在哪个地址监听
+#  goRuntimeMetrics : true # 是否开启go 运行时监控
+2018-03-30 13:31:15.235 +08:00 INFO archaius/archaius.go:77 config value after change plugin | # Router rules and fault injection rules are moved to router.yaml
+#plugin:
+#  destinationResolver: host #用户可自定义如何将host转为换destination name，默认为host直接就是service name，
+#admin: #admin API
+#  serverUri : 127.0.0.1:40102 # 在哪个地址监听
+#  goRuntimeMetrics : true # 是否开启go 运行时监控
+2018-03-30 13:31:15.236 +08:00 INFO config-center/config_center.go:225 config value plugin | # Router rules and fault injection rules are moved to router.yaml
+#plugin:
+#  destinationResolver: host #用户可自定义如何将host转为换destination name，默认为host直接就是service name，
+#admin: #admin API
+#  serverUri : 127.0.0.1:40102 # 在哪个地址监听
+#  goRuntimeMetrics : true # 是否开启go 运行时监控
+2018-03-30 13:31:15.241 +08:00 INFO archaius/archaius.go:77 config value after change admin | # Router rules and fault injection rules are moved to router.yaml
+#plugin:
+#  destinationResolver: host #用户可自定义如何将host转为换destination name，默认为host直接就是service name，
+#admin: #admin API
+#  serverUri : 127.0.0.1:40102 # 在哪个地址监听
+#  goRuntimeMetrics : true # 是否开启go 运行时监控
+2018-03-30 13:31:15.241 +08:00 INFO config-center/config_center.go:225 config value admin | # Router rules and fault injection rules are moved to router.yaml
+#plugin:
+#  destinationResolver: host #用户可自定义如何将host转为换destination name，默认为host直接就是service name，
+#admin: #admin API
+#  serverUri : 127.0.0.1:40102 # 在哪个地址监听
+#  goRuntimeMetrics : true # 是否开启go 运行时监控
+2018-03-30 13:31:15.244 +08:00 INFO bootstrap/bootstrap.go:45 Running as sidecar
+2018-03-30 13:31:15.244 +08:00 INFO config-center/config_center.go:225 config value proxyedProtocol | # Router rules and fault injection rules are moved to router.yaml
+#plugin:
+#  destinationResolver: host #用户可自定义如何将host转为换destination name，默认为host直接就是service name，
+#admin: #admin API
+#  serverUri : 127.0.0.1:40102 # 在哪个地址监听
+#  goRuntimeMetrics : true # 是否开启go 运行时监控
+2018-03-30 13:31:15.244 +08:00 INFO archaius/archaius.go:77 config value after change proxyedProtocol | # Router rules and fault injection rules are moved to router.yaml
+#plugin:
+#  destinationResolver: host #用户可自定义如何将host转为换destination name，默认为host直接就是service name，
+#admin: #admin API
+#  serverUri : 127.0.0.1:40102 # 在哪个地址监听
+#  goRuntimeMetrics : true # 是否开启go 运行时监控
+2018-03-30 13:31:15.254 +08:00 INFO server/server_manager.go:62 starting server http...
+2018-03-30 13:31:15.255 +08:00 ERROR server/server_manager.go:65 servers failed to start error: listen tcp4 127.0.0.1:30101: bind: Only one usage of each socket address (protocol/network address/port) is normally permitted.
+2018-03-30 13:31:15.255 +08:00 ERROR go-chassis/chassis.go:204 run chassis fail: error: Can not start [http] server,listen tcp4 127.0.0.1:30101: bind: Only one usage of each socket address (protocol/network address/port) is normally permitted.
+2018-03-30 13:31:15.256 +08:00 WARN registry/bootstrap.go:105 Start to register instances.
+2018-03-30 13:31:15.389 +08:00 ERROR servicecenter/servicecenter.go:53 RegisterMicroServiceInstance failed. error: RegisterMicroServiceInstance failed, MicroServiceId: 143628a533c511e89c8f0255ac105519, response StatusCode: 400, response body: {"errorCode":"400025","errorMessage":"Endpoint is already belong to other service","detail":"Find the same endpoints in service 6551150533cb11e891230255ac105117"}
+
+2018-03-30 13:31:15.390 +08:00 ERROR registry/bootstrap.go:144 Register instance failed, serviceID: 143628a533c511e89c8f0255ac105519. error: RegisterMicroServiceInstance failed, MicroServiceId: 143628a533c511e89c8f0255ac105519, response StatusCode: 400, response body: {"errorCode":"400025","errorMessage":"Endpoint is already belong to other service","detail":"Find the same endpoints in service 6551150533cb11e891230255ac105117"}
+
+2018-03-30 13:31:15.393 +08:00 ERROR go-chassis/chassis.go:208 register instance fail: error: RegisterMicroServiceInstance failed, MicroServiceId: 143628a533c511e89c8f0255ac105519, response StatusCode: 400, response body: {"errorCode":"400025","errorMessage":"Endpoint is already belong to other service","detail":"Find the same endpoints in service 6551150533cb11e891230255ac105117"}
+
+2018-03-30 13:31:17.446 +08:00 INFO cse-collector/csemonitor.go:67 Connection to monitoring server established successfully
+2018-03-30 13:35:02.870 +08:00 INFO archaius/archaius.go:96 Essential Configuration Path: [F:\nl-code\mesher\consumer\mesher\conf\chassis.yaml F:\nl-code\mesher\consumer\mesher\conf\microservice.yaml], Configuration Paths [F:\nl-code\mesher\consumer\mesher\conf\circuit_breaker.yaml F:\nl-code\mesher\consumer\mesher\conf\load_balancing.yaml F:\nl-code\mesher\consumer\mesher\conf\rate_limiting.yaml F:\nl-code\mesher\consumer\mesher\conf\tls.yaml F:\nl-code\mesher\consumer\mesher\conf\monitoring.yaml F:\nl-code\mesher\consumer\mesher\conf\auth.yaml F:\nl-code\mesher\consumer\mesher\conf\tracing.yaml]
+2018-03-30 13:35:02.870 +08:00 WARN config-manager/configurationmanager.go:140 empty configurtion from CommandlineSource
+2018-03-30 13:35:02.870 +08:00 WARN config-manager/configurationmanager.go:140 empty configurtion from ExternalSource
+2018-03-30 13:35:02.871 +08:00 INFO archaius/archaius.go:44 [F:\nl-code\mesher\consumer\mesher\conf\circuit_breaker.yaml] file not exist
+2018-03-30 13:35:02.871 +08:00 INFO archaius/archaius.go:44 [F:\nl-code\mesher\consumer\mesher\conf\load_balancing.yaml] file not exist
+2018-03-30 13:35:02.872 +08:00 INFO archaius/archaius.go:44 [F:\nl-code\mesher\consumer\mesher\conf\rate_limiting.yaml] file not exist
+2018-03-30 13:35:02.872 +08:00 INFO archaius/archaius.go:44 [F:\nl-code\mesher\consumer\mesher\conf\tls.yaml] file not exist
+2018-03-30 13:35:02.872 +08:00 INFO archaius/archaius.go:44 [F:\nl-code\mesher\consumer\mesher\conf\monitoring.yaml] file not exist
+2018-03-30 13:35:02.872 +08:00 INFO archaius/archaius.go:44 [F:\nl-code\mesher\consumer\mesher\conf\tracing.yaml] file not exist
+2018-03-30 13:35:02.872 +08:00 INFO config/config.go:235 archaius init success
+2018-03-30 13:35:02.873 +08:00 INFO config/router_config.go:71 Load route rules from file: F:\nl-code\mesher\consumer\mesher\conf\router.yaml
+2018-03-30 13:35:02.874 +08:00 INFO archaius/archaius.go:77 config value after change sourceTemplate | #routeRule:
+#  ShoppingCart: #这里就是请求里的host,也是sc里的service name
+#    - precedence: 2 #路由规则优先级 越大优先级越高，请求会先进入优先级最高的路由规则进行匹配
+#      route: #路由规则列表
+#      - tags:
+#          version: 0.2 #对接service center的话，如果不填就自动为0.1
+#          app: HelloWorld #对接service center的话，如果不填就自动为default
+#        weight: 80 #全重 80%到这里
+#      - tags:
+#          version: 1.2
+#          app: HelloWorld
+#        weight: 20 #全重 20%到这里
+routeRule:
+  cxf-provider-sbdemo: #这里就是请求里的host,也是sc里的service name
+    - precedence: 2 #路由规则优先级 越大优先级越高，请求会先进入优先级最高的路由规则进行匹配
+      route: #路由规则列表
+      - tags:
+          version: 0.0.1 #对接service center的话，如果不填就自动为0.1
+          app: cxf-mesh #对接service center的话，如果不填就自动为default
+2018-03-30 13:35:02.875 +08:00 WARN auth/auth.go:193 Huawei Cloud auth mode: ak/sk
+2018-03-30 13:35:02.875 +08:00 INFO go-chassis/chassis.go:97 Chain init success
+2018-03-30 13:35:02.876 +08:00 WARN registry/registry.go:141 registry.Consumer TLS mode, verify peer: false, cipher plugin: default.
+2018-03-30 13:35:02.878 +08:00 INFO go-sc-client/client.go:133 Use Service center v4
+2018-03-30 13:35:02.879 +08:00 WARN registry/registry.go:82 Enable servicecenter registry.
+2018-03-30 13:35:02.879 +08:00 WARN registry/bootstrap.go:24 Get schemas failed, microservice = cxf-consumer-csedemo. error: microservice cxf-consumer-csedemo not found
+2018-03-30 13:35:02.879 +08:00 INFO registry/bootstrap.go:45 Framework registered is [ Mesher:1.3.7 ]
+2018-03-30 13:35:02.879 +08:00 INFO registry/bootstrap.go:46 Microservice registered by [ SIDECAR ]
+2018-03-30 13:35:03.130 +08:00 WARN servicecenter/servicecenter.go:41 Microservice [cxf-consumer-csedemo:0.0.1:cxf-mesh] exists in registry, no need register
+2018-03-30 13:35:03.130 +08:00 WARN registry/bootstrap.go:54 Register microservice [cxf-consumer-csedemo] success
+2018-03-30 13:35:03.202 +08:00 INFO registry/bootstrap.go:83 Don't need add dependency
+2018-03-30 13:35:03.561 +08:00 INFO registry/registry.go:160 Enabled Registry
+2018-03-30 13:35:03.562 +08:00 INFO loadbalance/selector.go:26 Enable LoadBalancing
+2018-03-30 13:35:03.565 +08:00 INFO bootstrap/bootstrap.go:32 Bootstrap Huawei Enterprise Edition.
+2018-03-30 13:35:03.575 +08:00 WARN config-center/config_center.go:119 configcenter.Consumer TLS mode, verify peer: false, cipher plugin: default.
+2018-03-30 13:35:03.860 +08:00 WARN config-center/config_center.go:78 config center init success
+2018-03-30 13:35:03.860 +08:00 WARN metrics/cse_monitoring.go:63 monitor.Consumer TLS mode, verify peer: false, cipher plugin: default
+2018-03-30 13:35:03.863 +08:00 INFO metrics/metric.go:92 Started sending metric Data to Monitor Server : https://cse.cn-north-1.myhwclouds.com:443
+2018-03-30 13:35:03.864 +08:00 WARN tracing/tracer_manager.go:34 Tracing enabled. Start to init tracer map.
+2018-03-30 13:35:03.865 +08:00 INFO go-chassis/chassis.go:261 Init chassis success
+2018-03-30 13:35:03.866 +08:00 INFO archaius/archaius.go:77 config value after change policy | # Router rules and fault injection rules are moved to router.yaml
+#plugin:
+#  destinationResolver: host #用户可自定义如何将host转为换destination name，默认为host直接就是service name，
+#admin: #admin API
+#  serverUri : 127.0.0.1:40102 # 在哪个地址监听
+#  goRuntimeMetrics : true # 是否开启go 运行时监控
+2018-03-30 13:35:03.867 +08:00 INFO config-center/config_center.go:225 config value policy | # Router rules and fault injection rules are moved to router.yaml
+#plugin:
+#  destinationResolver: host #用户可自定义如何将host转为换destination name，默认为host直接就是service name，
+#admin: #admin API
+#  serverUri : 127.0.0.1:40102 # 在哪个地址监听
+#  goRuntimeMetrics : true # 是否开启go 运行时监控
+2018-03-30 13:35:03.872 +08:00 INFO config-center/config_center.go:225 config value plugin | # Router rules and fault injection rules are moved to router.yaml
+#plugin:
+#  destinationResolver: host #用户可自定义如何将host转为换destination name，默认为host直接就是service name，
+#admin: #admin API
+#  serverUri : 127.0.0.1:40102 # 在哪个地址监听
+#  goRuntimeMetrics : true # 是否开启go 运行时监控
+2018-03-30 13:35:03.874 +08:00 INFO archaius/archaius.go:77 config value after change plugin | # Router rules and fault injection rules are moved to router.yaml
+#plugin:
+#  destinationResolver: host #用户可自定义如何将host转为换destination name，默认为host直接就是service name，
+#admin: #admin API
+#  serverUri : 127.0.0.1:40102 # 在哪个地址监听
+#  goRuntimeMetrics : true # 是否开启go 运行时监控
+2018-03-30 13:35:03.877 +08:00 INFO config-center/config_center.go:225 config value admin | # Router rules and fault injection rules are moved to router.yaml
+#plugin:
+#  destinationResolver: host #用户可自定义如何将host转为换destination name，默认为host直接就是service name，
+#admin: #admin API
+#  serverUri : 127.0.0.1:40102 # 在哪个地址监听
+#  goRuntimeMetrics : true # 是否开启go 运行时监控
+2018-03-30 13:35:03.877 +08:00 INFO archaius/archaius.go:77 config value after change admin | # Router rules and fault injection rules are moved to router.yaml
+#plugin:
+#  destinationResolver: host #用户可自定义如何将host转为换destination name，默认为host直接就是service name，
+#admin: #admin API
+#  serverUri : 127.0.0.1:40102 # 在哪个地址监听
+#  goRuntimeMetrics : true # 是否开启go 运行时监控
+2018-03-30 13:35:03.879 +08:00 INFO archaius/archaius.go:77 config value after change proxyedProtocol | # Router rules and fault injection rules are moved to router.yaml
+#plugin:
+#  destinationResolver: host #用户可自定义如何将host转为换destination name，默认为host直接就是service name，
+#admin: #admin API
+#  serverUri : 127.0.0.1:40102 # 在哪个地址监听
+#  goRuntimeMetrics : true # 是否开启go 运行时监控
+2018-03-30 13:35:03.879 +08:00 INFO bootstrap/bootstrap.go:45 Running as sidecar
+2018-03-30 13:35:03.879 +08:00 INFO config-center/config_center.go:225 config value proxyedProtocol | # Router rules and fault injection rules are moved to router.yaml
+#plugin:
+#  destinationResolver: host #用户可自定义如何将host转为换destination name，默认为host直接就是service name，
+#admin: #admin API
+#  serverUri : 127.0.0.1:40102 # 在哪个地址监听
+#  goRuntimeMetrics : true # 是否开启go 运行时监控
+2018-03-30 13:35:03.892 +08:00 INFO server/server_manager.go:62 starting server http...
+2018-03-30 13:35:03.893 +08:00 ERROR server/server_manager.go:65 servers failed to start error: listen tcp4 127.0.0.1:30101: bind: Only one usage of each socket address (protocol/network address/port) is normally permitted.
+2018-03-30 13:35:03.894 +08:00 ERROR go-chassis/chassis.go:204 run chassis fail: error: Can not start [http] server,listen tcp4 127.0.0.1:30101: bind: Only one usage of each socket address (protocol/network address/port) is normally permitted.
+2018-03-30 13:35:03.894 +08:00 WARN registry/bootstrap.go:105 Start to register instances.
+2018-03-30 13:35:04.032 +08:00 WARN servicecenter/servicecenter.go:58 RegisterMicroServiceInstance get SelfInstancesCache failed, Mid/Sid: 143628a533c511e89c8f0255ac105519/18ea8f7b33dc11e891230255ac105117
+2018-03-30 13:35:04.032 +08:00 WARN servicecenter/servicecenter.go:62 RegisterMicroServiceInstance type asserts failed,  Mid/Sid: 143628a533c511e89c8f0255ac105519/18ea8f7b33dc11e891230255ac105117
+2018-03-30 13:35:04.034 +08:00 INFO servicecenter/servicecenter.go:74 RegisterMicroServiceInstance success, MicroServiceID: 143628a533c511e89c8f0255ac105519
+2018-03-30 13:35:04.035 +08:00 INFO registry/heartbeat.go:50 Add HB task, task:143628a533c511e89c8f0255ac105519/18ea8f7b33dc11e891230255ac105117
+2018-03-30 13:35:04.036 +08:00 INFO servicecenter/servicecenter.go:80 RegisterMicroServiceInstance success, microServiceID/instanceID: 143628a533c511e89c8f0255ac105519/18ea8f7b33dc11e891230255ac105117.
+2018-03-30 13:35:04.036 +08:00 WARN registry/bootstrap.go:167 Register instance success, serviceID/instanceID: 143628a533c511e89c8f0255ac105519/18ea8f7b33dc11e891230255ac105117.
+2018-03-30 13:35:06.061 +08:00 INFO cse-collector/csemonitor.go:67 Connection to monitoring server established successfully
+2018-03-30 14:13:19.964 +08:00 INFO archaius/archaius.go:96 Essential Configuration Path: [F:\nl-code\mesher\consumer\mesher\conf\chassis.yaml F:\nl-code\mesher\consumer\mesher\conf\microservice.yaml], Configuration Paths [F:\nl-code\mesher\consumer\mesher\conf\circuit_breaker.yaml F:\nl-code\mesher\consumer\mesher\conf\load_balancing.yaml F:\nl-code\mesher\consumer\mesher\conf\rate_limiting.yaml F:\nl-code\mesher\consumer\mesher\conf\tls.yaml F:\nl-code\mesher\consumer\mesher\conf\monitoring.yaml F:\nl-code\mesher\consumer\mesher\conf\auth.yaml F:\nl-code\mesher\consumer\mesher\conf\tracing.yaml]
+2018-03-30 14:13:19.965 +08:00 WARN config-manager/configurationmanager.go:140 empty configurtion from CommandlineSource
+2018-03-30 14:13:19.965 +08:00 WARN config-manager/configurationmanager.go:140 empty configurtion from ExternalSource
+2018-03-30 14:13:19.966 +08:00 INFO archaius/archaius.go:44 [F:\nl-code\mesher\consumer\mesher\conf\circuit_breaker.yaml] file not exist
+2018-03-30 14:13:19.966 +08:00 INFO archaius/archaius.go:44 [F:\nl-code\mesher\consumer\mesher\conf\load_balancing.yaml] file not exist
+2018-03-30 14:13:19.966 +08:00 INFO archaius/archaius.go:44 [F:\nl-code\mesher\consumer\mesher\conf\rate_limiting.yaml] file not exist
+2018-03-30 14:13:19.966 +08:00 INFO archaius/archaius.go:44 [F:\nl-code\mesher\consumer\mesher\conf\tls.yaml] file not exist
+2018-03-30 14:13:19.966 +08:00 INFO archaius/archaius.go:44 [F:\nl-code\mesher\consumer\mesher\conf\monitoring.yaml] file not exist
+2018-03-30 14:13:19.967 +08:00 INFO archaius/archaius.go:44 [F:\nl-code\mesher\consumer\mesher\conf\tracing.yaml] file not exist
+2018-03-30 14:13:19.967 +08:00 INFO config/config.go:235 archaius init success
+2018-03-30 14:13:19.967 +08:00 INFO config/router_config.go:71 Load route rules from file: F:\nl-code\mesher\consumer\mesher\conf\router.yaml
+2018-03-30 14:13:19.968 +08:00 INFO archaius/archaius.go:77 config value after change sourceTemplate | #routeRule:
+#  ShoppingCart: #这里就是请求里的host,也是sc里的service name
+#    - precedence: 2 #路由规则优先级 越大优先级越高，请求会先进入优先级最高的路由规则进行匹配
+#      route: #路由规则列表
+#      - tags:
+#          version: 0.2 #对接service center的话，如果不填就自动为0.1
+#          app: HelloWorld #对接service center的话，如果不填就自动为default
+#        weight: 80 #全重 80%到这里
+#      - tags:
+#          version: 1.2
+#          app: HelloWorld
+#        weight: 20 #全重 20%到这里
+routeRule:
+  cxf-provider-sbdemo: #这里就是请求里的host,也是sc里的service name
+    - precedence: 2 #路由规则优先级 越大优先级越高，请求会先进入优先级最高的路由规则进行匹配
+      route: #路由规则列表
+      - tags:
+          version: 0.0.1 #对接service center的话，如果不填就自动为0.1
+          app: cxf-mesh #对接service center的话，如果不填就自动为default
+2018-03-30 14:13:19.969 +08:00 WARN auth/auth.go:193 Huawei Cloud auth mode: ak/sk
+2018-03-30 14:13:19.970 +08:00 INFO go-chassis/chassis.go:97 Chain init success
+2018-03-30 14:13:19.970 +08:00 WARN registry/registry.go:141 registry.Consumer TLS mode, verify peer: false, cipher plugin: default.
+2018-03-30 14:13:19.970 +08:00 INFO go-sc-client/client.go:133 Use Service center v4
+2018-03-30 14:13:19.971 +08:00 WARN registry/registry.go:82 Enable servicecenter registry.
+2018-03-30 14:13:19.971 +08:00 WARN registry/bootstrap.go:24 Get schemas failed, microservice = cxf-consumer-csedemo. error: microservice cxf-consumer-csedemo not found
+2018-03-30 14:13:19.971 +08:00 INFO registry/bootstrap.go:45 Framework registered is [ Mesher:1.3.7 ]
+2018-03-30 14:13:19.971 +08:00 INFO registry/bootstrap.go:46 Microservice registered by [ SIDECAR ]
+2018-03-30 14:13:20.226 +08:00 WARN servicecenter/servicecenter.go:41 Microservice [cxf-consumer-csedemo:0.0.1:cxf-mesh] exists in registry, no need register
+2018-03-30 14:13:20.226 +08:00 WARN registry/bootstrap.go:54 Register microservice [cxf-consumer-csedemo] success
+2018-03-30 14:13:20.306 +08:00 INFO registry/bootstrap.go:83 Don't need add dependency
+2018-03-30 14:13:20.577 +08:00 INFO registry/registry.go:160 Enabled Registry
+2018-03-30 14:13:20.577 +08:00 INFO loadbalance/selector.go:26 Enable LoadBalancing
+2018-03-30 14:13:20.580 +08:00 INFO bootstrap/bootstrap.go:32 Bootstrap Huawei Enterprise Edition.
+2018-03-30 14:13:20.580 +08:00 WARN metrics/cse_monitoring.go:63 monitor.Consumer TLS mode, verify peer: false, cipher plugin: default
+2018-03-30 14:13:20.581 +08:00 INFO metrics/metric.go:92 Started sending metric Data to Monitor Server : https://cse.cn-north-1.myhwclouds.com:443
+2018-03-30 14:13:20.582 +08:00 WARN config-center/config_center.go:119 configcenter.Consumer TLS mode, verify peer: false, cipher plugin: default.
+2018-03-30 14:13:20.776 +08:00 WARN config-center/config_center.go:78 config center init success
+2018-03-30 14:13:20.777 +08:00 WARN tracing/tracer_manager.go:34 Tracing enabled. Start to init tracer map.
+2018-03-30 14:13:20.780 +08:00 INFO go-chassis/chassis.go:261 Init chassis success
+2018-03-30 14:13:20.782 +08:00 INFO archaius/archaius.go:77 config value after change policy | # Router rules and fault injection rules are moved to router.yaml
+#plugin:
+#  destinationResolver: host #用户可自定义如何将host转为换destination name，默认为host直接就是service name，
+#admin: #admin API
+#  serverUri : 127.0.0.1:40102 # 在哪个地址监听
+#  goRuntimeMetrics : true # 是否开启go 运行时监控
+2018-03-30 14:13:20.782 +08:00 INFO config-center/config_center.go:225 config value policy | # Router rules and fault injection rules are moved to router.yaml
+#plugin:
+#  destinationResolver: host #用户可自定义如何将host转为换destination name，默认为host直接就是service name，
+#admin: #admin API
+#  serverUri : 127.0.0.1:40102 # 在哪个地址监听
+#  goRuntimeMetrics : true # 是否开启go 运行时监控
+2018-03-30 14:13:20.785 +08:00 INFO archaius/archaius.go:77 config value after change plugin | # Router rules and fault injection rules are moved to router.yaml
+#plugin:
+#  destinationResolver: host #用户可自定义如何将host转为换destination name，默认为host直接就是service name，
+#admin: #admin API
+#  serverUri : 127.0.0.1:40102 # 在哪个地址监听
+#  goRuntimeMetrics : true # 是否开启go 运行时监控
+2018-03-30 14:13:20.785 +08:00 INFO config-center/config_center.go:225 config value plugin | # Router rules and fault injection rules are moved to router.yaml
+#plugin:
+#  destinationResolver: host #用户可自定义如何将host转为换destination name，默认为host直接就是service name，
+#admin: #admin API
+#  serverUri : 127.0.0.1:40102 # 在哪个地址监听
+#  goRuntimeMetrics : true # 是否开启go 运行时监控
+2018-03-30 14:13:20.786 +08:00 INFO archaius/archaius.go:77 config value after change admin | # Router rules and fault injection rules are moved to router.yaml
+#plugin:
+#  destinationResolver: host #用户可自定义如何将host转为换destination name，默认为host直接就是service name，
+#admin: #admin API
+#  serverUri : 127.0.0.1:40102 # 在哪个地址监听
+#  goRuntimeMetrics : true # 是否开启go 运行时监控
+2018-03-30 14:13:20.786 +08:00 INFO config-center/config_center.go:225 config value admin | # Router rules and fault injection rules are moved to router.yaml
+#plugin:
+#  destinationResolver: host #用户可自定义如何将host转为换destination name，默认为host直接就是service name，
+#admin: #admin API
+#  serverUri : 127.0.0.1:40102 # 在哪个地址监听
+#  goRuntimeMetrics : true # 是否开启go 运行时监控
+2018-03-30 14:13:20.787 +08:00 INFO archaius/archaius.go:77 config value after change proxyedProtocol | # Router rules and fault injection rules are moved to router.yaml
+#plugin:
+#  destinationResolver: host #用户可自定义如何将host转为换destination name，默认为host直接就是service name，
+#admin: #admin API
+#  serverUri : 127.0.0.1:40102 # 在哪个地址监听
+#  goRuntimeMetrics : true # 是否开启go 运行时监控
+2018-03-30 14:13:20.787 +08:00 INFO config-center/config_center.go:225 config value proxyedProtocol | # Router rules and fault injection rules are moved to router.yaml
+#plugin:
+#  destinationResolver: host #用户可自定义如何将host转为换destination name，默认为host直接就是service name，
+#admin: #admin API
+#  serverUri : 127.0.0.1:40102 # 在哪个地址监听
+#  goRuntimeMetrics : true # 是否开启go 运行时监控
+2018-03-30 14:13:20.788 +08:00 INFO bootstrap/bootstrap.go:45 Running as sidecar
+2018-03-30 14:13:20.798 +08:00 INFO server/server_manager.go:62 starting server http...
+2018-03-30 14:13:20.798 +08:00 ERROR server/server_manager.go:65 servers failed to start error: listen tcp4 127.0.0.1:30101: bind: Only one usage of each socket address (protocol/network address/port) is normally permitted.
+2018-03-30 14:13:20.799 +08:00 ERROR go-chassis/chassis.go:204 run chassis fail: error: Can not start [http] server,listen tcp4 127.0.0.1:30101: bind: Only one usage of each socket address (protocol/network address/port) is normally permitted.
+2018-03-30 14:13:20.800 +08:00 WARN registry/bootstrap.go:105 Start to register instances.
+2018-03-30 14:13:20.970 +08:00 WARN servicecenter/servicecenter.go:58 RegisterMicroServiceInstance get SelfInstancesCache failed, Mid/Sid: 143628a533c511e89c8f0255ac105519/720002d033e111e891230255ac105117
+2018-03-30 14:13:20.970 +08:00 WARN servicecenter/servicecenter.go:62 RegisterMicroServiceInstance type asserts failed,  Mid/Sid: 143628a533c511e89c8f0255ac105519/720002d033e111e891230255ac105117
+2018-03-30 14:13:20.973 +08:00 INFO servicecenter/servicecenter.go:74 RegisterMicroServiceInstance success, MicroServiceID: 143628a533c511e89c8f0255ac105519
+2018-03-30 14:13:20.974 +08:00 INFO registry/heartbeat.go:50 Add HB task, task:143628a533c511e89c8f0255ac105519/720002d033e111e891230255ac105117
+2018-03-30 14:13:20.975 +08:00 INFO servicecenter/servicecenter.go:80 RegisterMicroServiceInstance success, microServiceID/instanceID: 143628a533c511e89c8f0255ac105519/720002d033e111e891230255ac105117.
+2018-03-30 14:13:20.976 +08:00 WARN registry/bootstrap.go:167 Register instance success, serviceID/instanceID: 143628a533c511e89c8f0255ac105519/720002d033e111e891230255ac105117.
+2018-03-30 14:13:22.791 +08:00 INFO cse-collector/csemonitor.go:67 Connection to monitoring server established successfully
+2018-03-30 14:30:34.038 +08:00 INFO archaius/archaius.go:96 Essential Configuration Path: [F:\nl-code\mesher\consumer\mesher\conf\chassis.yaml F:\nl-code\mesher\consumer\mesher\conf\microservice.yaml], Configuration Paths [F:\nl-code\mesher\consumer\mesher\conf\circuit_breaker.yaml F:\nl-code\mesher\consumer\mesher\conf\load_balancing.yaml F:\nl-code\mesher\consumer\mesher\conf\rate_limiting.yaml F:\nl-code\mesher\consumer\mesher\conf\tls.yaml F:\nl-code\mesher\consumer\mesher\conf\monitoring.yaml F:\nl-code\mesher\consumer\mesher\conf\auth.yaml F:\nl-code\mesher\consumer\mesher\conf\tracing.yaml]
+2018-03-30 14:30:34.038 +08:00 WARN config-manager/configurationmanager.go:140 empty configurtion from CommandlineSource
+2018-03-30 14:30:34.039 +08:00 WARN config-manager/configurationmanager.go:140 empty configurtion from ExternalSource
+2018-03-30 14:30:34.040 +08:00 INFO archaius/archaius.go:44 [F:\nl-code\mesher\consumer\mesher\conf\circuit_breaker.yaml] file not exist
+2018-03-30 14:30:34.040 +08:00 INFO archaius/archaius.go:44 [F:\nl-code\mesher\consumer\mesher\conf\load_balancing.yaml] file not exist
+2018-03-30 14:30:34.040 +08:00 INFO archaius/archaius.go:44 [F:\nl-code\mesher\consumer\mesher\conf\rate_limiting.yaml] file not exist
+2018-03-30 14:30:34.040 +08:00 INFO archaius/archaius.go:44 [F:\nl-code\mesher\consumer\mesher\conf\tls.yaml] file not exist
+2018-03-30 14:30:34.040 +08:00 INFO archaius/archaius.go:44 [F:\nl-code\mesher\consumer\mesher\conf\monitoring.yaml] file not exist
+2018-03-30 14:30:34.041 +08:00 INFO archaius/archaius.go:44 [F:\nl-code\mesher\consumer\mesher\conf\tracing.yaml] file not exist
+2018-03-30 14:30:34.041 +08:00 INFO config/config.go:235 archaius init success
+2018-03-30 14:30:34.041 +08:00 INFO config/router_config.go:71 Load route rules from file: F:\nl-code\mesher\consumer\mesher\conf\router.yaml
+2018-03-30 14:30:34.042 +08:00 INFO archaius/archaius.go:77 config value after change sourceTemplate | #routeRule:
+#  ShoppingCart: #这里就是请求里的host,也是sc里的service name
+#    - precedence: 2 #路由规则优先级 越大优先级越高，请求会先进入优先级最高的路由规则进行匹配
+#      route: #路由规则列表
+#      - tags:
+#          version: 0.2 #对接service center的话，如果不填就自动为0.1
+#          app: HelloWorld #对接service center的话，如果不填就自动为default
+#        weight: 80 #全重 80%到这里
+#      - tags:
+#          version: 1.2
+#          app: HelloWorld
+#        weight: 20 #全重 20%到这里
+routeRule:
+  cxf-provider-sbdemo: #这里就是请求里的host,也是sc里的service name
+    - precedence: 2 #路由规则优先级 越大优先级越高，请求会先进入优先级最高的路由规则进行匹配
+      route: #路由规则列表
+      - tags:
+          version: 0.0.1 #对接service center的话，如果不填就自动为0.1
+          app: cxf-mesh #对接service center的话，如果不填就自动为default
+2018-03-30 14:30:34.044 +08:00 WARN auth/auth.go:193 Huawei Cloud auth mode: ak/sk
+2018-03-30 14:30:34.044 +08:00 INFO go-chassis/chassis.go:97 Chain init success
+2018-03-30 14:30:34.044 +08:00 WARN registry/registry.go:141 registry.Consumer TLS mode, verify peer: false, cipher plugin: default.
+2018-03-30 14:30:34.044 +08:00 INFO go-sc-client/client.go:133 Use Service center v4
+2018-03-30 14:30:34.048 +08:00 WARN registry/registry.go:82 Enable servicecenter registry.
+2018-03-30 14:30:34.048 +08:00 WARN registry/bootstrap.go:24 Get schemas failed, microservice = cxf-consumer-csedemo. error: microservice cxf-consumer-csedemo not found
+2018-03-30 14:30:34.048 +08:00 INFO registry/bootstrap.go:45 Framework registered is [ Mesher:1.3.7 ]
+2018-03-30 14:30:34.049 +08:00 INFO registry/bootstrap.go:46 Microservice registered by [ SIDECAR ]
+2018-03-30 14:30:34.307 +08:00 WARN servicecenter/servicecenter.go:41 Microservice [cxf-consumer-csedemo:0.0.1:cxf-mesh] exists in registry, no need register
+2018-03-30 14:30:34.307 +08:00 WARN registry/bootstrap.go:54 Register microservice [cxf-consumer-csedemo] success
+2018-03-30 14:30:34.378 +08:00 INFO registry/bootstrap.go:83 Don't need add dependency
+2018-03-30 14:30:34.643 +08:00 INFO registry/registry.go:160 Enabled Registry
+2018-03-30 14:30:34.643 +08:00 INFO loadbalance/selector.go:26 Enable LoadBalancing
+2018-03-30 14:30:34.644 +08:00 INFO bootstrap/bootstrap.go:32 Bootstrap Huawei Enterprise Edition.
+2018-03-30 14:30:34.645 +08:00 WARN config-center/config_center.go:119 configcenter.Consumer TLS mode, verify peer: false, cipher plugin: default.
+2018-03-30 14:30:34.850 +08:00 WARN config-center/config_center.go:78 config center init success
+2018-03-30 14:30:34.851 +08:00 WARN metrics/cse_monitoring.go:63 monitor.Consumer TLS mode, verify peer: false, cipher plugin: default
+2018-03-30 14:30:34.853 +08:00 INFO metrics/metric.go:92 Started sending metric Data to Monitor Server : https://cse.cn-north-1.myhwclouds.com:443
+2018-03-30 14:30:34.854 +08:00 WARN tracing/tracer_manager.go:34 Tracing enabled. Start to init tracer map.
+2018-03-30 14:30:34.855 +08:00 INFO go-chassis/chassis.go:261 Init chassis success
+2018-03-30 14:30:34.857 +08:00 INFO archaius/archaius.go:77 config value after change policy | # Router rules and fault injection rules are moved to router.yaml
+#plugin:
+#  destinationResolver: host #用户可自定义如何将host转为换destination name，默认为host直接就是service name，
+#admin: #admin API
+#  serverUri : 127.0.0.1:40102 # 在哪个地址监听
+#  goRuntimeMetrics : true # 是否开启go 运行时监控
+2018-03-30 14:30:34.857 +08:00 INFO config-center/config_center.go:225 config value policy | # Router rules and fault injection rules are moved to router.yaml
+#plugin:
+#  destinationResolver: host #用户可自定义如何将host转为换destination name，默认为host直接就是service name，
+#admin: #admin API
+#  serverUri : 127.0.0.1:40102 # 在哪个地址监听
+#  goRuntimeMetrics : true # 是否开启go 运行时监控
+2018-03-30 14:30:34.859 +08:00 INFO archaius/archaius.go:77 config value after change plugin | # Router rules and fault injection rules are moved to router.yaml
+#plugin:
+#  destinationResolver: host #用户可自定义如何将host转为换destination name，默认为host直接就是service name，
+#admin: #admin API
+#  serverUri : 127.0.0.1:40102 # 在哪个地址监听
+#  goRuntimeMetrics : true # 是否开启go 运行时监控
+2018-03-30 14:30:34.859 +08:00 INFO config-center/config_center.go:225 config value plugin | # Router rules and fault injection rules are moved to router.yaml
+#plugin:
+#  destinationResolver: host #用户可自定义如何将host转为换destination name，默认为host直接就是service name，
+#admin: #admin API
+#  serverUri : 127.0.0.1:40102 # 在哪个地址监听
+#  goRuntimeMetrics : true # 是否开启go 运行时监控
+2018-03-30 14:30:34.863 +08:00 INFO config-center/config_center.go:225 config value admin | # Router rules and fault injection rules are moved to router.yaml
+#plugin:
+#  destinationResolver: host #用户可自定义如何将host转为换destination name，默认为host直接就是service name，
+#admin: #admin API
+#  serverUri : 127.0.0.1:40102 # 在哪个地址监听
+#  goRuntimeMetrics : true # 是否开启go 运行时监控
+2018-03-30 14:30:34.863 +08:00 INFO archaius/archaius.go:77 config value after change admin | # Router rules and fault injection rules are moved to router.yaml
+#plugin:
+#  destinationResolver: host #用户可自定义如何将host转为换destination name，默认为host直接就是service name，
+#admin: #admin API
+#  serverUri : 127.0.0.1:40102 # 在哪个地址监听
+#  goRuntimeMetrics : true # 是否开启go 运行时监控
+2018-03-30 14:30:34.870 +08:00 INFO archaius/archaius.go:77 config value after change proxyedProtocol | # Router rules and fault injection rules are moved to router.yaml
+#plugin:
+#  destinationResolver: host #用户可自定义如何将host转为换destination name，默认为host直接就是service name，
+#admin: #admin API
+#  serverUri : 127.0.0.1:40102 # 在哪个地址监听
+#  goRuntimeMetrics : true # 是否开启go 运行时监控
+2018-03-30 14:30:34.870 +08:00 INFO config-center/config_center.go:225 config value proxyedProtocol | # Router rules and fault injection rules are moved to router.yaml
+#plugin:
+#  destinationResolver: host #用户可自定义如何将host转为换destination name，默认为host直接就是service name，
+#admin: #admin API
+#  serverUri : 127.0.0.1:40102 # 在哪个地址监听
+#  goRuntimeMetrics : true # 是否开启go 运行时监控
+2018-03-30 14:30:34.870 +08:00 INFO bootstrap/bootstrap.go:45 Running as sidecar
+2018-03-30 14:30:34.877 +08:00 INFO server/server_manager.go:62 starting server http...
+2018-03-30 14:30:34.878 +08:00 ERROR server/server_manager.go:65 servers failed to start error: listen tcp4 127.0.0.1:30101: bind: Only one usage of each socket address (protocol/network address/port) is normally permitted.
+2018-03-30 14:30:34.879 +08:00 ERROR go-chassis/chassis.go:204 run chassis fail: error: Can not start [http] server,listen tcp4 127.0.0.1:30101: bind: Only one usage of each socket address (protocol/network address/port) is normally permitted.
+2018-03-30 14:30:34.880 +08:00 WARN registry/bootstrap.go:105 Start to register instances.
+2018-03-30 14:30:35.048 +08:00 WARN servicecenter/servicecenter.go:58 RegisterMicroServiceInstance get SelfInstancesCache failed, Mid/Sid: 143628a533c511e89c8f0255ac105519/da5cd43033e311e89c8f0255ac105519
+2018-03-30 14:30:35.048 +08:00 WARN servicecenter/servicecenter.go:62 RegisterMicroServiceInstance type asserts failed,  Mid/Sid: 143628a533c511e89c8f0255ac105519/da5cd43033e311e89c8f0255ac105519
+2018-03-30 14:30:35.050 +08:00 INFO servicecenter/servicecenter.go:74 RegisterMicroServiceInstance success, MicroServiceID: 143628a533c511e89c8f0255ac105519
+2018-03-30 14:30:35.051 +08:00 INFO registry/heartbeat.go:50 Add HB task, task:143628a533c511e89c8f0255ac105519/da5cd43033e311e89c8f0255ac105519
+2018-03-30 14:30:35.052 +08:00 INFO servicecenter/servicecenter.go:80 RegisterMicroServiceInstance success, microServiceID/instanceID: 143628a533c511e89c8f0255ac105519/da5cd43033e311e89c8f0255ac105519.
+2018-03-30 14:30:35.053 +08:00 WARN registry/bootstrap.go:167 Register instance success, serviceID/instanceID: 143628a533c511e89c8f0255ac105519/da5cd43033e311e89c8f0255ac105519.
+2018-03-30 14:30:37.060 +08:00 INFO cse-collector/csemonitor.go:67 Connection to monitoring server established successfully
+2018-03-30 17:00:04.725 +08:00 ERROR servicecenter/cache.go:179 get Providers failed, sid = 143628a533c511e89c8f0255ac105519 error: Get Providers failed, MicroServiceid: 143628a533c511e89c8f0255ac105519, response StatusCode: 400, response body: {"errorCode":"400012","errorMessage":"Micro-service does not exist","detail":"Consumer does not exist"}
+
+2018-03-30 17:00:04.725 +08:00 ERROR servicecenter/cache.go:73 AutoUpdateMicroserviceInstance failed. error: Get Providers failed, MicroServiceid: 143628a533c511e89c8f0255ac105519, response StatusCode: 400, response body: {"errorCode":"400012","errorMessage":"Micro-service does not exist","detail":"Consumer does not exist"}
+
+2018-03-30 17:00:19.704 +08:00 ERROR servicecenter/servicecenter.go:136 Heartbeat failed, microServiceID/instanceID: 143628a533c511e89c8f0255ac105519/da5cd43033e311e89c8f0255ac105519. error: Common exception(result: 400 {"errorCode":"400017","errorMessage":"Instance does not exist","detail":"Service instance does not exist."}
+)
+2018-03-30 17:00:19.704 +08:00 ERROR registry/heartbeat.go:95 Run Heartbeat fail error: Common exception(result: 400 {"errorCode":"400017","errorMessage":"Instance does not exist","detail":"Service instance does not exist."}
+)
+2018-03-30 17:00:29.706 +08:00 INFO registry/heartbeat.go:125 Try to re-register self
+2018-03-30 17:00:29.836 +08:00 ERROR servicecenter/servicecenter.go:227 GetMicroService failed error: GetMicroService failed, MicroServiceId: 143628a533c511e89c8f0255ac105519, response StatusCode: 400, response body: {"errorCode":"400012","errorMessage":"Micro-service does not exist","detail":"service does not exist."}
+
+, microserviceURL: https://cse.cn-north-1.myhwclouds.com:443/v4/default/registry/microservices/143628a533c511e89c8f0255ac105519
+2018-03-30 17:00:29.937 +08:00 WARN registry/bootstrap.go:24 Get schemas failed, microservice = cxf-consumer-csedemo. error: microservice cxf-consumer-csedemo not found
+2018-03-30 17:00:29.937 +08:00 INFO registry/bootstrap.go:45 Framework registered is [ Mesher:1.3.7 ]
+2018-03-30 17:00:29.939 +08:00 INFO registry/bootstrap.go:46 Microservice registered by [ SIDECAR ]
+2018-03-30 17:00:30.005 +08:00 WARN servicecenter/servicecenter.go:34 Microservice [cxf-consumer-csedemo:0.0.1:cxf-mesh] not exists in registry, register it
+2018-03-30 17:00:30.073 +08:00 WARN registry/bootstrap.go:54 Register microservice [cxf-consumer-csedemo] success
+2018-03-30 17:00:30.156 +08:00 INFO registry/bootstrap.go:83 Don't need add dependency
+2018-03-30 17:00:30.157 +08:00 WARN registry/bootstrap.go:105 Start to register instances.
+2018-03-30 17:00:30.481 +08:00 WARN servicecenter/servicecenter.go:58 RegisterMicroServiceInstance get SelfInstancesCache failed, Mid/Sid: cbdc3df333f811e891230255ac105117/cc1683d533f811e89c8f0255ac105519
+2018-03-30 17:00:30.481 +08:00 WARN servicecenter/servicecenter.go:62 RegisterMicroServiceInstance type asserts failed,  Mid/Sid: cbdc3df333f811e891230255ac105117/cc1683d533f811e89c8f0255ac105519
+2018-03-30 17:00:30.482 +08:00 INFO servicecenter/servicecenter.go:74 RegisterMicroServiceInstance success, MicroServiceID: cbdc3df333f811e891230255ac105117
+2018-03-30 17:00:30.483 +08:00 INFO registry/heartbeat.go:50 Add HB task, task:cbdc3df333f811e891230255ac105117/cc1683d533f811e89c8f0255ac105519
+2018-03-30 17:00:30.483 +08:00 INFO servicecenter/servicecenter.go:80 RegisterMicroServiceInstance success, microServiceID/instanceID: cbdc3df333f811e891230255ac105117/cc1683d533f811e89c8f0255ac105519.
+2018-03-30 17:00:30.483 +08:00 WARN registry/bootstrap.go:167 Register instance success, serviceID/instanceID: cbdc3df333f811e891230255ac105117/cc1683d533f811e89c8f0255ac105519.
+2018-03-30 17:00:30.483 +08:00 WARN registry/heartbeat.go:139 Re-register self success
+2018-04-02 09:04:14.510 +08:00 INFO archaius/archaius.go:96 Essential Configuration Path: [F:\nl-code\mesher\consumer\mesher\conf\chassis.yaml F:\nl-code\mesher\consumer\mesher\conf\microservice.yaml], Configuration Paths [F:\nl-code\mesher\consumer\mesher\conf\circuit_breaker.yaml F:\nl-code\mesher\consumer\mesher\conf\load_balancing.yaml F:\nl-code\mesher\consumer\mesher\conf\rate_limiting.yaml F:\nl-code\mesher\consumer\mesher\conf\tls.yaml F:\nl-code\mesher\consumer\mesher\conf\monitoring.yaml F:\nl-code\mesher\consumer\mesher\conf\auth.yaml F:\nl-code\mesher\consumer\mesher\conf\tracing.yaml]
+2018-04-02 09:04:14.538 +08:00 WARN config-manager/configurationmanager.go:140 empty configurtion from CommandlineSource
+2018-04-02 09:04:14.539 +08:00 WARN config-manager/configurationmanager.go:140 empty configurtion from ExternalSource
+2018-04-02 09:04:14.574 +08:00 INFO archaius/archaius.go:44 [F:\nl-code\mesher\consumer\mesher\conf\circuit_breaker.yaml] file not exist
+2018-04-02 09:04:14.574 +08:00 INFO archaius/archaius.go:44 [F:\nl-code\mesher\consumer\mesher\conf\load_balancing.yaml] file not exist
+2018-04-02 09:04:14.574 +08:00 INFO archaius/archaius.go:44 [F:\nl-code\mesher\consumer\mesher\conf\rate_limiting.yaml] file not exist
+2018-04-02 09:04:14.575 +08:00 INFO archaius/archaius.go:44 [F:\nl-code\mesher\consumer\mesher\conf\tls.yaml] file not exist
+2018-04-02 09:04:14.575 +08:00 INFO archaius/archaius.go:44 [F:\nl-code\mesher\consumer\mesher\conf\monitoring.yaml] file not exist
+2018-04-02 09:04:14.575 +08:00 INFO archaius/archaius.go:44 [F:\nl-code\mesher\consumer\mesher\conf\tracing.yaml] file not exist
+2018-04-02 09:04:14.576 +08:00 INFO config/config.go:235 archaius init success
+2018-04-02 09:04:14.576 +08:00 INFO config/router_config.go:71 Load route rules from file: F:\nl-code\mesher\consumer\mesher\conf\router.yaml
+2018-04-02 09:04:14.578 +08:00 INFO archaius/archaius.go:77 config value after change sourceTemplate | #routeRule:
+#  ShoppingCart: #这里就是请求里的host,也是sc里的service name
+#    - precedence: 2 #路由规则优先级 越大优先级越高，请求会先进入优先级最高的路由规则进行匹配
+#      route: #路由规则列表
+#      - tags:
+#          version: 0.2 #对接service center的话，如果不填就自动为0.1
+#          app: HelloWorld #对接service center的话，如果不填就自动为default
+#        weight: 80 #全重 80%到这里
+#      - tags:
+#          version: 1.2
+#          app: HelloWorld
+#        weight: 20 #全重 20%到这里
+routeRule:
+  cxf-provider-sbdemo: #这里就是请求里的host,也是sc里的service name
+    - precedence: 2 #路由规则优先级 越大优先级越高，请求会先进入优先级最高的路由规则进行匹配
+      route: #路由规则列表
+      - tags:
+          version: 0.0.1 #对接service center的话，如果不填就自动为0.1
+          app: cxf-mesh #对接service center的话，如果不填就自动为default
+2018-04-02 09:04:14.628 +08:00 WARN auth/auth.go:193 Huawei Cloud auth mode: ak/sk
+2018-04-02 09:04:14.628 +08:00 INFO go-chassis/chassis.go:97 Chain init success
+2018-04-02 09:04:14.629 +08:00 WARN registry/registry.go:141 registry.Consumer TLS mode, verify peer: false, cipher plugin: default.
+2018-04-02 09:04:14.629 +08:00 INFO go-sc-client/client.go:133 Use Service center v4
+2018-04-02 09:04:14.629 +08:00 WARN registry/registry.go:82 Enable servicecenter registry.
+2018-04-02 09:04:14.630 +08:00 WARN registry/bootstrap.go:24 Get schemas failed, microservice = cxf-consumer-csedemo. error: microservice cxf-consumer-csedemo not found
+2018-04-02 09:04:14.630 +08:00 INFO registry/bootstrap.go:45 Framework registered is [ Mesher:1.3.7 ]
+2018-04-02 09:04:14.630 +08:00 INFO registry/bootstrap.go:46 Microservice registered by [ SIDECAR ]
+2018-04-02 09:04:14.821 +08:00 WARN servicecenter/servicecenter.go:34 Microservice [cxf-consumer-csedemo:0.0.1:cxf-mesh] not exists in registry, register it
+2018-04-02 09:04:14.882 +08:00 WARN registry/bootstrap.go:54 Register microservice [cxf-consumer-csedemo] success
+2018-04-02 09:04:14.942 +08:00 INFO registry/bootstrap.go:83 Don't need add dependency
+2018-04-02 09:04:15.194 +08:00 INFO registry/registry.go:160 Enabled Registry
+2018-04-02 09:04:15.194 +08:00 INFO loadbalance/selector.go:26 Enable LoadBalancing
+2018-04-02 09:04:15.196 +08:00 INFO bootstrap/bootstrap.go:32 Bootstrap Huawei Enterprise Edition.
+2018-04-02 09:04:15.196 +08:00 WARN config-center/config_center.go:119 configcenter.Consumer TLS mode, verify peer: false, cipher plugin: default.
+2018-04-02 09:04:15.411 +08:00 WARN config-center/config_center.go:78 config center init success
+2018-04-02 09:04:15.412 +08:00 WARN metrics/cse_monitoring.go:63 monitor.Consumer TLS mode, verify peer: false, cipher plugin: default
+2018-04-02 09:04:15.413 +08:00 INFO metrics/metric.go:92 Started sending metric Data to Monitor Server : https://cse.cn-north-1.myhwclouds.com:443
+2018-04-02 09:04:15.413 +08:00 WARN tracing/tracer_manager.go:34 Tracing enabled. Start to init tracer map.
+2018-04-02 09:04:15.414 +08:00 INFO go-chassis/chassis.go:261 Init chassis success
+2018-04-02 09:04:15.415 +08:00 INFO archaius/archaius.go:77 config value after change policy | # Router rules and fault injection rules are moved to router.yaml
+#plugin:
+#  destinationResolver: host #用户可自定义如何将host转为换destination name，默认为host直接就是service name，
+#admin: #admin API
+#  serverUri : 127.0.0.1:40102 # 在哪个地址监听
+#  goRuntimeMetrics : true # 是否开启go 运行时监控
+2018-04-02 09:04:15.415 +08:00 INFO config-center/config_center.go:225 config value policy | # Router rules and fault injection rules are moved to router.yaml
+#plugin:
+#  destinationResolver: host #用户可自定义如何将host转为换destination name，默认为host直接就是service name，
+#admin: #admin API
+#  serverUri : 127.0.0.1:40102 # 在哪个地址监听
+#  goRuntimeMetrics : true # 是否开启go 运行时监控
+2018-04-02 09:04:15.415 +08:00 INFO archaius/archaius.go:77 config value after change plugin | # Router rules and fault injection rules are moved to router.yaml
+#plugin:
+#  destinationResolver: host #用户可自定义如何将host转为换destination name，默认为host直接就是service name，
+#admin: #admin API
+#  serverUri : 127.0.0.1:40102 # 在哪个地址监听
+#  goRuntimeMetrics : true # 是否开启go 运行时监控
+2018-04-02 09:04:15.415 +08:00 INFO config-center/config_center.go:225 config value plugin | # Router rules and fault injection rules are moved to router.yaml
+#plugin:
+#  destinationResolver: host #用户可自定义如何将host转为换destination name，默认为host直接就是service name，
+#admin: #admin API
+#  serverUri : 127.0.0.1:40102 # 在哪个地址监听
+#  goRuntimeMetrics : true # 是否开启go 运行时监控
+2018-04-02 09:04:15.416 +08:00 INFO archaius/archaius.go:77 config value after change admin | # Router rules and fault injection rules are moved to router.yaml
+#plugin:
+#  destinationResolver: host #用户可自定义如何将host转为换destination name，默认为host直接就是service name，
+#admin: #admin API
+#  serverUri : 127.0.0.1:40102 # 在哪个地址监听
+#  goRuntimeMetrics : true # 是否开启go 运行时监控
+2018-04-02 09:04:15.416 +08:00 INFO config-center/config_center.go:225 config value admin | # Router rules and fault injection rules are moved to router.yaml
+#plugin:
+#  destinationResolver: host #用户可自定义如何将host转为换destination name，默认为host直接就是service name，
+#admin: #admin API
+#  serverUri : 127.0.0.1:40102 # 在哪个地址监听
+#  goRuntimeMetrics : true # 是否开启go 运行时监控
+2018-04-02 09:04:15.417 +08:00 INFO archaius/archaius.go:77 config value after change proxyedProtocol | # Router rules and fault injection rules are moved to router.yaml
+#plugin:
+#  destinationResolver: host #用户可自定义如何将host转为换destination name，默认为host直接就是service name，
+#admin: #admin API
+#  serverUri : 127.0.0.1:40102 # 在哪个地址监听
+#  goRuntimeMetrics : true # 是否开启go 运行时监控
+2018-04-02 09:04:15.417 +08:00 INFO config-center/config_center.go:225 config value proxyedProtocol | # Router rules and fault injection rules are moved to router.yaml
+#plugin:
+#  destinationResolver: host #用户可自定义如何将host转为换destination name，默认为host直接就是service name，
+#admin: #admin API
+#  serverUri : 127.0.0.1:40102 # 在哪个地址监听
+#  goRuntimeMetrics : true # 是否开启go 运行时监控
+2018-04-02 09:04:15.417 +08:00 INFO bootstrap/bootstrap.go:45 Running as sidecar
+2018-04-02 09:04:15.423 +08:00 INFO server/server_manager.go:62 starting server http...
+2018-04-02 09:04:15.424 +08:00 ERROR server/server_manager.go:65 servers failed to start error: listen tcp4 127.0.0.1:30101: bind: Only one usage of each socket address (protocol/network address/port) is normally permitted.
+2018-04-02 09:04:15.424 +08:00 ERROR go-chassis/chassis.go:204 run chassis fail: error: Can not start [http] server,listen tcp4 127.0.0.1:30101: bind: Only one usage of each socket address (protocol/network address/port) is normally permitted.
+2018-04-02 09:04:15.424 +08:00 WARN registry/bootstrap.go:105 Start to register instances.
+2018-04-02 09:04:15.552 +08:00 WARN servicecenter/servicecenter.go:58 RegisterMicroServiceInstance get SelfInstancesCache failed, Mid/Sid: c3de3e1c361111e89c8f0255ac105519/c443394c361111e891230255ac105117
+2018-04-02 09:04:15.552 +08:00 WARN servicecenter/servicecenter.go:62 RegisterMicroServiceInstance type asserts failed,  Mid/Sid: c3de3e1c361111e89c8f0255ac105519/c443394c361111e891230255ac105117
+2018-04-02 09:04:15.556 +08:00 INFO servicecenter/servicecenter.go:74 RegisterMicroServiceInstance success, MicroServiceID: c3de3e1c361111e89c8f0255ac105519
+2018-04-02 09:04:15.556 +08:00 INFO registry/heartbeat.go:50 Add HB task, task:c3de3e1c361111e89c8f0255ac105519/c443394c361111e891230255ac105117
+2018-04-02 09:04:15.557 +08:00 INFO servicecenter/servicecenter.go:80 RegisterMicroServiceInstance success, microServiceID/instanceID: c3de3e1c361111e89c8f0255ac105519/c443394c361111e891230255ac105117.
+2018-04-02 09:04:15.557 +08:00 WARN registry/bootstrap.go:167 Register instance success, serviceID/instanceID: c3de3e1c361111e89c8f0255ac105519/c443394c361111e891230255ac105117.
+2018-04-02 09:04:17.616 +08:00 INFO cse-collector/csemonitor.go:67 Connection to monitoring server established successfully
+2018-04-02 10:01:30.254 +08:00 WARN cse-collector/csemonitor.go:61 Unable to connect to monitoring server error: Post https://cse.cn-north-1.myhwclouds.com:443/v2/default/csemonitor/metric?service=cxf-consumer-csedemo: dial tcp 43.254.0.22:443: connectex: An established connection was aborted by the software in your host machine.
+2018-04-02 10:01:31.656 +08:00 INFO cse-collector/csemonitor.go:72 Connection recovered successfully to monitoring server
+2018-04-02 10:03:26.364 +08:00 INFO archaius/archaius.go:96 Essential Configuration Path: [F:\nl-code\mesher\consumer\mesher\conf\chassis.yaml F:\nl-code\mesher\consumer\mesher\conf\microservice.yaml], Configuration Paths [F:\nl-code\mesher\consumer\mesher\conf\circuit_breaker.yaml F:\nl-code\mesher\consumer\mesher\conf\load_balancing.yaml F:\nl-code\mesher\consumer\mesher\conf\rate_limiting.yaml F:\nl-code\mesher\consumer\mesher\conf\tls.yaml F:\nl-code\mesher\consumer\mesher\conf\monitoring.yaml F:\nl-code\mesher\consumer\mesher\conf\auth.yaml F:\nl-code\mesher\consumer\mesher\conf\tracing.yaml]
+2018-04-02 10:03:26.364 +08:00 WARN config-manager/configurationmanager.go:140 empty configurtion from CommandlineSource
+2018-04-02 10:03:26.365 +08:00 WARN config-manager/configurationmanager.go:140 empty configurtion from ExternalSource
+2018-04-02 10:03:26.366 +08:00 INFO archaius/archaius.go:44 [F:\nl-code\mesher\consumer\mesher\conf\circuit_breaker.yaml] file not exist
+2018-04-02 10:03:26.366 +08:00 INFO archaius/archaius.go:44 [F:\nl-code\mesher\consumer\mesher\conf\load_balancing.yaml] file not exist
+2018-04-02 10:03:26.366 +08:00 INFO archaius/archaius.go:44 [F:\nl-code\mesher\consumer\mesher\conf\rate_limiting.yaml] file not exist
+2018-04-02 10:03:26.366 +08:00 INFO archaius/archaius.go:44 [F:\nl-code\mesher\consumer\mesher\conf\tls.yaml] file not exist
+2018-04-02 10:03:26.367 +08:00 INFO archaius/archaius.go:44 [F:\nl-code\mesher\consumer\mesher\conf\monitoring.yaml] file not exist
+2018-04-02 10:03:26.367 +08:00 INFO archaius/archaius.go:44 [F:\nl-code\mesher\consumer\mesher\conf\tracing.yaml] file not exist
+2018-04-02 10:03:26.367 +08:00 INFO config/config.go:235 archaius init success
+2018-04-02 10:03:26.369 +08:00 INFO config/router_config.go:71 Load route rules from file: F:\nl-code\mesher\consumer\mesher\conf\router.yaml
+2018-04-02 10:03:26.370 +08:00 INFO archaius/archaius.go:77 config value after change sourceTemplate | #routeRule:
+#  ShoppingCart: #这里就是请求里的host,也是sc里的service name
+#    - precedence: 2 #路由规则优先级 越大优先级越高，请求会先进入优先级最高的路由规则进行匹配
+#      route: #路由规则列表
+#      - tags:
+#          version: 0.2 #对接service center的话，如果不填就自动为0.1
+#          app: HelloWorld #对接service center的话，如果不填就自动为default
+#        weight: 80 #全重 80%到这里
+#      - tags:
+#          version: 1.2
+#          app: HelloWorld
+#        weight: 20 #全重 20%到这里
+routeRule:
+  cxf-provider-sbdemo: #这里就是请求里的host,也是sc里的service name
+    - precedence: 2 #路由规则优先级 越大优先级越高，请求会先进入优先级最高的路由规则进行匹配
+      route: #路由规则列表
+      - tags:
+          version: 0.0.1 #对接service center的话，如果不填就自动为0.1
+          app: cxf-mesh #对接service center的话，如果不填就自动为default
+2018-04-02 10:03:26.371 +08:00 WARN auth/auth.go:193 Huawei Cloud auth mode: ak/sk
+2018-04-02 10:03:26.372 +08:00 INFO go-chassis/chassis.go:97 Chain init success
+2018-04-02 10:03:26.373 +08:00 WARN registry/registry.go:141 registry.Consumer TLS mode, verify peer: false, cipher plugin: default.
+2018-04-02 10:03:26.373 +08:00 INFO go-sc-client/client.go:133 Use Service center v4
+2018-04-02 10:03:26.373 +08:00 WARN registry/registry.go:82 Enable servicecenter registry.
+2018-04-02 10:03:26.373 +08:00 WARN registry/bootstrap.go:24 Get schemas failed, microservice = cxf-consumer-csedemo. error: microservice cxf-consumer-csedemo not found
+2018-04-02 10:03:26.374 +08:00 INFO registry/bootstrap.go:45 Framework registered is [ Mesher:1.3.7 ]
+2018-04-02 10:03:26.374 +08:00 INFO registry/bootstrap.go:46 Microservice registered by [ SIDECAR ]
+2018-04-02 10:03:26.630 +08:00 WARN servicecenter/servicecenter.go:41 Microservice [cxf-consumer-csedemo:0.0.1:cxf-mesh] exists in registry, no need register
+2018-04-02 10:03:26.630 +08:00 WARN registry/bootstrap.go:54 Register microservice [cxf-consumer-csedemo] success
+2018-04-02 10:03:26.701 +08:00 INFO registry/bootstrap.go:83 Don't need add dependency
+2018-04-02 10:03:26.989 +08:00 INFO registry/registry.go:160 Enabled Registry
+2018-04-02 10:03:26.989 +08:00 INFO loadbalance/selector.go:26 Enable LoadBalancing
+2018-04-02 10:03:26.995 +08:00 INFO bootstrap/bootstrap.go:32 Bootstrap Huawei Enterprise Edition.
+2018-04-02 10:03:26.995 +08:00 WARN config-center/config_center.go:119 configcenter.Consumer TLS mode, verify peer: false, cipher plugin: default.
+2018-04-02 10:03:27.229 +08:00 WARN config-center/config_center.go:78 config center init success
+2018-04-02 10:03:27.230 +08:00 WARN metrics/cse_monitoring.go:63 monitor.Consumer TLS mode, verify peer: false, cipher plugin: default
+2018-04-02 10:03:27.234 +08:00 INFO metrics/metric.go:92 Started sending metric Data to Monitor Server : https://cse.cn-north-1.myhwclouds.com:443
+2018-04-02 10:03:27.235 +08:00 WARN tracing/tracer_manager.go:34 Tracing enabled. Start to init tracer map.
+2018-04-02 10:03:27.236 +08:00 INFO go-chassis/chassis.go:261 Init chassis success
+2018-04-02 10:03:27.238 +08:00 INFO archaius/archaius.go:77 config value after change policy | # Router rules and fault injection rules are moved to router.yaml
+#plugin:
+#  destinationResolver: host #用户可自定义如何将host转为换destination name，默认为host直接就是service name，
+#admin: #admin API
+#  serverUri : 127.0.0.1:40102 # 在哪个地址监听
+#  goRuntimeMetrics : true # 是否开启go 运行时监控
+2018-04-02 10:03:27.238 +08:00 INFO config-center/config_center.go:225 config value policy | # Router rules and fault injection rules are moved to router.yaml
+#plugin:
+#  destinationResolver: host #用户可自定义如何将host转为换destination name，默认为host直接就是service name，
+#admin: #admin API
+#  serverUri : 127.0.0.1:40102 # 在哪个地址监听
+#  goRuntimeMetrics : true # 是否开启go 运行时监控
+2018-04-02 10:03:27.239 +08:00 INFO archaius/archaius.go:77 config value after change plugin | # Router rules and fault injection rules are moved to router.yaml
+#plugin:
+#  destinationResolver: host #用户可自定义如何将host转为换destination name，默认为host直接就是service name，
+#admin: #admin API
+#  serverUri : 127.0.0.1:40102 # 在哪个地址监听
+#  goRuntimeMetrics : true # 是否开启go 运行时监控
+2018-04-02 10:03:27.239 +08:00 INFO config-center/config_center.go:225 config value plugin | # Router rules and fault injection rules are moved to router.yaml
+#plugin:
+#  destinationResolver: host #用户可自定义如何将host转为换destination name，默认为host直接就是service name，
+#admin: #admin API
+#  serverUri : 127.0.0.1:40102 # 在哪个地址监听
+#  goRuntimeMetrics : true # 是否开启go 运行时监控
+2018-04-02 10:03:27.244 +08:00 INFO archaius/archaius.go:77 config value after change admin | # Router rules and fault injection rules are moved to router.yaml
+#plugin:
+#  destinationResolver: host #用户可自定义如何将host转为换destination name，默认为host直接就是service name，
+#admin: #admin API
+#  serverUri : 127.0.0.1:40102 # 在哪个地址监听
+#  goRuntimeMetrics : true # 是否开启go 运行时监控
+2018-04-02 10:03:27.244 +08:00 INFO config-center/config_center.go:225 config value admin | # Router rules and fault injection rules are moved to router.yaml
+#plugin:
+#  destinationResolver: host #用户可自定义如何将host转为换destination name，默认为host直接就是service name，
+#admin: #admin API
+#  serverUri : 127.0.0.1:40102 # 在哪个地址监听
+#  goRuntimeMetrics : true # 是否开启go 运行时监控
+2018-04-02 10:03:27.246 +08:00 INFO archaius/archaius.go:77 config value after change proxyedProtocol | # Router rules and fault injection rules are moved to router.yaml
+#plugin:
+#  destinationResolver: host #用户可自定义如何将host转为换destination name，默认为host直接就是service name，
+#admin: #admin API
+#  serverUri : 127.0.0.1:40102 # 在哪个地址监听
+#  goRuntimeMetrics : true # 是否开启go 运行时监控
+2018-04-02 10:03:27.246 +08:00 INFO config-center/config_center.go:225 config value proxyedProtocol | # Router rules and fault injection rules are moved to router.yaml
+#plugin:
+#  destinationResolver: host #用户可自定义如何将host转为换destination name，默认为host直接就是service name，
+#admin: #admin API
+#  serverUri : 127.0.0.1:40102 # 在哪个地址监听
+#  goRuntimeMetrics : true # 是否开启go 运行时监控
+2018-04-02 10:03:27.246 +08:00 INFO bootstrap/bootstrap.go:45 Running as sidecar
+2018-04-02 10:03:27.253 +08:00 INFO server/server_manager.go:62 starting server http...
+2018-04-02 10:03:27.254 +08:00 ERROR server/server_manager.go:65 servers failed to start error: listen tcp4 127.0.0.1:30101: bind: Only one usage of each socket address (protocol/network address/port) is normally permitted.
+2018-04-02 10:03:27.255 +08:00 ERROR go-chassis/chassis.go:204 run chassis fail: error: Can not start [http] server,listen tcp4 127.0.0.1:30101: bind: Only one usage of each socket address (protocol/network address/port) is normally permitted.
+2018-04-02 10:03:27.264 +08:00 WARN registry/bootstrap.go:105 Start to register instances.
+2018-04-02 10:03:27.411 +08:00 WARN servicecenter/servicecenter.go:58 RegisterMicroServiceInstance get SelfInstancesCache failed, Mid/Sid: c3de3e1c361111e89c8f0255ac105519/c443394c361111e891230255ac105117
+2018-04-02 10:03:27.412 +08:00 WARN servicecenter/servicecenter.go:62 RegisterMicroServiceInstance type asserts failed,  Mid/Sid: c3de3e1c361111e89c8f0255ac105519/c443394c361111e891230255ac105117
+2018-04-02 10:03:27.415 +08:00 INFO servicecenter/servicecenter.go:74 RegisterMicroServiceInstance success, MicroServiceID: c3de3e1c361111e89c8f0255ac105519
+2018-04-02 10:03:27.416 +08:00 INFO registry/heartbeat.go:50 Add HB task, task:c3de3e1c361111e89c8f0255ac105519/c443394c361111e891230255ac105117
+2018-04-02 10:03:27.417 +08:00 INFO servicecenter/servicecenter.go:80 RegisterMicroServiceInstance success, microServiceID/instanceID: c3de3e1c361111e89c8f0255ac105519/c443394c361111e891230255ac105117.
+2018-04-02 10:03:27.418 +08:00 WARN registry/bootstrap.go:167 Register instance success, serviceID/instanceID: c3de3e1c361111e89c8f0255ac105519/c443394c361111e891230255ac105117.
+2018-04-02 10:03:29.468 +08:00 INFO cse-collector/csemonitor.go:67 Connection to monitoring server established successfully
+2018-04-02 10:05:59.117 +08:00 INFO archaius/archaius.go:96 Essential Configuration Path: [F:\nl-code\mesher\consumer\mesher\conf\chassis.yaml F:\nl-code\mesher\consumer\mesher\conf\microservice.yaml], Configuration Paths [F:\nl-code\mesher\consumer\mesher\conf\circuit_breaker.yaml F:\nl-code\mesher\consumer\mesher\conf\load_balancing.yaml F:\nl-code\mesher\consumer\mesher\conf\rate_limiting.yaml F:\nl-code\mesher\consumer\mesher\conf\tls.yaml F:\nl-code\mesher\consumer\mesher\conf\monitoring.yaml F:\nl-code\mesher\consumer\mesher\conf\auth.yaml F:\nl-code\mesher\consumer\mesher\conf\tracing.yaml]
+2018-04-02 10:05:59.117 +08:00 WARN config-manager/configurationmanager.go:140 empty configurtion from CommandlineSource
+2018-04-02 10:05:59.117 +08:00 WARN config-manager/configurationmanager.go:140 empty configurtion from ExternalSource
+2018-04-02 10:05:59.119 +08:00 INFO archaius/archaius.go:44 [F:\nl-code\mesher\consumer\mesher\conf\circuit_breaker.yaml] file not exist
+2018-04-02 10:05:59.120 +08:00 INFO archaius/archaius.go:44 [F:\nl-code\mesher\consumer\mesher\conf\load_balancing.yaml] file not exist
+2018-04-02 10:05:59.120 +08:00 INFO archaius/archaius.go:44 [F:\nl-code\mesher\consumer\mesher\conf\rate_limiting.yaml] file not exist
+2018-04-02 10:05:59.120 +08:00 INFO archaius/archaius.go:44 [F:\nl-code\mesher\consumer\mesher\conf\tls.yaml] file not exist
+2018-04-02 10:05:59.121 +08:00 INFO archaius/archaius.go:44 [F:\nl-code\mesher\consumer\mesher\conf\monitoring.yaml] file not exist
+2018-04-02 10:05:59.121 +08:00 INFO archaius/archaius.go:44 [F:\nl-code\mesher\consumer\mesher\conf\tracing.yaml] file not exist
+2018-04-02 10:05:59.122 +08:00 INFO config/config.go:235 archaius init success
+2018-04-02 10:05:59.122 +08:00 INFO config/router_config.go:71 Load route rules from file: F:\nl-code\mesher\consumer\mesher\conf\router.yaml
+2018-04-02 10:05:59.123 +08:00 INFO archaius/archaius.go:77 config value after change sourceTemplate | #routeRule:
+#  ShoppingCart: #这里就是请求里的host,也是sc里的service name
+#    - precedence: 2 #路由规则优先级 越大优先级越高，请求会先进入优先级最高的路由规则进行匹配
+#      route: #路由规则列表
+#      - tags:
+#          version: 0.2 #对接service center的话，如果不填就自动为0.1
+#          app: HelloWorld #对接service center的话，如果不填就自动为default
+#        weight: 80 #全重 80%到这里
+#      - tags:
+#          version: 1.2
+#          app: HelloWorld
+#        weight: 20 #全重 20%到这里
+routeRule:
+  cxf-provider-sbdemo: #这里就是请求里的host,也是sc里的service name
+    - precedence: 2 #路由规则优先级 越大优先级越高，请求会先进入优先级最高的路由规则进行匹配
+      route: #路由规则列表
+      - tags:
+          version: 0.0.1 #对接service center的话，如果不填就自动为0.1
+          app: cxf-mesh #对接service center的话，如果不填就自动为default
+2018-04-02 10:05:59.124 +08:00 WARN auth/auth.go:193 Huawei Cloud auth mode: ak/sk
+2018-04-02 10:05:59.125 +08:00 INFO go-chassis/chassis.go:97 Chain init success
+2018-04-02 10:05:59.126 +08:00 WARN registry/registry.go:141 registry.Consumer TLS mode, verify peer: false, cipher plugin: default.
+2018-04-02 10:05:59.126 +08:00 INFO go-sc-client/client.go:133 Use Service center v4
+2018-04-02 10:05:59.126 +08:00 WARN registry/registry.go:82 Enable servicecenter registry.
+2018-04-02 10:05:59.127 +08:00 WARN registry/bootstrap.go:24 Get schemas failed, microservice = cxf-consumer-csedemo. error: microservice cxf-consumer-csedemo not found
+2018-04-02 10:05:59.127 +08:00 INFO registry/bootstrap.go:45 Framework registered is [ Mesher:1.3.7 ]
+2018-04-02 10:05:59.127 +08:00 INFO registry/bootstrap.go:46 Microservice registered by [ SIDECAR ]
+2018-04-02 10:05:59.345 +08:00 WARN servicecenter/servicecenter.go:41 Microservice [cxf-consumer-csedemo:0.0.1:cxf-mesh] exists in registry, no need register
+2018-04-02 10:05:59.345 +08:00 WARN registry/bootstrap.go:54 Register microservice [cxf-consumer-csedemo] success
+2018-04-02 10:05:59.413 +08:00 INFO registry/bootstrap.go:83 Don't need add dependency
+2018-04-02 10:05:59.672 +08:00 INFO registry/registry.go:160 Enabled Registry
+2018-04-02 10:05:59.673 +08:00 INFO loadbalance/selector.go:26 Enable LoadBalancing
+2018-04-02 10:05:59.680 +08:00 INFO bootstrap/bootstrap.go:32 Bootstrap Huawei Enterprise Edition.
+2018-04-02 10:05:59.680 +08:00 WARN config-center/config_center.go:119 configcenter.Consumer TLS mode, verify peer: false, cipher plugin: default.
+2018-04-02 10:05:59.895 +08:00 WARN config-center/config_center.go:78 config center init success
+2018-04-02 10:05:59.895 +08:00 WARN metrics/cse_monitoring.go:63 monitor.Consumer TLS mode, verify peer: false, cipher plugin: default
+2018-04-02 10:05:59.896 +08:00 INFO metrics/metric.go:92 Started sending metric Data to Monitor Server : https://cse.cn-north-1.myhwclouds.com:443
+2018-04-02 10:05:59.896 +08:00 WARN tracing/tracer_manager.go:34 Tracing enabled. Start to init tracer map.
+2018-04-02 10:05:59.897 +08:00 INFO go-chassis/chassis.go:261 Init chassis success
+2018-04-02 10:05:59.897 +08:00 INFO archaius/archaius.go:77 config value after change policy | # Router rules and fault injection rules are moved to router.yaml
+#plugin:
+#  destinationResolver: host #用户可自定义如何将host转为换destination name，默认为host直接就是service name，
+#admin: #admin API
+#  serverUri : 127.0.0.1:40102 # 在哪个地址监听
+#  goRuntimeMetrics : true # 是否开启go 运行时监控
+2018-04-02 10:05:59.897 +08:00 INFO config-center/config_center.go:225 config value policy | # Router rules and fault injection rules are moved to router.yaml
+#plugin:
+#  destinationResolver: host #用户可自定义如何将host转为换destination name，默认为host直接就是service name，
+#admin: #admin API
+#  serverUri : 127.0.0.1:40102 # 在哪个地址监听
+#  goRuntimeMetrics : true # 是否开启go 运行时监控
+2018-04-02 10:05:59.898 +08:00 INFO archaius/archaius.go:77 config value after change plugin | # Router rules and fault injection rules are moved to router.yaml
+#plugin:
+#  destinationResolver: host #用户可自定义如何将host转为换destination name，默认为host直接就是service name，
+#admin: #admin API
+#  serverUri : 127.0.0.1:40102 # 在哪个地址监听
+#  goRuntimeMetrics : true # 是否开启go 运行时监控
+2018-04-02 10:05:59.898 +08:00 INFO config-center/config_center.go:225 config value plugin | # Router rules and fault injection rules are moved to router.yaml
+#plugin:
+#  destinationResolver: host #用户可自定义如何将host转为换destination name，默认为host直接就是service name，
+#admin: #admin API
+#  serverUri : 127.0.0.1:40102 # 在哪个地址监听
+#  goRuntimeMetrics : true # 是否开启go 运行时监控
+2018-04-02 10:05:59.899 +08:00 INFO archaius/archaius.go:77 config value after change admin | # Router rules and fault injection rules are moved to router.yaml
+#plugin:
+#  destinationResolver: host #用户可自定义如何将host转为换destination name，默认为host直接就是service name，
+#admin: #admin API
+#  serverUri : 127.0.0.1:40102 # 在哪个地址监听
+#  goRuntimeMetrics : true # 是否开启go 运行时监控
+2018-04-02 10:05:59.899 +08:00 INFO config-center/config_center.go:225 config value admin | # Router rules and fault injection rules are moved to router.yaml
+#plugin:
+#  destinationResolver: host #用户可自定义如何将host转为换destination name，默认为host直接就是service name，
+#admin: #admin API
+#  serverUri : 127.0.0.1:40102 # 在哪个地址监听
+#  goRuntimeMetrics : true # 是否开启go 运行时监控
+2018-04-02 10:05:59.899 +08:00 INFO archaius/archaius.go:77 config value after change proxyedProtocol | # Router rules and fault injection rules are moved to router.yaml
+#plugin:
+#  destinationResolver: host #用户可自定义如何将host转为换destination name，默认为host直接就是service name，
+#admin: #admin API
+#  serverUri : 127.0.0.1:40102 # 在哪个地址监听
+#  goRuntimeMetrics : true # 是否开启go 运行时监控
+2018-04-02 10:05:59.899 +08:00 INFO config-center/config_center.go:225 config value proxyedProtocol | # Router rules and fault injection rules are moved to router.yaml
+#plugin:
+#  destinationResolver: host #用户可自定义如何将host转为换destination name，默认为host直接就是service name，
+#admin: #admin API
+#  serverUri : 127.0.0.1:40102 # 在哪个地址监听
+#  goRuntimeMetrics : true # 是否开启go 运行时监控
+2018-04-02 10:05:59.899 +08:00 INFO bootstrap/bootstrap.go:45 Running as sidecar
+2018-04-02 10:05:59.900 +08:00 INFO server/server_manager.go:62 starting server http...
+2018-04-02 10:05:59.901 +08:00 ERROR server/server_manager.go:65 servers failed to start error: listen tcp4 127.0.0.1:30101: bind: Only one usage of each socket address (protocol/network address/port) is normally permitted.
+2018-04-02 10:05:59.901 +08:00 ERROR go-chassis/chassis.go:204 run chassis fail: error: Can not start [http] server,listen tcp4 127.0.0.1:30101: bind: Only one usage of each socket address (protocol/network address/port) is normally permitted.
+2018-04-02 10:05:59.901 +08:00 WARN registry/bootstrap.go:105 Start to register instances.
+2018-04-02 10:06:00.029 +08:00 WARN servicecenter/servicecenter.go:58 RegisterMicroServiceInstance get SelfInstancesCache failed, Mid/Sid: c3de3e1c361111e89c8f0255ac105519/c443394c361111e891230255ac105117
+2018-04-02 10:06:00.029 +08:00 WARN servicecenter/servicecenter.go:62 RegisterMicroServiceInstance type asserts failed,  Mid/Sid: c3de3e1c361111e89c8f0255ac105519/c443394c361111e891230255ac105117
+2018-04-02 10:06:00.030 +08:00 INFO servicecenter/servicecenter.go:74 RegisterMicroServiceInstance success, MicroServiceID: c3de3e1c361111e89c8f0255ac105519
+2018-04-02 10:06:00.030 +08:00 INFO registry/heartbeat.go:50 Add HB task, task:c3de3e1c361111e89c8f0255ac105519/c443394c361111e891230255ac105117
+2018-04-02 10:06:00.031 +08:00 INFO servicecenter/servicecenter.go:80 RegisterMicroServiceInstance success, microServiceID/instanceID: c3de3e1c361111e89c8f0255ac105519/c443394c361111e891230255ac105117.
+2018-04-02 10:06:00.031 +08:00 WARN registry/bootstrap.go:167 Register instance success, serviceID/instanceID: c3de3e1c361111e89c8f0255ac105519/c443394c361111e891230255ac105117.
+2018-04-02 10:06:02.126 +08:00 INFO cse-collector/csemonitor.go:67 Connection to monitoring server established successfully

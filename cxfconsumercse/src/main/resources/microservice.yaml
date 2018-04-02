@@ -1,0 +1,24 @@
+APPLICATION_ID: cxf-mesh
+service_description:
+  name: cxfconsumercse
+  version: 0.0.1
+  properties:
+    allowCrossApp: false
+cse:
+  service:
+    registry:
+      address: https://cse.cn-north-1.myhuaweicloud.com:443
+      instance:
+        watch: false
+  config:
+    client:
+      serverUri: https://cse.cn-north-1.myhuaweicloud.com:443
+      refreshMode: 1
+      refresh_interval: 5000
+  rest:
+    address: 0.0.0.0:8090
+  credentials:
+    accessKey: AJADUZGY3IFKSQPEPB8Q
+    secretKey: JUggo6jdtKqJ4fCaznLw043ideXRQV8Hoa5nsHTq
+    akskCustomCipher: default
+    project: cn-north-1
