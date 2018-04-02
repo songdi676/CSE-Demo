@@ -31,4 +31,10 @@ public class CSERpcDemoDelegate implements ICSERpcDemo {
 		// TODO Auto-generated method stub
 		return 0;
 	}
+
+	@Override
+	public String sayHello(String name) {
+		// TODO Auto-generated method stub
+		return null;
+	}
 }
