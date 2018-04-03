@@ -55,4 +55,10 @@ public class People implements Serializable {
 		this.description = description;
 	}
 
+	@Override
+	public String toString() {
+		return "People [peopleId=" + peopleId + ", peopleName=" + peopleName + ", status=" + status + ", description="
+				+ description + "]";
+	}
+
 }

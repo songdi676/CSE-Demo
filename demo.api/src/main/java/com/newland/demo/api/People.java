@@ -8,6 +8,12 @@ public class People implements Serializable {
 		 * 
 		 */
 	private static final long serialVersionUID = -4093927848930419910L;
+	@Override
+	public String toString() {
+		return "People [peopleId=" + peopleId + ", peopleName=" + peopleName + ", status=" + status + ", description="
+				+ description + "]";
+	}
+
 	private int peopleId;
 	private String peopleName;
 	private int status;

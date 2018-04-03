@@ -30,4 +30,10 @@ public interface PeopleService {
 
 	List<People> save(List<People> peoples);
 
+	void delete(List<People> peoples);
+
+	void delete(People people);
+
+	int deleteByPeopleName(String peopleName);
+
 }

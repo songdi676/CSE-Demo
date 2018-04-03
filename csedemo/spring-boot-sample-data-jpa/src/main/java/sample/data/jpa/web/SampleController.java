@@ -50,7 +50,7 @@ public class SampleController {
 		return peopleService.findAll();
 	}
 
-	@RequestMapping(value = "/findPeople", produces = { "application/json" }, method = RequestMethod.GET)
+	@RequestMapping(value = "/findPeopleByName", produces = { "application/json" }, method = RequestMethod.GET)
 	public List<People> findByPeopleName(@RequestParam(value = "name") String name) {
 		logger.info("find people by name:" + name);
 		return peopleService.findByPeopleName(name);
@@ -65,5 +65,15 @@ public class SampleController {
 	@RequestMapping(value = "/save", method = RequestMethod.POST)
 	public List<People> save(@RequestBody List<People> peoples) {
 		return peopleService.save(peoples);
+	}
+
+	@RequestMapping(value = "/delete", method = RequestMethod.POST)
+	public void delete(@RequestBody List<People> peoples) {
+		peopleService.delete(peoples);
+	}
+
+	@RequestMapping(value = "/deletePeopleByName", produces = { "application/json" }, method = RequestMethod.GET)
+	public void deletePeopleByName(@RequestParam(value = "name") String name) {
+		peopleService.deleteByPeopleName(name);
 	}
 }

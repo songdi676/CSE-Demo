@@ -75,4 +75,19 @@ class PeopleServiceImpl implements PeopleService {
 		return list;
 	}
 
+	@Override
+	public void delete(List<People> peoples) {
+		peopleRepository.delete(peoples);
+	}
+
+	@Override
+	public void delete(People people) {
+		peopleRepository.delete(people);
+	}
+
+	@Override
+	public int deleteByPeopleName(String peopleName) {
+		return peopleRepository.deleteByPeopleName(peopleName);
+	}
+
 }

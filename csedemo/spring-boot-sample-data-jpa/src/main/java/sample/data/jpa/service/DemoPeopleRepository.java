@@ -23,5 +23,8 @@ import sample.data.jpa.domain.People;
 interface DemoPeopleRepository extends CrudRepository<People, Long> {
 
 	Iterable<People> findByPeopleName(String peopleName);
+
 	Iterable<People> findByStatus(int status);
+
+	int deleteByPeopleName(String peopleName);
 }

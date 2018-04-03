@@ -12,7 +12,7 @@
 
 
 	<properties>
-		<demo.main>org.springframework.boot.SpringApplication.SampleDataJpaApplication</demo.main>
+		<demo.main>sample.data.jpa.SampleDataJpaApplication</demo.main>
 	</properties>
 	<repositories>
 		<repository>
@@ -39,6 +39,11 @@
 	<dependencies>
 		<!-- 使用CSE Java SDK作为RPC框架引入cse-solution-service-engine -->
 		<dependency>
+			<groupId>org.apache.servicecomb</groupId>
+			<artifactId>spring-boot-starter-provider</artifactId>
+		</dependency>
+
+		<dependency>
 			<groupId>com.huawei.paas.cse</groupId>
 			<artifactId>cse-solution-service-engine</artifactId>
 			<exclusions>
@@ -47,16 +52,6 @@
 					<artifactId>slf4j-log4j12</artifactId>
 				</exclusion>
 			</exclusions>
-		</dependency>
-		<!-- 在pom.xml文件中增加依赖关系。除了引用spring-boot-starter-registry 和spring-boot-starter-configuration之外，还引用了foundation-auth包，这个包主要完成和CSE服务之间的认证。 
-			这个包默认依赖log4j，由于Spring Boot默认使用logback作为日志记录器，需要排除掉对于log4j的引用。 -->
-		<dependency>
-			<groupId>org.apache.servicecomb</groupId>
-			<artifactId>spring-boot-starter-registry</artifactId>
-		</dependency>
-		<dependency>
-			<groupId>org.apache.servicecomb</groupId>
-			<artifactId>spring-boot-starter-configuration</artifactId>
 		</dependency>
 		<dependency>
 			<groupId>com.huawei.paas.cse</groupId>
@@ -81,6 +76,11 @@
 			<groupId>com.oracle</groupId>
 			<artifactId>ojdbc6</artifactId>
 			<version>11.2.0.3</version>
+		</dependency>
+		<dependency>
+			<groupId>org.springframework</groupId>
+			<artifactId>spring-jdbc</artifactId>
+			<scope>compile</scope>
 		</dependency>
 	</dependencies>
 	<build>
@@ -118,6 +118,28 @@
 						</manifestEntries>
 					</archive>
 				</configuration>
+			</plugin>
+			<plugin>
+				<artifactId>maven-antrun-plugin</artifactId>
+				<version>1.8</version>
+				<executions>
+					<execution>
+						<id>make-vm-zip</id>
+						<phase>package</phase>
+						<configuration>
+							<target>
+								<zip destfile="target/${build.finalName}.zip">
+									<zipfileset dir="target/lib" prefix="lib" />
+									<zipfileset dir="target" includes="*.jar" />
+									<zipfileset dir="." includes="start.sh" />
+								</zip>
+							</target>
+						</configuration>
+						<goals>
+							<goal>run</goal>
+						</goals>
+					</execution>
+				</executions>
 			</plugin>
 			<plugin>
 				<groupId>org.apache.maven.plugins</groupId>

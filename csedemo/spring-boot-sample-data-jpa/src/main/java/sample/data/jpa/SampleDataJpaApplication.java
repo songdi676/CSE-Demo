@@ -16,14 +16,15 @@
 
 package sample.data.jpa;
 
+import org.apache.servicecomb.springboot.starter.provider.EnableServiceComb;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.EnableAutoConfiguration;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.annotation.ImportResource;
 
 @SpringBootApplication
-@EnableAutoConfiguration
-@ImportResource(locations = "classpath*:META-INF/spring/*.bean.xml")
+@EnableServiceComb
+//@ImportResource(locations = "classpath*:META-INF/spring/*.bean.xml")
 public class SampleDataJpaApplication {
 
 	public static void main(String[] args) {

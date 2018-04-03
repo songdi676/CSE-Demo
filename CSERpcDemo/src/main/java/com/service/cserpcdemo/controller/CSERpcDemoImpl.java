@@ -1,5 +1,7 @@
 package com.service.cserpcdemo.controller;
 
+import java.util.List;
+
 import org.apache.servicecomb.provider.pojo.RpcSchema;
 import org.springframework.beans.factory.annotation.Autowired;
 
@@ -32,10 +34,24 @@ public class CSERpcDemoImpl implements ICSERpcDemo {
 		return peopleJdbcTemplate.save(people);
 	}
 
+	public int[] batchAddPeople(List<People> peopleList) {
+
+		return peopleJdbcTemplate.batchSave(peopleList);
+	}
+
 	@Override
 	public String sayHello(String name) {
-		// TODO Auto-generated method stub
-		return null;
+		return CSERpcDemoDelegate.helloworld(name);
+	}
+
+	@Override
+	public List<People> getPeopleByName(String peopleName) {
+		return peopleJdbcTemplate.getPeopleByName(peopleName);
+	}
+
+	@Override
+	public int deletePeopleByName(String peopleName) {
+		return peopleJdbcTemplate.deletePeopleByName(peopleName);
 	}
 
 }

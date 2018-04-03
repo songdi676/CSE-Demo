@@ -2,9 +2,6 @@ package com.service.cserpcdemo.controller;
 
 import org.springframework.stereotype.Component;
 
-import com.newland.demo.api.ICSERpcDemo;
-import com.newland.demo.api.People;
-
 /**
  * ICSERpcDemo 业务实现类
  * 
@@ -12,29 +9,11 @@ import com.newland.demo.api.People;
  *
  */
 @Component
-public class CSERpcDemoDelegate implements ICSERpcDemo {
+public class CSERpcDemoDelegate {
 
 	public String helloworld(String name) {
 
-		// Do Some Magic Here!
 		return "RPC Demo" + name;
 	}
 
-	@Override
-	public int getPeopleNumberByNameAndStatus(People people) {
-		// TODO Auto-generated method stub
-		return 0;
-	}
-
-	@Override
-	public int addPeople(People people) {
-		// TODO Auto-generated method stub
-		return 0;
-	}
-
-	@Override
-	public String sayHello(String name) {
-		// TODO Auto-generated method stub
-		return null;
-	}
 }

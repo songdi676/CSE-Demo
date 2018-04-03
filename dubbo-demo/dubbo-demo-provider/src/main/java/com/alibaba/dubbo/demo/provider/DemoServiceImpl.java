@@ -18,8 +18,7 @@ package com.alibaba.dubbo.demo.provider;
 
 import java.text.SimpleDateFormat;
 import java.util.Date;
-
-import org.springframework.beans.factory.annotation.Autowired;
+import java.util.List;
 
 import com.alibaba.dubbo.rpc.RpcContext;
 import com.newland.demo.api.ICSERpcDemo;
@@ -49,6 +48,21 @@ public class DemoServiceImpl implements ICSERpcDemo {
 		return peopleJdbcTemplate.save(people);
 	}
 
+	@Override
+	public List<People> getPeopleByName(String peopleName) {
+		return peopleJdbcTemplate.getPeopleByName(peopleName);
+	}
+
+	@Override
+	public int[] batchAddPeople(List<People> peopleList) {
+		return peopleJdbcTemplate.batchSave(peopleList);
+	}
+
+	@Override
+	public int deletePeopleByName(String peopleName) {
+		return peopleJdbcTemplate.deletePeopleByName(peopleName);
+	}
+
 	public PeopleJdbcTemplate getPeopleJdbcTemplate() {
 		return peopleJdbcTemplate;
 	}
@@ -56,4 +70,5 @@ public class DemoServiceImpl implements ICSERpcDemo {
 	public void setPeopleJdbcTemplate(PeopleJdbcTemplate peopleJdbcTemplate) {
 		this.peopleJdbcTemplate = peopleJdbcTemplate;
 	}
+
 }

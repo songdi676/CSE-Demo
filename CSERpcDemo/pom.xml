@@ -19,6 +19,15 @@
 		<demo.main>com.service.cserpcdemo.CSERpcDemoApplication</demo.main>
 	</properties>
 
+	<repositories>
+		<repository>
+			<id>aliyun</id>
+			<url>https://maven.aliyun.com/nexus/content/groups/public/</url>
+			<snapshots>
+				<enabled>false</enabled>
+			</snapshots>
+		</repository>
+	</repositories>
 	<dependencyManagement>
 		<dependencies>
 			<dependency>
@@ -54,7 +63,7 @@
 		<dependency>
 			<groupId>org.springframework</groupId>
 			<artifactId>spring-jdbc</artifactId>
-			<version>4.3.5.RELEASE</version>
+			<scope>compile</scope>
 		</dependency>
 
 		<dependency>

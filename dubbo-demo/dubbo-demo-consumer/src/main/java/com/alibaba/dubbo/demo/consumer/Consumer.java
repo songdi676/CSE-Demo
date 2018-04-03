@@ -16,6 +16,9 @@
  */
 package com.alibaba.dubbo.demo.consumer;
 
+import java.util.ArrayList;
+import java.util.List;
+
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 
 import com.newland.demo.api.ICSERpcDemo;
@@ -33,21 +36,59 @@ public class Consumer {
 		context.start();
 		ICSERpcDemo demoService = (ICSERpcDemo) context.getBean("demoService"); // get remote service proxy
 
+
+		//testPeopleDao(demoService);
+
 		while (true) {
 			try {
 				Thread.sleep(1000);
 				String hello = demoService.sayHello("world"); // call remote method
 				System.out.println(hello); // get result
-				People people = new People();
-				people.setStatus(1);
-				people.setPeopleName("jack");
-				int num = demoService.getPeopleNumberByNameAndStatus(people);
-				System.out.println("people num:" + num);
 			} catch (Throwable throwable) {
 				throwable.printStackTrace();
 			}
 
 		}
 
+	}
+
+	private static void testPeopleDao(ICSERpcDemo demoService) {
+		String name = "dubbo";
+		People people = new People();
+		people.setStatus(1);
+		people.setPeopleName(name);
+		people.setPeopleId(11111);
+
+		int result = demoService.addPeople(people);
+		System.out.println("addPeople people:" + name + " result:" + result);
+
+		List<People> peopleList = demoService.getPeopleByName(name);
+		System.out.println("after addPeople, getPeopleByName:" + name + " result:" + peopleList);
+
+		result = demoService.deletePeopleByName(name);
+		System.out.println("deletePeopleByName:" + name + " result:" + result);
+
+		peopleList = demoService.getPeopleByName(name);
+		System.out.println("after deletePeopleByName, getPeopleByName:" + name + " result:" + peopleList);
+
+		peopleList = new ArrayList<People>();
+		People people2 = new People();
+		people2.setStatus(1);
+		people2.setPeopleName(name);
+		people2.setPeopleId(22222);
+		peopleList.add(people);
+		peopleList.add(people2);
+
+		int[] result2 = demoService.batchAddPeople(peopleList);
+		System.out.println("addPeople batchAddPeople:" + name + " result:" + result2);
+
+		List<People> peopleList3 = demoService.getPeopleByName(name);
+		System.out.println("after batchAddPeople, getPeopleByName:" + name + " result:" + peopleList3);
+
+		result = demoService.deletePeopleByName(name);
+		System.out.println("deletePeopleByName:" + name + " result:" + result);
+
+		peopleList3 = demoService.getPeopleByName(name);
+		System.out.println("after deletePeopleByName, getPeopleByName:" + name + " result:" + peopleList3);
 	}
 }

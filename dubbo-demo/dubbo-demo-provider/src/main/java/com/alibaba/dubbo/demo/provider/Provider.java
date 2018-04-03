@@ -16,6 +16,9 @@
  */
 package com.alibaba.dubbo.demo.provider;
 
+import java.util.ArrayList;
+import java.util.List;
+
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 
 import com.newland.demo.api.ICSERpcDemo;
@@ -36,13 +39,49 @@ public class Provider {
 
 		String hello = demoService.sayHello("world"); // call remote method
 		System.out.println(hello); // get result
-		People people=new People();
-		people.setPeopleName("jack");
-		people.setStatus(1);
-		int number=demoService.getPeopleNumberByNameAndStatus(people);
-		System.out.println(number);
+
+		testPeopleDao(demoService);
 
 		System.in.read(); // press any key to exit
 	}
 
+	private static void testPeopleDao(ICSERpcDemo demoService) {
+		String name = "dubbo";
+		People people = new People();
+		people.setStatus(1);
+		people.setPeopleName(name);
+		people.setPeopleId(11111);
+
+		int result = demoService.addPeople(people);
+		System.out.println("addPeople people:" + name + " result:" + result);
+
+		List<People> peopleList = demoService.getPeopleByName(name);
+		System.out.println("after addPeople, getPeopleByName:" + name + " result:" + peopleList);
+
+		result = demoService.deletePeopleByName(name);
+		System.out.println("deletePeopleByName:" + name + " result:" + result);
+
+		peopleList = demoService.getPeopleByName(name);
+		System.out.println("after deletePeopleByName, getPeopleByName:" + name + " result:" + peopleList);
+
+		peopleList = new ArrayList<People>();
+		People people2 = new People();
+		people2.setStatus(1);
+		people2.setPeopleName(name);
+		people2.setPeopleId(22222);
+		peopleList.add(people);
+		peopleList.add(people2);
+
+		int[] result2 = demoService.batchAddPeople(peopleList);
+		System.out.println("批量添加人员： batchAddPeople:" + name + " result:" + result2);
+
+		List<People> peopleList3 = demoService.getPeopleByName(name);
+		System.out.println("批量添加人员后查询, getPeopleByName:" + name + " result:" + peopleList3);
+
+		result = demoService.deletePeopleByName(name);
+		System.out.println("删除人员：deletePeopleByName:" + name + " result:" + result);
+
+		peopleList3 = demoService.getPeopleByName(name);
+		System.out.println("删除人员后查询, getPeopleByName:" + name + " result:" + peopleList3);
+	}
 }
