@@ -9,6 +9,8 @@ import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.List;
+
 @SpringBootApplication
 @RestController
 public class CxfProviderSbApplication {
@@ -37,6 +39,16 @@ public class CxfProviderSbApplication {
 		factoryBean.setAddress("http://localhost:8080/services/DemoService");
 		DemoService demoService = (DemoService) factoryBean.create();
 		String result = demoService.sayHello(name);
+		return result;
+	}
+
+	@RequestMapping(value = "/testcxf3", method = RequestMethod.POST)
+	public List<People> testcxf3(@RequestParam(name = "name") String name) {
+		JaxWsProxyFactoryBean factoryBean = new JaxWsProxyFactoryBean();
+		factoryBean.setServiceClass(DemoService.class);
+		factoryBean.setAddress("http://localhost:8080/services/DemoService");
+		DemoService demoService = (DemoService) factoryBean.create();
+		List<People> result = demoService.listPeopleByName(name);
 		return result;
 	}
 
