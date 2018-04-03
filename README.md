@@ -11,4 +11,6 @@
 ### 5.dubbo服务接入CSE
 1. dubbo-demo/dubbo-demo-provider 基于dubbo框架微服务提供者
 2. dubbo-demo/dubbo-demo-consumer 基于dubbo框架微服务消费者
-
+### 6.webservice服务通过mesher代理访问
+1. cxf-provider-sb 提供者使用Mesher发布webservice
+2. cxf-consumer-sb 消费者使用Mesher访问webservice
